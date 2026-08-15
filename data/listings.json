@@ -4,13 +4,16 @@
     "built": "2026-08-15",
     "confirmation_ceiling": "unconfirmed",
     "note": "No first-party page was opened by any researcher. Every record is search-extract grade or weaker. `evidence` records how the fact was seen; `confirmation` records that nobody re-opened the source. Both axes are orthogonal to `status`, which is the operating state of the place.",
+    "lint_warnings_justified": "Two warn-tier phrases survive deliberately and are exempt under the lint's own scope_exclude for proper names: 'the City of Trenton' (the municipal corporation's name, in seven records) and 'National Register of Historic Places' (a proper name, in three records). No warn-tier phrase is used as description.",
     "owner": "merge data lead"
   },
   "listings": [
     {
       "slug": "city-of-trenton",
       "name": "City of Trenton",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The municipal government of Trenton, Missouri, seated at City Hall on Main Street. It is governed by a mayor and a city council with two members elected from each ward.",
       "proximity": "trenton",
@@ -29,8 +32,26 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/government/departments/administrator/", "publisher": "City of Trenton", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://ecode360.com/28485733", "publisher": "eCode360 (Trenton municipal code)", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/government/departments/administrator/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://ecode360.com/28485733",
+          "publisher": "eCode360 (Trenton municipal code)",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Officeholder names were collected by both teams and are deliberately omitted from listing data."
@@ -38,7 +59,10 @@
     {
       "slug": "trenton-municipal-utilities",
       "name": "Trenton Municipal Utilities",
-      "categories": ["utilities-trash", "government"],
+      "categories": [
+        "utilities-trash",
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The city-owned utility providing electric, water and wastewater service inside Trenton. It also bills residents for city-contracted trash and recycling collection.",
       "proximity": "trenton",
@@ -57,8 +81,27 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/municipal-utilities/billing/", "publisher": "City of Trenton", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://trentonmo.municipalonlinepayments.com/trentonmo", "publisher": "Municipal Online Payments (City of Trenton portal)", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/municipal-utilities/billing/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.municipalonlinepayments.com/trentonmo",
+          "publisher": "Municipal Online Payments (City of Trenton portal)",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Sources report a penalty of 10 percent of electric, water and wastewater charges on bills unpaid after the 18th of the month. Published water-rate figures are dated September 2022 and are not reproduced here."
@@ -66,7 +109,10 @@
     {
       "slug": "trenton-parks-and-recreation-department",
       "name": "Trenton Parks and Recreation Department",
-      "categories": ["government", "parks-recreation"],
+      "categories": [
+        "government",
+        "parks-recreation"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The city department that maintains Trenton's public parks, the municipal aquatic center and city recreation facilities.",
       "proximity": "trenton",
@@ -83,10 +129,29 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://trentonmo.com/government/departments/parks-and-recreation/", "publisher": "City of Trenton", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.visittrentonmo.com/parks-recreation", "publisher": "Visit Trenton", "covers": ["phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/government/departments/parks-and-recreation/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/parks-recreation",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Two street addresses were reported by the two research passes (1510 E 13th Ct and 1000 E 13th Street). Neither is published."
@@ -94,7 +159,9 @@
     {
       "slug": "trenton-street-barn",
       "name": "Trenton Street Barn",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "A City of Trenton public works facility listed among city department locations.",
       "proximity": "trenton",
@@ -113,7 +180,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/government/departments/administrator/", "publisher": "City of Trenton", "covers": ["name", "summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/government/departments/administrator/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Function of the facility beyond its listing as a city location was not observed."
@@ -121,7 +197,10 @@
     {
       "slug": "trenton-municipal-airport",
       "name": "Trenton Municipal Airport",
-      "categories": ["government", "business"],
+      "categories": [
+        "government",
+        "business"
+      ],
       "schemaType": "Airport",
       "summary": "A city-owned, public-use general aviation airport about one mile east of downtown Trenton, with a single asphalt runway and no scheduled passenger service. Sources report fuel available around the clock, tie-down space, hangar rental and a courtesy car.",
       "proximity": "trenton",
@@ -140,8 +219,26 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/government/departments/municipal-airport/", "publisher": "City of Trenton", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.airnav.com/airport/KTRX", "publisher": "AirNav", "covers": ["summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/government/departments/municipal-airport/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.airnav.com/airport/KTRX",
+          "publisher": "AirNav",
+          "covers": [
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "FAA/ICAO identifier KTRX. Runway is reported as 4,310 by 75 feet (18/36) on roughly 85 acres."
@@ -149,7 +246,10 @@
     {
       "slug": "rapid-removal-disposal",
       "name": "Rapid Removal Disposal",
-      "categories": ["government", "utilities-trash"],
+      "categories": [
+        "government",
+        "utilities-trash"
+      ],
       "schemaType": "LocalBusiness",
       "summary": "The private hauler reported as currently under contract with the City of Trenton for residential trash collection. Residents are billed for the service through Trenton Municipal Utilities rather than by the hauler.",
       "proximity": "trenton",
@@ -168,7 +268,18 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/how-do-i/", "publisher": "City of Trenton", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/how-do-i/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "This is a city contract that can be re-bid. Editorial copy must say 'currently contracted' and carry a date."
@@ -176,7 +287,10 @@
     {
       "slug": "hope-haven-industries",
       "name": "Hope Haven Industries, Inc.",
-      "categories": ["government", "utilities-trash"],
+      "categories": [
+        "government",
+        "utilities-trash"
+      ],
       "schemaType": "LocalBusiness",
       "summary": "The recycling collector reported as currently contracted for Trenton residential recycling pickup. Sources state that every Trenton Municipal Utilities account with water service is billed the recycling fee whether or not the service is used.",
       "proximity": "trenton",
@@ -195,7 +309,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/how-do-i/", "publisher": "City of Trenton", "covers": ["name", "summary", "phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/how-do-i/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Based in Chillicothe, Missouri; included because it is the City of Trenton's contracted residential recycling collector. Service area is Trenton, not the company's own location."
@@ -203,7 +326,10 @@
     {
       "slug": "grundy-electric-cooperative",
       "name": "Grundy Electric Cooperative, Inc.",
-      "categories": ["utilities-trash", "business"],
+      "categories": [
+        "utilities-trash",
+        "business"
+      ],
       "schemaType": "LocalBusiness",
       "summary": "A member-owned electric cooperative serving rural members in northern Missouri and southern Iowa. Addresses inside Trenton city limits are generally served by Trenton Municipal Utilities instead.",
       "proximity": "trenton",
@@ -220,10 +346,29 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["phone"],
+      "disputed": [
+        "phone"
+      ],
       "sources": [
-        { "url": "https://www.grundyec.com/overview", "publisher": "Grundy Electric Cooperative", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.trentonmochamber.com/connections/49808-grundy-electric-cooperative-inc/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.grundyec.com/overview",
+          "publisher": "Grundy Electric Cooperative",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.trentonmochamber.com/connections/49808-grundy-electric-cooperative-inc/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Two different main numbers appeared across sources ((660) 359-6030 and (660) 359-3941); neither is published. Reported office hours came from aggregators only and are not published."
@@ -231,7 +376,9 @@
     {
       "slug": "grundy-county-courthouse",
       "name": "Grundy County Courthouse",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentBuilding",
       "summary": "The seat of Grundy County government in downtown Trenton, housing the county clerk, collector-treasurer, assessor, county commission and circuit court offices. The building was constructed between 1903 and 1905 of Bedford stone.",
       "proximity": "trenton",
@@ -250,9 +397,36 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://grundycountymo.com/wordpress/", "publisher": "Grundy County, Missouri", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://grundycountymo.com/wordpress/buildings-and-grounds/", "publisher": "Grundy County, Missouri", "covers": ["summary", "address"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.mocounties.com/grundy-county", "publisher": "Missouri Association of Counties", "covers": ["address", "phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymo.com/wordpress/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://grundycountymo.com/wordpress/buildings-and-grounds/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.mocounties.com/grundy-county",
+          "publisher": "Missouri Association of Counties",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Building-wide hours are not published: the 8:30 a.m. to 4:30 p.m. window reported in sources applies to specific offices, not necessarily to the whole building."
@@ -260,7 +434,9 @@
     {
       "slug": "grundy-county-clerk",
       "name": "Grundy County Clerk",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The county office handling voter registration, election administration, county records and county payroll. This is where a Trenton resident registers to vote and confirms a polling place.",
       "proximity": "trenton",
@@ -279,8 +455,29 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://grundycountymo.com/wordpress/county-clerk/elections/", "publisher": "Grundy County, Missouri", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.usvotefoundation.org/grundy-county-mo-election-office", "publisher": "U.S. Vote Foundation", "covers": ["address", "phone", "hours"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymo.com/wordpress/county-clerk/elections/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.usvotefoundation.org/grundy-county-mo-election-office",
+          "publisher": "U.S. Vote Foundation",
+          "covers": [
+            "address",
+            "phone",
+            "hours"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "A suite number (Suite 7) and a phone extension (2256) were reported by third-party sources only and are not published."
@@ -288,7 +485,9 @@
     {
       "slug": "grundy-county-collector-treasurer",
       "name": "Grundy County Collector-Treasurer",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The county office that collects real estate and personal property taxes and serves as county treasurer. It issues the paid-tax receipt required for vehicle licensing.",
       "proximity": "trenton",
@@ -307,7 +506,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://grundycountymo.com/wordpress/collector-treasurer/", "publisher": "Grundy County, Missouri", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymo.com/wordpress/collector-treasurer/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -315,7 +526,9 @@
     {
       "slug": "grundy-county-assessor",
       "name": "Grundy County Assessor",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The county office that maintains the list of taxable real and personal property in Grundy County. This is where a resident declares personal property or questions an assessment.",
       "proximity": "trenton",
@@ -334,7 +547,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://grundycountymo.com/wordpress/assessors-office/", "publisher": "Grundy County, Missouri", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymo.com/wordpress/assessors-office/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -342,7 +567,9 @@
     {
       "slug": "grundy-county-circuit-clerk-and-recorder",
       "name": "Grundy County Circuit Clerk and Recorder",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The county office handling circuit court records and recorded documents, located in the Grundy County Courthouse.",
       "proximity": "trenton",
@@ -361,7 +588,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://grundycountymo.com/wordpress/", "publisher": "Grundy County, Missouri", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymo.com/wordpress/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The officeholder is named in the source and is deliberately omitted here."
@@ -369,7 +608,9 @@
     {
       "slug": "grundy-county-sheriffs-office",
       "name": "Grundy County Sheriff's Office",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The county law enforcement agency for Grundy County. It conducts criminal investigations, serves civil process and operates the county jail.",
       "proximity": "trenton",
@@ -386,9 +627,20 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 1,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://grundycountymo.com/wordpress/sheriffs-office/", "publisher": "Grundy County, Missouri", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymo.com/wordpress/sheriffs-office/",
+          "publisher": "Grundy County, Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Three candidate addresses appeared across sources, one of them shared with the Trenton Police Department. None is published. No phone number is published on emergency-services records."
@@ -396,7 +648,9 @@
     {
       "slug": "trenton-police-department",
       "name": "Trenton Police Department",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "PoliceStation",
       "summary": "The municipal police department for the City of Trenton.",
       "proximity": "trenton",
@@ -413,10 +667,28 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://trentonmo.com/government/departments/police/", "publisher": "City of Trenton", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://trentonmo.com/government/departments/administrator/", "publisher": "City of Trenton", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/government/departments/police/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.com/government/departments/administrator/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "One research pass found an address (610 Main St) that collides with the address reported for the Grundy County Sheriff's Office; the other found no address at all. Nothing is published. No phone number is published on emergency-services records."
@@ -424,7 +696,9 @@
     {
       "slug": "trenton-fire-department",
       "name": "Trenton Fire Department",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "FireStation",
       "summary": "The fire department serving the City of Trenton, providing fire suppression and emergency response.",
       "proximity": "trenton",
@@ -443,8 +717,25 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/government/departments/fire-department/", "publisher": "City of Trenton", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://trentonmo.com/government/departments/administrator/", "publisher": "City of Trenton", "covers": ["address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/government/departments/fire-department/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.com/government/departments/administrator/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Both research passes found the same address on the same publisher's site, so this counts as one independent source. No phone number is published on emergency-services records."
@@ -452,7 +743,9 @@
     {
       "slug": "trenton-post-office",
       "name": "Trenton Post Office",
-      "categories": ["government"],
+      "categories": [
+        "government"
+      ],
       "schemaType": "PostOffice",
       "summary": "The United States Postal Service retail post office serving Trenton and ZIP code 64683. Sources state it does not offer passport services.",
       "proximity": "trenton",
@@ -471,7 +764,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://tools.usps.com/locations/home.htm?location=1384973", "publisher": "United States Postal Service", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://tools.usps.com/locations/home.htm?location=1384973",
+          "publisher": "United States Postal Service",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Published hours are retail counter hours, which can differ from lobby access hours."
@@ -479,7 +784,10 @@
     {
       "slug": "green-hills-regional-planning-commission",
       "name": "Green Hills Regional Planning Commission",
-      "categories": ["government", "community"],
+      "categories": [
+        "government",
+        "community"
+      ],
       "schemaType": "GovernmentOrganization",
       "summary": "A regional council of governments headquartered in Trenton that provides planning, grant administration and technical assistance to member cities and counties in north central Missouri.",
       "proximity": "trenton",
@@ -498,8 +806,26 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://ghrpc.org/about-us/", "publisher": "Green Hills Regional Planning Commission", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://macog.org/green-hills-regional-planning-commission/", "publisher": "Missouri Association of Councils of Governments", "covers": ["summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://ghrpc.org/about-us/",
+          "publisher": "Green Hills Regional Planning Commission",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://macog.org/green-hills-regional-planning-commission/",
+          "publisher": "Missouri Association of Councils of Governments",
+          "covers": [
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -507,7 +833,9 @@
     {
       "slug": "green-hills-community-action-agency",
       "name": "Green Hills Community Action Agency",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "NGO",
       "summary": "A community action agency headquartered in Trenton that runs anti-poverty and family support programs across north central Missouri.",
       "proximity": "trenton",
@@ -526,7 +854,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.capncm.org/", "publisher": "Green Hills Community Action Agency", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.capncm.org/",
+          "publisher": "Green Hills Community Action Agency",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The specific program list (energy assistance, Head Start, weatherization, housing) was not observed and is not asserted here."
@@ -534,7 +872,9 @@
     {
       "slug": "wright-memorial-hospital",
       "name": "Wright Memorial Hospital",
-      "categories": ["health"],
+      "categories": [
+        "health"
+      ],
       "schemaType": "Hospital",
       "summary": "A 25-bed acute care hospital in Trenton, part of Saint Luke's Health System. Sources describe a 24-hour emergency department, inpatient and outpatient diagnostic testing, surgery, rehabilitation, a specialty clinic and adjoining primary care offices.",
       "proximity": "trenton",
@@ -551,9 +891,21 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 1,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital", "publisher": "Saint Luke's Health System", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital",
+          "publisher": "Saint Luke's Health System",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Two candidate addresses exist across sources (191 Iowa Blvd and 701 E 1st St, with a third appearing in aggregator data). Neither is published. Of every field on this site this is the one that must not be wrong."
@@ -561,7 +913,9 @@
     {
       "slug": "wright-memorial-physicians-group",
       "name": "Wright Memorial Physicians' Group",
-      "categories": ["health"],
+      "categories": [
+        "health"
+      ],
       "schemaType": "MedicalClinic",
       "summary": "The primary care practice affiliated with Wright Memorial Hospital, providing family medicine from pediatrics through geriatrics.",
       "proximity": "trenton",
@@ -580,7 +934,18 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital-physicians-group", "publisher": "Saint Luke's Health System", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital-physicians-group",
+          "publisher": "Saint Luke's Health System",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "This address sits one number away from a disputed hospital address; treat both as open questions in the same block."
@@ -588,7 +953,9 @@
     {
       "slug": "wright-memorial-hospital-specialty-clinic",
       "name": "Wright Memorial Hospital Specialty Clinic",
-      "categories": ["health"],
+      "categories": [
+        "health"
+      ],
       "schemaType": "MedicalClinic",
       "summary": "A specialty clinic operated in connection with Wright Memorial Hospital, hosting visiting specialists for Trenton-area patients.",
       "proximity": "trenton",
@@ -607,7 +974,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital-specialty-clinic", "publisher": "Saint Luke's Health System", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital-specialty-clinic",
+          "publisher": "Saint Luke's Health System",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "One source lists specialties including cardiology, ENT, gastroenterology, oncology, orthopedics and podiatry; the roster was not confirmed and is not published as a field."
@@ -615,7 +991,10 @@
     {
       "slug": "grundy-county-health-department",
       "name": "Grundy County Health Department",
-      "categories": ["health", "government"],
+      "categories": [
+        "health",
+        "government"
+      ],
       "schemaType": "GovernmentOffice",
       "summary": "The local public health agency for Grundy County. It issues vital records including birth certificates, runs immunization and community clinics, administers WIC, and publishes local food inspection records.",
       "proximity": "trenton",
@@ -634,9 +1013,39 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://health.mo.gov/local/find-your-local-public-health-agency/grundy-county-health-department", "publisher": "Missouri Department of Health and Senior Services", "covers": ["name", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.grundycountyhealth.org/contact", "publisher": "Grundy County Health Department", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.grundycountyhealth.org/foodinspections", "publisher": "Grundy County Health Department", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://health.mo.gov/local/find-your-local-public-health-agency/grundy-county-health-department",
+          "publisher": "Missouri Department of Health and Senior Services",
+          "covers": [
+            "name",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.grundycountyhealth.org/contact",
+          "publisher": "Grundy County Health Department",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.grundycountyhealth.org/foodinspections",
+          "publisher": "Grundy County Health Department",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "One of the two strongest records in the merged set: the state health registry and the department's own site agree independently."
@@ -644,7 +1053,10 @@
     {
       "slug": "hy-vee-pharmacy",
       "name": "Hy-Vee Pharmacy",
-      "categories": ["health", "shopping"],
+      "categories": [
+        "health",
+        "shopping"
+      ],
       "schemaType": "Pharmacy",
       "summary": "The in-store pharmacy at the Trenton Hy-Vee. Sources describe delivery, durable medical equipment, immunizations, a drive-up window and compounding.",
       "proximity": "trenton",
@@ -663,7 +1075,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.hy-vee.com/store/trenton", "publisher": "Hy-Vee", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.hy-vee.com/store/trenton",
+          "publisher": "Hy-Vee",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Pharmacy counter hours differ from store hours and were not observed."
@@ -671,7 +1093,9 @@
     {
       "slug": "cleaver-dermatology",
       "name": "Cleaver Dermatology",
-      "categories": ["health"],
+      "categories": [
+        "health"
+      ],
       "schemaType": "MedicalClinic",
       "summary": "A dermatology practice that opened a Trenton office and is a Chamber of Commerce member.",
       "proximity": "trenton",
@@ -690,7 +1114,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/2025/05/05/18771/cleaver-dermatology-open-house/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/2025/05/05/18771/cleaver-dermatology-open-house/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Sourced from a May 2025 Chamber open-house announcement. No contact details were observed."
@@ -698,7 +1130,9 @@
     {
       "slug": "evercare-pharmacy",
       "name": "Evercare Pharmacy",
-      "categories": ["health"],
+      "categories": [
+        "health"
+      ],
       "schemaType": "Pharmacy",
       "summary": "A pharmacy listed at a Trenton, Missouri location in a pharmacy locator directory.",
       "proximity": "trenton",
@@ -717,7 +1151,14 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://pharmacyfinder.rxlocal.com/pharmacyFinder/mo/trenton", "publisher": "RxLocal Pharmacy Finder", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://pharmacyfinder.rxlocal.com/pharmacyFinder/mo/trenton",
+          "publisher": "RxLocal Pharmacy Finder",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Name only, from a directory listing. Nothing else about this business was observed."
@@ -725,7 +1166,9 @@
     {
       "slug": "trenton-r-ix-school-district",
       "name": "Trenton R-IX School District",
-      "categories": ["schools"],
+      "categories": [
+        "schools"
+      ],
       "schemaType": "EducationalOrganization",
       "summary": "The public school district serving Trenton, covering grades PK-12 across Rissler Elementary School, Trenton Middle School and Trenton High School. Its teams are the Bulldogs.",
       "proximity": "trenton",
@@ -744,9 +1187,35 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonr9.k12.mo.us/", "publisher": "Trenton R-IX School District", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=2930360&details=1", "publisher": "National Center for Education Statistics", "covers": ["summary", "address"], "retrieved_at": "2026-08-15" },
-        { "url": "https://dese.mo.gov/special-education/compliance/media/pdf/trenton-r-ix-school-district-1704", "publisher": "Missouri Department of Elementary and Secondary Education", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonr9.k12.mo.us/",
+          "publisher": "Trenton R-IX School District",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://nces.ed.gov/ccd/districtsearch/district_detail.asp?ID2=2930360&details=1",
+          "publisher": "National Center for Education Statistics",
+          "covers": [
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://dese.mo.gov/special-education/compliance/media/pdf/trenton-r-ix-school-district-1704",
+          "publisher": "Missouri Department of Elementary and Secondary Education",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Legal name is R-IX (roman numeral) per state records; the district domain and local usage render it R-9. Enrollment figures differed between sources (about 1,208 and about 1,268) and are not published."
@@ -754,7 +1223,9 @@
     {
       "slug": "sm-rissler-elementary-school",
       "name": "S.M. Rissler Elementary School",
-      "categories": ["schools"],
+      "categories": [
+        "schools"
+      ],
       "schemaType": "ElementarySchool",
       "summary": "The Trenton R-IX elementary school, serving grades PK-4 including the district preschool program.",
       "proximity": "trenton",
@@ -773,7 +1244,18 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonr9.k12.mo.us/o/rissler-elementary", "publisher": "Trenton R-IX School District", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonr9.k12.mo.us/o/rissler-elementary",
+          "publisher": "Trenton R-IX School District",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Also appears in sources without the initials, as Rissler Elementary School."
@@ -781,7 +1263,9 @@
     {
       "slug": "trenton-middle-school",
       "name": "Trenton Middle School",
-      "categories": ["schools"],
+      "categories": [
+        "schools"
+      ],
       "schemaType": "MiddleSchool",
       "summary": "The Trenton R-IX middle school, serving grades 5-8.",
       "proximity": "trenton",
@@ -800,7 +1284,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonr9.k12.mo.us/o/tms", "publisher": "Trenton R-IX School District", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonr9.k12.mo.us/o/tms",
+          "publisher": "Trenton R-IX School District",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "A street address (1417 Oklahoma Ave) appeared only in third-party school databases, not on the district page, so it is not published."
@@ -808,7 +1302,9 @@
     {
       "slug": "trenton-high-school",
       "name": "Trenton High School",
-      "categories": ["schools"],
+      "categories": [
+        "schools"
+      ],
       "schemaType": "HighSchool",
       "summary": "The Trenton R-IX high school, serving grades 9-12. Its teams are the Bulldogs and it is a member of the Missouri State High School Activities Association.",
       "proximity": "trenton",
@@ -827,9 +1323,35 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.mshsaa.org/Schools/AccountInfo.aspx?s=196", "publisher": "Missouri State High School Activities Association", "covers": ["name", "summary", "address", "phone"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.trentonr9.k12.mo.us/", "publisher": "Trenton R-IX School District", "covers": ["name", "address", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=293036002080", "publisher": "National Center for Education Statistics", "covers": ["address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.mshsaa.org/Schools/AccountInfo.aspx?s=196",
+          "publisher": "Missouri State High School Activities Association",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.trentonr9.k12.mo.us/",
+          "publisher": "Trenton R-IX School District",
+          "covers": [
+            "name",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=293036002080",
+          "publisher": "National Center for Education Statistics",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The same street address is also reported for the North Central Missouri Fairgrounds; the two sites appear to be adjacent, which is why the fairgrounds address is held null rather than this one."
@@ -837,7 +1359,9 @@
     {
       "slug": "north-central-missouri-college",
       "name": "North Central Missouri College",
-      "categories": ["schools"],
+      "categories": [
+        "schools"
+      ],
       "schemaType": "CollegeOrUniversity",
       "summary": "A public community college headquartered in downtown Trenton, offering transfer programs, career programs, adult education and student support services. Its teams are the Pirates. It operates a main campus in Trenton, the Barton Farm Campus south of town, and a campus in Savannah.",
       "proximity": "trenton",
@@ -856,8 +1380,26 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.ncmissouri.edu/about/campus-locations/", "publisher": "North Central Missouri College", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.ncmissouri.edu/about/facilities-and-sites/", "publisher": "North Central Missouri College", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.ncmissouri.edu/about/campus-locations/",
+          "publisher": "North Central Missouri College",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.ncmissouri.edu/about/facilities-and-sites/",
+          "publisher": "North Central Missouri College",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Named campus buildings appear in sources (Geyer Hall and the Nuttall Student Center at 1205 Main Street) but were recorded as facilities rather than as separate entities, so they are not split out here."
@@ -865,7 +1407,9 @@
     {
       "slug": "ncmc-barton-farm-campus",
       "name": "Elizabeth and Arthur Barton Farm Campus",
-      "categories": ["schools"],
+      "categories": [
+        "schools"
+      ],
       "schemaType": "CollegeOrUniversity",
       "summary": "North Central Missouri College's agriculture campus, about one mile from Trenton off Highway 65, with classroom and training buildings, grazing paddocks, crop test plots and a pond.",
       "proximity": "grundy_county",
@@ -884,7 +1428,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.ncmissouri.edu/about/facilities-and-sites/", "publisher": "North Central Missouri College", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.ncmissouri.edu/about/facilities-and-sites/",
+          "publisher": "North Central Missouri College",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Sources place it one mile southeast and one mile south of Trenton respectively; the direction is not asserted. It sits outside the city, hence grundy_county proximity."
@@ -892,7 +1445,11 @@
     {
       "slug": "ncmc-ketcham-community-center",
       "name": "NCMC Ketcham Community Center",
-      "categories": ["schools", "parks-recreation", "community"],
+      "categories": [
+        "schools",
+        "parks-recreation",
+        "community"
+      ],
       "schemaType": "SportsActivityLocation",
       "summary": "North Central Missouri College's athletic and community facility in Trenton, used for college sports, physical education classes, commencement and community activities. Sources state memberships are available.",
       "proximity": "trenton",
@@ -911,8 +1468,27 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.ncmissouri.edu/directory/contact/ketcham-community-center-kcc-front-desk/", "publisher": "North Central Missouri College", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.ncmissouri.edu/about/facilities-and-sites/", "publisher": "North Central Missouri College", "covers": ["address", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.ncmissouri.edu/directory/contact/ketcham-community-center-kcc-front-desk/",
+          "publisher": "North Central Missouri College",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.ncmissouri.edu/about/facilities-and-sites/",
+          "publisher": "North Central Missouri College",
+          "covers": [
+            "address",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "A July 2025 college athletics release reported the building undergoing renovations. That report is over a year old, so status is held at unknown rather than renovating. Confirm availability before promoting it as bookable. A front-desk extension (1450) appeared in one source and is not published."
@@ -920,7 +1496,9 @@
     {
       "slug": "grundy-county-jewett-norris-library",
       "name": "Grundy County Jewett Norris Library",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Library",
       "summary": "The public library serving Trenton and Grundy County, housed in an 1891 Romanesque Revival brick and limestone building listed on the National Register of Historic Places.",
       "proximity": "trenton",
@@ -931,16 +1509,38 @@
       "phone": "(660) 359-3577",
       "website": "https://www.grundycountylibrary.org/",
       "email": null,
-      "hours": "Monday 8:30 a.m. to 7:00 p.m.; Tuesday-Friday 8:30 a.m. to 5:00 p.m. Saturday hours not confirmed.",
+      "hours": null,
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["hours"],
+      "disputed": [
+        "hours"
+      ],
       "sources": [
-        { "url": "https://www.grundycountylibrary.org/?page_id=8", "publisher": "Grundy County Jewett Norris Library", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://en.wikipedia.org/wiki/Jewett_Norris_Library", "publisher": "Wikipedia", "covers": ["summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.grundycountylibrary.org/?page_id=8",
+          "publisher": "Grundy County Jewett Norris Library",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Jewett_Norris_Library",
+          "publisher": "Wikipedia",
+          "covers": [
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Saturday closing time conflicted across research passes and is deliberately omitted. The library and the National Register building are modelled as one place with two facets, not two listings. The correct domain is grundycountylibrary.org; a similarly named trentonlib.org belongs to a different town."
@@ -948,7 +1548,10 @@
     {
       "slug": "trenton-area-chamber-of-commerce",
       "name": "Trenton Area Chamber of Commerce",
-      "categories": ["business", "community"],
+      "categories": [
+        "business",
+        "community"
+      ],
       "schemaType": "Organization",
       "summary": "The business membership organization for Trenton and the surrounding area, formed in 1938. It maintains a member directory and organizes the Missouri Day Festival.",
       "proximity": "trenton",
@@ -965,10 +1568,29 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/contact", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.trentonmochamber.com/membership-benefits/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/contact",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.trentonmochamber.com/membership-benefits/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Three conflicting addresses appeared across sources (903 Main Street, 617 Main, and 1846 E 9th St). None is published. The 1846 E 9th St value also collides with a state license office that closed in May 2023, which is the signature of an aggregator data smear. The executive director is named in one source and is deliberately omitted."
@@ -976,7 +1598,9 @@
     {
       "slug": "rotary-club-of-trenton",
       "name": "Rotary Club of Trenton",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Organization",
       "summary": "The local Rotary International service club, in Rotary District 6040. Sources report it meets Thursdays at noon in the BTC Bank meeting room on Oklahoma Avenue and sponsors the Missouri Day parade.",
       "proximity": "trenton",
@@ -995,8 +1619,24 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://rotary6040.org/clubinfo/trenton-3", "publisher": "Rotary District 6040", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.trentonmochamber.com/missouri-day-festival", "publisher": "Trenton Area Chamber of Commerce", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://rotary6040.org/clubinfo/trenton-3",
+          "publisher": "Rotary District 6040",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.trentonmochamber.com/missouri-day-festival",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The meeting venue is described in the summary rather than published as the club's address, because it is a meeting location, not premises."
@@ -1004,7 +1644,9 @@
     {
       "slug": "grundy-county-senior-center",
       "name": "Grundy County Senior Center",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Organization",
       "summary": "A senior center for Grundy County residents providing meals, activities and services for older adults, operated in connection with the Grundy County Council on Aging.",
       "proximity": "trenton",
@@ -1023,8 +1665,25 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.mocounties.com/grundy-county", "publisher": "Missouri Association of Counties", "covers": ["name", "summary", "phone"], "retrieved_at": "2026-08-15" },
-        { "url": "https://seniorcenters.com/senior-centers/grundy-county-senior-center/", "publisher": "SeniorCenters.com", "covers": ["name", "phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.mocounties.com/grundy-county",
+          "publisher": "Missouri Association of Counties",
+          "covers": [
+            "name",
+            "summary",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://seniorcenters.com/senior-centers/grundy-county-senior-center/",
+          "publisher": "SeniorCenters.com",
+          "covers": [
+            "name",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Only a P.O. Box was found, which is a mailing address and must never render as a street location or a map pin. The physical location is a known gap."
@@ -1032,7 +1691,9 @@
     {
       "slug": "community-food-pantry-of-grundy-county",
       "name": "Community Food Pantry of Grundy County",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "NGO",
       "summary": "A food pantry serving Grundy County residents, operating out of Trenton. Its existence is documented in federal nonprofit records.",
       "proximity": "trenton",
@@ -1051,7 +1712,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.causeiq.com/organizations/community-food-pantry,431530787/", "publisher": "Cause IQ (IRS-derived nonprofit data)", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.causeiq.com/organizations/community-food-pantry,431530787/",
+          "publisher": "Cause IQ (IRS-derived nonprofit data)",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Distribution hours, address and phone are all unknown. A pantry listing without hours is close to useless to the person who needs it; this record exists so the gap is visible and correctable, and it must carry the correction path prominently."
@@ -1059,7 +1728,9 @@
     {
       "slug": "green-hills-animal-shelter",
       "name": "Green Hills Animal Shelter",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "AnimalShelter",
       "summary": "A volunteer-run, not-for-profit animal shelter in Trenton providing care and adoption services for stray and abandoned animals in Trenton and neighboring towns.",
       "proximity": "trenton",
@@ -1078,7 +1749,20 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.greenhillsanimalshelter.org/adoption-info.html", "publisher": "Green Hills Animal Shelter", "covers": ["name", "summary", "address", "phone", "email", "hours", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.greenhillsanimalshelter.org/adoption-info.html",
+          "publisher": "Green Hills Animal Shelter",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "email",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Adoption fees were observed but are not published as structured data because prices go stale quickly."
@@ -1086,7 +1770,9 @@
     {
       "slug": "grundy-county-museum",
       "name": "Grundy County Museum",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Museum",
       "summary": "A county history museum in Trenton occupying several buildings, including a three-story main building, a one-room schoolhouse and a flat iron building. Sources describe exhibits of Native American artifacts, antique vehicles and a Black history display.",
       "proximity": "trenton",
@@ -1107,10 +1793,33 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["website"],
+      "disputed": [
+        "website"
+      ],
       "sources": [
-        { "url": "https://grundycountymuseum.webnode.page/contact/", "publisher": "Grundy County Museum", "covers": ["name", "summary", "address", "phone", "website", "seasonal"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.visittrentonmo.com/museums-historical-sites", "publisher": "Visit Trenton", "covers": ["name", "summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://grundycountymuseum.webnode.page/contact/",
+          "publisher": "Grundy County Museum",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/museums-historical-sites",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Two candidate domains appeared (grundycountymuseum.org and grundycountymuseum.webnode.page); the webnode address is the one sources resolved to. Seasonal opening must never render as year-round hours. One extract referenced Livingston County veterans; that clause was excluded as unresolved and must not be reinstated."
@@ -1118,7 +1827,10 @@
     {
       "slug": "main-street-trenton",
       "name": "Main Street Trenton",
-      "categories": ["community", "business"],
+      "categories": [
+        "community",
+        "business"
+      ],
       "schemaType": "NGO",
       "summary": "A nonprofit working to preserve and promote downtown Trenton. It runs the Saturday farmers market, downtown annual events, a downtown business directory and a facade grant program for downtown businesses.",
       "proximity": "trenton",
@@ -1137,7 +1849,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.mainstreettrentonmo.org/resources", "publisher": "Main Street Trenton", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.mainstreettrentonmo.org/resources",
+          "publisher": "Main Street Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Their downtown business directory at mainstreettrentonmo.org/directory is the single highest-value unopened source for filling the shopping and eat-drink categories."
@@ -1145,7 +1866,9 @@
     {
       "slug": "five-points-alive",
       "name": "Five Points Alive",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Organization",
       "summary": "A community group that works with Main Street Trenton to support the downtown area and helps organize the December downtown Christmas event.",
       "proximity": "trenton",
@@ -1164,7 +1887,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.kttn.com/downtown-trenton-prepares-for-christmas-parade-and-festivities/", "publisher": "KTTN", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.kttn.com/downtown-trenton-prepares-for-christmas-parade-and-festivities/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -1172,7 +1903,10 @@
     {
       "slug": "trenton-r9-performing-arts-center",
       "name": "Trenton R-9 Performing Arts Center",
-      "categories": ["community", "events"],
+      "categories": [
+        "community",
+        "events"
+      ],
       "schemaType": "PerformingArtsTheater",
       "summary": "A theater-style venue seating more than 500 on the Trenton R-IX middle and high school campus, used for school and community performances and events.",
       "proximity": "trenton",
@@ -1191,8 +1925,23 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://trentonmo.com/community/", "publisher": "City of Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.facebook.com/TPACR9/", "publisher": "Trenton R-9 Performing Arts Center (Facebook)", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/community/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.facebook.com/TPACR9/",
+          "publisher": "Trenton R-9 Performing Arts Center (Facebook)",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The venue name uses R-9 even though the district's legal name is R-IX. No street address was observed on either source."
@@ -1200,7 +1949,9 @@
     {
       "slug": "st-joseph-catholic-parish",
       "name": "St. Joseph Catholic Parish",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Church",
       "summary": "A Roman Catholic parish serving Trenton, Missouri.",
       "proximity": "trenton",
@@ -1219,7 +1970,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.stjoseph-trenton.org/", "publisher": "St. Joseph Catholic Parish", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.stjoseph-trenton.org/",
+          "publisher": "St. Joseph Catholic Parish",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Mass times were not observed."
@@ -1227,7 +1988,9 @@
     {
       "slug": "first-baptist-church",
       "name": "First Baptist Church",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Church",
       "summary": "A Baptist congregation in Trenton, Missouri.",
       "proximity": "trenton",
@@ -1246,7 +2009,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.fbctrenton.org/", "publisher": "First Baptist Church, Trenton", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.fbctrenton.org/",
+          "publisher": "First Baptist Church, Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Service times and address were not observed."
@@ -1254,7 +2026,9 @@
     {
       "slug": "st-philips-episcopal-church",
       "name": "St. Philip's Episcopal Church",
-      "categories": ["community"],
+      "categories": [
+        "community"
+      ],
       "schemaType": "Church",
       "summary": "An Episcopal church in a one-story Gothic Revival limestone building of 1898, listed on the National Register of Historic Places. Sources describe a clerestoried chancel, a polygonal apse and locally crafted colored glass windows.",
       "proximity": "trenton",
@@ -1273,7 +2047,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/post/local-history-at-no-cost", "publisher": "Visit Trenton", "covers": ["name", "summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/post/local-history-at-no-cost",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Whether the congregation is currently active was not observed; only the building is documented."
@@ -1281,7 +2064,10 @@
     {
       "slug": "church-women-united-thrift-store",
       "name": "Church Women United Thrift Store",
-      "categories": ["shopping", "community"],
+      "categories": [
+        "shopping",
+        "community"
+      ],
       "schemaType": "Store",
       "summary": "A thrift store in Trenton and a Chamber of Commerce member.",
       "proximity": "trenton",
@@ -1300,7 +2086,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "A reported 2026 expansion is forward-looking news and is not published as a directory attribute."
@@ -1308,7 +2103,9 @@
     {
       "slug": "crowder-state-park",
       "name": "Crowder State Park",
-      "categories": ["parks-recreation"],
+      "categories": [
+        "parks-recreation"
+      ],
       "schemaType": "Park",
       "summary": "A Missouri state park in Grundy County, about three miles outside Trenton city limits, with more than 17 miles of hiking, bicycling, backpacking and equestrian trails through forested, rugged terrain, plus camping, picnic shelters, playgrounds and fishing on Crowder Lake.",
       "proximity": "grundy_county",
@@ -1327,8 +2124,25 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://mostateparks.com/park/crowder-state-park", "publisher": "Missouri State Parks", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.visittrentonmo.com/post/the-great-outdoors", "publisher": "Visit Trenton", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://mostateparks.com/park/crowder-state-park",
+          "publisher": "Missouri State Parks",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/post/the-great-outdoors",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Park acreage and lake acreage are deliberately unpublished: sources gave conflicting lake sizes and the address reported in one pass could not be corroborated. This park is in Grundy County near Trenton, not in Trenton, and copy must never say 'in Trenton'. Toll-free and campsite reservation numbers exist in sources and are not published as the primary phone."
@@ -1336,7 +2150,9 @@
     {
       "slug": "moberly-park",
       "name": "Moberly Park",
-      "categories": ["parks-recreation"],
+      "categories": [
+        "parks-recreation"
+      ],
       "schemaType": "Park",
       "summary": "Trenton's westernmost city park. Sources describe baseball fields, the Trenton Family Aquatic Center, a disc golf course, a tennis court and a playground.",
       "proximity": "trenton",
@@ -1355,7 +2171,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/parks-recreation", "publisher": "Visit Trenton", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/parks-recreation",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The phone number is the Trenton Park Department general line, not a park office. An acreage figure from a third-party fitness app was rejected."
@@ -1363,7 +2189,9 @@
     {
       "slug": "eastside-park",
       "name": "Eastside Park",
-      "categories": ["parks-recreation"],
+      "categories": [
+        "parks-recreation"
+      ],
       "schemaType": "Park",
       "summary": "A city park on the east side of Trenton containing home fields for Trenton High School football and baseball and for the North Central Missouri College baseball team, plus a playground and a horseshoe pitching area.",
       "proximity": "trenton",
@@ -1382,7 +2210,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/parks-recreation", "publisher": "Visit Trenton", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/parks-recreation",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The phone number is the Trenton Park Department general line."
@@ -1390,7 +2228,9 @@
     {
       "slug": "ray-van-meter-park",
       "name": "Ray Van Meter Park",
-      "categories": ["parks-recreation"],
+      "categories": [
+        "parks-recreation"
+      ],
       "schemaType": "Park",
       "summary": "A city park on the south end of Trenton with a playground, a basketball court and a baseball field.",
       "proximity": "trenton",
@@ -1409,8 +2249,25 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/parks-recreation", "publisher": "Visit Trenton", "covers": ["name", "summary", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/pool-wages-and-fees-reviewed-by-trenton-park-board/", "publisher": "KTTN", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/parks-recreation",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/pool-wages-and-fees-reviewed-by-trenton-park-board/",
+          "publisher": "KTTN",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Always use the full name. This is not Van Meter State Park, which is a different place elsewhere in Missouri, and search engines conflate the two. One source renders the name simply as Van Meter Park."
@@ -1418,7 +2275,10 @@
     {
       "slug": "sesquicentennial-park",
       "name": "Sesquicentennial Park",
-      "categories": ["parks-recreation", "events"],
+      "categories": [
+        "parks-recreation",
+        "events"
+      ],
       "schemaType": "Park",
       "summary": "A downtown Trenton park with a gazebo. It is the site of the Main Street Trenton farmers market on Saturdays from May through September and of the Santa appearance at the December downtown Christmas event.",
       "proximity": "trenton",
@@ -1437,7 +2297,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.mainstreettrentonmo.org/farmersmarket", "publisher": "Main Street Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.mainstreettrentonmo.org/farmersmarket",
+          "publisher": "Main Street Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -1445,7 +2313,9 @@
     {
       "slug": "trenton-family-aquatic-center",
       "name": "Trenton Family Aquatic Center",
-      "categories": ["parks-recreation"],
+      "categories": [
+        "parks-recreation"
+      ],
       "schemaType": "PublicSwimmingPool",
       "summary": "The municipal swimming facility inside Moberly Park, with water slides, diving boards and a separate zero-entry baby pool.",
       "proximity": "trenton",
@@ -1467,8 +2337,26 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/parks-recreation", "publisher": "Visit Trenton", "covers": ["name", "summary", "phone", "website", "seasonal"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/pool-wages-and-fees-reviewed-by-trenton-park-board/", "publisher": "KTTN", "covers": ["seasonal"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/parks-recreation",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/pool-wages-and-fees-reviewed-by-trenton-park-board/",
+          "publisher": "KTTN",
+          "covers": [
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Fees were discussed in a news report but no figures were confirmed, so none are published."
@@ -1476,7 +2364,10 @@
     {
       "slug": "riverside-country-club",
       "name": "Riverside Country Club",
-      "categories": ["parks-recreation", "business"],
+      "categories": [
+        "parks-recreation",
+        "business"
+      ],
       "schemaType": "GolfCourse",
       "summary": "A nine-hole golf course and social club in Trenton, founded in 1908, on ground along the Grand River. Sources describe a clubhouse, a swimming pool, and use as a facility by North Central Missouri College.",
       "proximity": "trenton",
@@ -1495,8 +2386,26 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.rcctrenton.com/", "publisher": "Riverside Country Club", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.ncmcpirates.com/information/Facilities/Riverside_Country_Club/Riverside_Country_Club_Landing_Page", "publisher": "NCMC Pirates Athletics", "covers": ["summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.rcctrenton.com/",
+          "publisher": "Riverside Country Club",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.ncmcpirates.com/information/Facilities/Riverside_Country_Club/Riverside_Country_Club_Landing_Page",
+          "publisher": "NCMC Pirates Athletics",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Whether the course is open to public play or members only was not confirmed, and that is the single fact a visiting golfer needs. Do not present it as publicly playable."
@@ -1504,7 +2413,11 @@
     {
       "slug": "north-central-missouri-fairgrounds-rock-barn",
       "name": "North Central Missouri Fairgrounds and the Rock Barn",
-      "categories": ["parks-recreation", "events", "community"],
+      "categories": [
+        "parks-recreation",
+        "events",
+        "community"
+      ],
       "schemaType": "EventVenue",
       "summary": "The Trenton fairgrounds and its octagonal limestone Rock Barn, built in 1938 as a Works Progress Administration project and listed on the National Register of Historic Places. The site hosts the North Central Missouri Fair, the Missouri Day Festival and other community events.",
       "proximity": "trenton",
@@ -1521,11 +2434,36 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://trentonmo.com/community/", "publisher": "City of Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" },
-        { "url": "https://trentonmo.com/government/departments/parks-and-recreation/", "publisher": "City of Trenton", "covers": ["summary", "phone"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.visittrentonmo.com/parks-recreation", "publisher": "Visit Trenton", "covers": ["phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://trentonmo.com/community/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.com/government/departments/parks-and-recreation/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "summary",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/parks-recreation",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "One source gives the fairgrounds address as 1415 Oklahoma Ave, which is also the reported address of Trenton High School. The two sites appear adjacent but the collision is unresolved, so no address is published here. A National Park Service reference number for the Rock Barn would settle the register listing and has not been pulled."
@@ -1533,11 +2471,13 @@
     {
       "slug": "cobblestone-inn-and-suites-trenton",
       "name": "Cobblestone Inn & Suites - Trenton",
-      "categories": ["stay"],
+      "categories": [
+        "stay"
+      ],
       "schemaType": "Hotel",
       "summary": "A hotel in Trenton, part of the Cobblestone Hotels group. Sources describe a 24-hour front desk, complimentary breakfast, an onsite convenience store, a fitness room and wireless internet.",
       "proximity": "trenton",
-      "address": "2900 Hoover Dr",
+      "address": null,
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
@@ -1550,10 +2490,30 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 2,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://staycobblestone.com/mo/trenton/", "publisher": "Cobblestone Hotels", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.yelp.com/biz/cobblestone-inn-and-suites-trenton", "publisher": "Yelp", "covers": ["address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://staycobblestone.com/mo/trenton/",
+          "publisher": "Cobblestone Hotels",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/cobblestone-inn-and-suites-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "An aggregator carries a second address on the same street (1845 Hoover Dr). The 1845 number recurs across several unrelated lodging records in this town and is the signature of an aggregator data smear, so it is recorded as a dispute rather than published. A toll-free brand number exists and is not published. Guest ratings are excluded by rule."
@@ -1561,7 +2521,10 @@
     {
       "slug": "crowder-state-park-campground",
       "name": "Crowder State Park Campground",
-      "categories": ["stay", "parks-recreation"],
+      "categories": [
+        "stay",
+        "parks-recreation"
+      ],
       "schemaType": "Campground",
       "summary": "Camping inside Crowder State Park, with basic and electric campsites, an organized group camp and a special-use camping area.",
       "proximity": "grundy_county",
@@ -1583,7 +2546,18 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://mostateparks.com/park/crowder-state-park", "publisher": "Missouri State Parks", "covers": ["name", "summary", "phone", "website", "seasonal"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://mostateparks.com/park/crowder-state-park",
+          "publisher": "Missouri State Parks",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Site counts and hookup counts came from a third-party camping site and are not published."
@@ -1591,7 +2565,9 @@
     {
       "slug": "black-silo-winery",
       "name": "Black Silo Winery",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "Winery",
       "summary": "A winery on a 70-acre property east of Trenton with a tasting room and a menu using locally sourced ingredients. Its grounds host the Mid-America Music Festival.",
       "proximity": "trenton",
@@ -1610,8 +2586,29 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.blacksilowinery.com/contact", "publisher": "Black Silo Winery", "covers": ["name", "summary", "address", "phone", "email", "hours", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://missouriwine.org/", "publisher": "Missouri Wine and Grape Board", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.blacksilowinery.com/contact",
+          "publisher": "Black Silo Winery",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "email",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://missouriwine.org/",
+          "publisher": "Missouri Wine and Grape Board",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The 357 phone exchange is unusual for Trenton, where 359 dominates, but it came from the winery's own contact page. Hours for small operations change seasonally; treat as a call-ahead field."
@@ -1619,7 +2616,9 @@
     {
       "slug": "washington-street-food-and-drink-company",
       "name": "Washington Street Food & Drink Company",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "Restaurant",
       "summary": "A Trenton restaurant serving steak and seafood, with a wine, beer and espresso menu.",
       "proximity": "trenton",
@@ -1638,8 +2637,24 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.yelp.com/biz/washington-street-food-and-drink-company-trenton", "publisher": "Yelp", "covers": ["address", "phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/washington-street-food-and-drink-company-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The business name references Washington Street but the reported address is on E 28th St; that is what the source says and it was not corrected. Opening hours were aggregator-derived and are withheld."
@@ -1647,7 +2662,9 @@
     {
       "slug": "chesapeake-on-main",
       "name": "Chesapeake on Main",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "Restaurant",
       "summary": "A Main Street restaurant in Trenton serving burgers, fish and shrimp, wings and Philly cheesesteaks.",
       "proximity": "trenton",
@@ -1669,7 +2686,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.facebook.com/p/Chesapeake-on-Main-61574223748779/", "publisher": "Chesapeake on Main (Facebook)", "covers": ["name", "summary", "address", "seasonal"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.facebook.com/p/Chesapeake-on-Main-61574223748779/",
+          "publisher": "Chesapeake on Main (Facebook)",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The only hours found are explicitly winter-only. Publishing them as year-round hours would be misleading, so the hours field is null and the seasonal note carries them with their label."
@@ -1677,7 +2704,9 @@
     {
       "slug": "uprooted-creamery",
       "name": "Uprooted Creamery",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "IceCreamShop",
       "summary": "An ice cream shop on Main Street in downtown Trenton.",
       "proximity": "trenton",
@@ -1696,7 +2725,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary", "address", "hours"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "hours"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "One research pass suggested a relationship to a restaurant whose operating status is unresolved. That relationship was not verified and is not asserted."
@@ -1704,7 +2743,9 @@
     {
       "slug": "el-toro",
       "name": "El Toro",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "Restaurant",
       "summary": "A Mexican restaurant in Trenton, listed by the town's tourism site among local food and drink businesses.",
       "proximity": "trenton",
@@ -1723,7 +2764,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Hours appeared only in a menu aggregator and are withheld. The tourism copy calls it the newest Mexican restaurant in town; that wording is time-sensitive and is not reused."
@@ -1731,7 +2780,9 @@
     {
       "slug": "china-fresh",
       "name": "China Fresh",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "Restaurant",
       "summary": "A Chinese restaurant with takeout in Trenton, listed by the town's tourism site among local food and drink businesses.",
       "proximity": "trenton",
@@ -1750,7 +2801,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "A quoted review line found in an aggregator was excluded by rule."
@@ -1758,7 +2817,9 @@
     {
       "slug": "main-street-creamery-co",
       "name": "Main Street Creamery Co.",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "IceCreamShop",
       "summary": "An ice cream and confection business in Trenton, listed by the town's tourism site among local food and drink businesses.",
       "proximity": "trenton",
@@ -1777,7 +2838,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -1785,7 +2854,9 @@
     {
       "slug": "sugar-shack-and-more",
       "name": "Sugar Shack & More",
-      "categories": ["eat-drink"],
+      "categories": [
+        "eat-drink"
+      ],
       "schemaType": "FoodEstablishment",
       "summary": "A trailer-based vendor in Trenton serving shaved ice in more than 15 flavors.",
       "proximity": "trenton",
@@ -1807,7 +2878,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary", "seasonal"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The record model must tolerate a listing with no location at all."
@@ -1815,7 +2895,10 @@
     {
       "slug": "caseys",
       "name": "Casey's",
-      "categories": ["eat-drink", "shopping"],
+      "categories": [
+        "eat-drink",
+        "shopping"
+      ],
       "schemaType": "ConvenienceStore",
       "summary": "A convenience store and fuel stop in Trenton that also sells made-to-order pizza, with delivery at some times of the week.",
       "proximity": "trenton",
@@ -1834,7 +2917,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/food-drink", "publisher": "Visit Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "No address was found. This chain often has more than one store per town, so this record must not be presented as the only location."
@@ -1842,7 +2933,10 @@
     {
       "slug": "hy-vee",
       "name": "Hy-Vee",
-      "categories": ["shopping", "eat-drink"],
+      "categories": [
+        "shopping",
+        "eat-drink"
+      ],
       "schemaType": "GroceryStore",
       "summary": "A full-service supermarket in Trenton with prepared foods, catering and an in-store pharmacy.",
       "proximity": "trenton",
@@ -1861,7 +2955,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.hy-vee.com/store/trenton", "publisher": "Hy-Vee", "covers": ["name", "summary", "address", "phone", "hours", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.hy-vee.com/store/trenton",
+          "publisher": "Hy-Vee",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Both research passes drew on the same corporate store page, so this counts as one independent source despite two independent finds."
@@ -1869,7 +2975,9 @@
     {
       "slug": "main-street-mercantile",
       "name": "Main Street Mercantile",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A downtown Trenton multi-vendor store selling home goods and decor, women's clothing, local beef, and infant apparel and gifts.",
       "proximity": "trenton",
@@ -1888,7 +2996,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -1896,7 +3014,9 @@
     {
       "slug": "trentons-main-street-mall",
       "name": "Trenton's Main Street Mall",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A downtown Trenton gift and vintage shop carrying antiques, collectibles, clothes and shoes.",
       "proximity": "trenton",
@@ -1913,9 +3033,20 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 1,
-      "disputed": ["name"],
+      "disputed": [
+        "name"
+      ],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name", "summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Social media carries both Main Street Mall and Trenton's Main Street Mall as separate pages; they are likely one business but the canonical name is unresolved."
@@ -1923,7 +3054,9 @@
     {
       "slug": "downtown-depot",
       "name": "Downtown Depot",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A downtown Trenton shop housing booths from local artisans.",
       "proximity": "trenton",
@@ -1942,7 +3075,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -1950,7 +3091,9 @@
     {
       "slug": "barnes-greenhouses",
       "name": "Barnes Greenhouses",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A seven-acre garden center near Trenton, established in 1890, selling plants and gardening supplies during its open season.",
       "proximity": "trenton",
@@ -1970,9 +3113,22 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 1,
-      "disputed": ["address"],
+      "disputed": [
+        "address"
+      ],
       "sources": [
-        { "url": "https://barnesgreenhouses.com/store-location-hours/", "publisher": "Barnes Greenhouses", "covers": ["name", "summary", "phone", "website", "seasonal"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://barnesgreenhouses.com/store-location-hours/",
+          "publisher": "Barnes Greenhouses",
+          "covers": [
+            "name",
+            "summary",
+            "phone",
+            "website",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Two near-identical addresses appeared across sources (3225 Pleasant Pl and 3235 Pleasant Plain), differing by one digit and a street-name form. Neither is published. The 1890 founding date is a story angle only if confirmed."
@@ -1980,7 +3136,9 @@
     {
       "slug": "dollar-general",
       "name": "Dollar General",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A discount variety store in Trenton.",
       "proximity": "trenton",
@@ -1999,7 +3157,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.dollargeneral.com/store-directory/mo/trenton", "publisher": "Dollar General", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.dollargeneral.com/store-directory/mo/trenton",
+          "publisher": "Dollar General",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Only store 25633 was confirmed. The chain's store directory implies Trenton may have more than one location, so this record must not be presented as the only one."
@@ -2007,7 +3175,9 @@
     {
       "slug": "klinginsmith-home-center",
       "name": "Klinginsmith Home Center, LLC",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A Trenton retailer selling home goods, televisions and appliances, and a Chamber of Commerce member.",
       "proximity": "trenton",
@@ -2026,7 +3196,18 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/connections/49809-klinginsmith-home-center-llc/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/connections/49809-klinginsmith-home-center-llc/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "One source mentioned a second location on Main Street; that address was not confirmed and is not published."
@@ -2034,7 +3215,9 @@
     {
       "slug": "savvy-sallys",
       "name": "Savvy Sally's",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A Trenton shop listed by the town's tourism site among local shopping businesses.",
       "proximity": "trenton",
@@ -2053,7 +3236,14 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Name only. Nothing beyond the listing was observed."
@@ -2061,7 +3251,9 @@
     {
       "slug": "howards-dept-store",
       "name": "Howard's Dept Store",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A Trenton store listed by the town's tourism site among local shopping businesses.",
       "proximity": "trenton",
@@ -2080,7 +3272,14 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Name only. Nothing beyond the listing was observed."
@@ -2088,7 +3287,9 @@
     {
       "slug": "browns-shoe-fit",
       "name": "Brown's Shoe Fit",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "ShoeStore",
       "summary": "A Trenton shoe store listed by the town's tourism site among local shopping businesses.",
       "proximity": "trenton",
@@ -2107,7 +3308,14 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Name only. Nothing beyond the listing was observed."
@@ -2115,7 +3323,9 @@
     {
       "slug": "the-weeping-willow-thrift",
       "name": "The Weeping Willow Thrift",
-      "categories": ["shopping"],
+      "categories": [
+        "shopping"
+      ],
       "schemaType": "Store",
       "summary": "A Trenton thrift store listed by the town's tourism site among local shopping businesses.",
       "proximity": "trenton",
@@ -2132,9 +3342,18 @@
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
       "corroborated": 1,
-      "disputed": ["name"],
+      "disputed": [
+        "name"
+      ],
       "sources": [
-        { "url": "https://www.visittrentonmo.com/shopping", "publisher": "Visit Trenton", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "In the source extract this name ran together with an adjacent listing, so the trailing part of the name is uncertain and a second business may be hidden inside it. Confirm the exact trading name before this record is promoted."
@@ -2142,7 +3361,9 @@
     {
       "slug": "kttn-kgoz-radio",
       "name": "KTTN / KGOZ Radio",
-      "categories": ["media-news"],
+      "categories": [
+        "media-news"
+      ],
       "schemaType": "RadioStation",
       "summary": "A three-station radio group based in Trenton covering north Missouri: KTTN-FM 92.3, KTTN-AM 1600 and KGOZ-FM 101.7. Sources state local newscasts air six times a day and sportscasts three times a day.",
       "proximity": "trenton",
@@ -2161,7 +3382,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.kttn.com/contact-kttnkgoz-radio/", "publisher": "KTTN", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.kttn.com/contact-kttnkgoz-radio/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "In practice this is the working local news outlet for Trenton and Grundy County and carried the most usable secondary reporting in both research passes. The station owner is named in one source and is deliberately omitted."
@@ -2169,7 +3399,9 @@
     {
       "slug": "trenton-telegraph",
       "name": "The Trenton Telegraph",
-      "categories": ["media-news"],
+      "categories": [
+        "media-news"
+      ],
       "schemaType": "NewsMediaOrganization",
       "summary": "A weekly newspaper for Trenton and Grundy County launched in September 2025, owned by the Grundy County Industrial Development Corporation with CherryRoad Media providing management. It covers schools and youth sports, town government, community events and business news.",
       "proximity": "trenton",
@@ -2188,8 +3420,25 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentontelegraph.com/", "publisher": "The Trenton Telegraph", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/", "publisher": "KTTN", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentontelegraph.com/",
+          "publisher": "The Trenton Telegraph",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Sources give both September 11 and September 12, 2025 as the launch day, so only the month is published. This is the town's current newspaper; any pre-2025 directory of Trenton media will be missing it."
@@ -2197,7 +3446,9 @@
     {
       "slug": "trenton-republican-times",
       "name": "Trenton Republican-Times",
-      "categories": ["media-news"],
+      "categories": [
+        "media-news"
+      ],
       "schemaType": "NewsMediaOrganization",
       "summary": "A newspaper that served Trenton and Grundy County from 1864 until it was closed after the June 19, 2025 issues. It no longer publishes.",
       "proximity": "trenton",
@@ -2216,8 +3467,25 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://mopress.com/stories/mayor-cherryroad-team-up-to-restore-paper-in-trenton,39445", "publisher": "Missouri Press Association", "covers": ["name", "summary", "status"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/", "publisher": "KTTN", "covers": ["summary", "status"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://mopress.com/stories/mayor-cherryroad-team-up-to-restore-paper-in-trenton,39445",
+          "publisher": "Missouri Press Association",
+          "covers": [
+            "name",
+            "summary",
+            "status"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/",
+          "publisher": "KTTN",
+          "covers": [
+            "summary",
+            "status"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Historical record only. The former domain still resolves and still ranks in search, which makes this an easy trap; the website field is deliberately null so the site never presents it as a live news source."
@@ -2225,7 +3493,9 @@
     {
       "slug": "btc-bank",
       "name": "BTC Bank",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "BankOrCreditUnion",
       "summary": "The Trenton location of BTC Bank, a community bank established in 1919 serving people, businesses and farms in the area.",
       "proximity": "trenton",
@@ -2244,8 +3514,25 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://btcbank.bank/locations/trenton-mo", "publisher": "BTC Bank", "covers": ["name", "summary", "address", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://rotary6040.org/clubinfo/trenton-3", "publisher": "Rotary District 6040", "covers": ["address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://btcbank.bank/locations/trenton-mo",
+          "publisher": "BTC Bank",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://rotary6040.org/clubinfo/trenton-3",
+          "publisher": "Rotary District 6040",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The address is independently corroborated by an unrelated source: the Rotary club meets in the bank's meeting room at the same address."
@@ -2253,7 +3540,9 @@
     {
       "slug": "farmers-bank-of-northern-missouri",
       "name": "Farmers Bank of Northern Missouri",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "BankOrCreditUnion",
       "summary": "The Trenton location of Farmers Bank of Northern Missouri.",
       "proximity": "trenton",
@@ -2272,8 +3561,26 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.onlinefarmersbank.com/hours-and-locations/trenton-mo-location", "publisher": "Farmers Bank of Northern Missouri", "covers": ["name", "summary", "address", "phone", "website"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.visittrentonmo.com/post/downtown-christmas-extravaganza", "publisher": "Visit Trenton", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.onlinefarmersbank.com/hours-and-locations/trenton-mo-location",
+          "publisher": "Farmers Bank of Northern Missouri",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/post/downtown-christmas-extravaganza",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Existence in Trenton is independently corroborated by the December parade forming at the bank. Do not confuse this bank with Farmers State Bank."
@@ -2281,7 +3588,9 @@
     {
       "slug": "farmers-state-bank",
       "name": "Farmers State Bank",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "BankOrCreditUnion",
       "summary": "A bank reported to have a branch in Trenton, Missouri.",
       "proximity": "trenton",
@@ -2300,7 +3609,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.usbanklocations.com/farmers-state-bank-trenton-mo.htm", "publisher": "USBankLocations", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.usbanklocations.com/farmers-state-bank-trenton-mo.htm",
+          "publisher": "USBankLocations",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The branch address reported by the aggregator (1503 E 9th St) is not published. The other pass found this name only as a donor name on a college building, which does not prove a Trenton branch. Do not confuse with Farmers Bank of Northern Missouri."
@@ -2308,7 +3625,9 @@
     {
       "slug": "agchem",
       "name": "AgChem",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "LocalBusiness",
       "summary": "A Trenton agricultural supply business founded in 2012, selling agricultural chemicals, seed and foliar fertilizers.",
       "proximity": "trenton",
@@ -2327,7 +3646,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/connections/49730-agchem/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary", "address"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/connections/49730-agchem/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary",
+            "address"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
@@ -2335,7 +3663,9 @@
     {
       "slug": "hattesohl-and-associates-land-surveying",
       "name": "Hattesohl and Associates Land Surveying",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "ProfessionalService",
       "summary": "A land surveying firm in Trenton and a Chamber of Commerce member.",
       "proximity": "trenton",
@@ -2354,7 +3684,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/connections/85037-hattesohl-and-associates-land-surveying/", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/connections/85037-hattesohl-and-associates-land-surveying/",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Confirmed as a Chamber member listing only; no detail was retrievable."
@@ -2362,7 +3700,9 @@
     {
       "slug": "anderson-autobody",
       "name": "Anderson Autobody",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "AutoBodyShop",
       "summary": "An auto body repair business in Trenton, reported to have operated since 2004.",
       "proximity": "trenton",
@@ -2381,7 +3721,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.yelp.com/search?find_desc=Service+Stations&find_loc=Trenton%2C+MO", "publisher": "Yelp", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.yelp.com/search?find_desc=Service+Stations&find_loc=Trenton%2C+MO",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Aggregator listing only. No address or phone was observed."
@@ -2389,7 +3737,9 @@
     {
       "slug": "midwest-tire-outlet",
       "name": "Midwest Tire Outlet",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "AutoRepair",
       "summary": "A tire dealer and automotive service shop in Trenton, listed as a Cooper Tire dealer location.",
       "proximity": "trenton",
@@ -2408,7 +3758,17 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.coopertire.com/en_US/location/Trenton-MO-64683-US-001812183", "publisher": "Cooper Tire dealer locator", "covers": ["name", "summary", "address", "phone"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.coopertire.com/en_US/location/Trenton-MO-64683-US-001812183",
+          "publisher": "Cooper Tire dealer locator",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "A manufacturer dealer locator is a stronger source class than a review aggregator and weaker than the business's own site."
@@ -2416,7 +3776,9 @@
     {
       "slug": "peoples-cooperative-mr-tire",
       "name": "People's Cooperative / Mr. Tire",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "AutoRepair",
       "summary": "A Trenton automotive service and tire provider operating as part of a farm cooperative.",
       "proximity": "trenton",
@@ -2433,9 +3795,21 @@
       "evidence": "aggregator",
       "confirmation": "unconfirmed",
       "corroborated": 1,
-      "disputed": ["address", "phone", "name"],
+      "disputed": [
+        "address",
+        "phone",
+        "name"
+      ],
       "sources": [
-        { "url": "https://www.yellowpages.com/trenton-mo/tire-dealers", "publisher": "YellowPages", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.yellowpages.com/trenton-mo/tire-dealers",
+          "publisher": "YellowPages",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Two addresses and two phone numbers were reported for what may be two different operations (one possibly the cooperative's agronomy or fuel side). Nothing is published until a human establishes which is which. The trading name itself is uncertain."
@@ -2443,7 +3817,9 @@
     {
       "slug": "nestle-trenton-plant",
       "name": "Nestle Trenton plant",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "LocalBusiness",
       "summary": "A food manufacturing plant in Trenton acquired by Nestle from Conagra Brands in 2018. Under Conagra it was the town's largest employer and produced canned meat products, and Conagra had announced a closure eliminating 282 positions before the sale.",
       "proximity": "trenton",
@@ -2462,8 +3838,24 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.areadevelopment.com/newsitems/3-30-2018/nestle-manufacturing-trenton-missouri.shtml", "publisher": "Area Development", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/audio-nestle-reaches-agreement-to-purchase-conagra-plant-in-trenton/", "publisher": "KTTN", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.areadevelopment.com/newsitems/3-30-2018/nestle-manufacturing-trenton-missouri.shtml",
+          "publisher": "Area Development",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/audio-nestle-reaches-agreement-to-purchase-conagra-plant-in-trenton/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Everything sourced here is from 2018 and must be written in the past tense. Current operating status and headcount are unknown and must not be asserted. The plant's history is relevant context for any page about working or moving here."
@@ -2471,7 +3863,9 @@
     {
       "slug": "modine-manufacturing",
       "name": "Modine Manufacturing Company",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "LocalBusiness",
       "summary": "A manufacturer listed among regional major employers with operations in Trenton.",
       "proximity": "trenton",
@@ -2490,7 +3884,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://ncmdevelopment.org/wp-content/uploads/2018/11/Regional-Profile-Grundy.pdf", "publisher": "North Central Missouri Development Alliance", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://ncmdevelopment.org/wp-content/uploads/2018/11/Regional-Profile-Grundy.pdf",
+          "publisher": "North Central Missouri Development Alliance",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The only source is a regional profile dated 2018. Do not present as a current employer without a check."
@@ -2498,7 +3900,9 @@
     {
       "slug": "north-central-missouri-development-alliance",
       "name": "North Central Missouri Development Alliance",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "Organization",
       "summary": "A regional economic development organization covering Grundy County and north central Missouri.",
       "proximity": "trenton",
@@ -2517,7 +3921,16 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://ncmdevelopment.org/grundy-county/", "publisher": "North Central Missouri Development Alliance", "covers": ["name", "summary", "website"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://ncmdevelopment.org/grundy-county/",
+          "publisher": "North Central Missouri Development Alliance",
+          "covers": [
+            "name",
+            "summary",
+            "website"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Their Grundy County regional profile PDF is dated 2018; any figure taken from it must be labelled historical."
@@ -2525,7 +3938,9 @@
     {
       "slug": "grundy-county-industrial-development-corporation",
       "name": "Grundy County Industrial Development Corporation",
-      "categories": ["business"],
+      "categories": [
+        "business"
+      ],
       "schemaType": "Organization",
       "summary": "The county industrial development body, and the owner of the community newspaper launched in Trenton in 2025.",
       "proximity": "trenton",
@@ -2544,7 +3959,15 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/", "publisher": "KTTN", "covers": ["name", "summary"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": null

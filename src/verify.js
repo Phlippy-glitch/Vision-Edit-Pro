@@ -49,6 +49,9 @@ const EMERGENCY_PATTERN = /\b(police|sheriff|fire\s*(department|district|protect
 /** Fields whose truth we cannot assert without a source that explicitly covers them. */
 const COVERED_FIELDS = ['phone', 'address', 'hours', 'website', 'email'];
 
+/** Fields a reader acts on physically — being wrong here costs them a trip. */
+const ACTIONABLE_FIELDS = ['address', 'phone', 'hours'];
+
 /** Keys that must never appear anywhere in the data. */
 const FORBIDDEN_KEYS = ['rating', 'aggregateRating', 'ratingValue', 'reviewCount', 'reviews', 'stars'];
 
@@ -151,8 +154,27 @@ function checkRecord(rec, kind) {
     fail('emergency-phone', `${id} carries a phone number — emergency contacts must never publish one`);
   }
 
-  // --- the hospital -------------------------------------------------------
-  if (/wright memorial/i.test(rec.name || '') && rec.address) {
+  // --- disputed fields ----------------------------------------------------
+  // If sources conflict on a field, what we do about it depends on what being
+  // wrong costs the reader. A wrong address sends someone across town to a
+  // locked door; a wrong website costs one click and is self-correcting on
+  // arrival. So conflicts on actionable fields are suppressed outright, and
+  // conflicts on the rest are published with the disagreement disclosed.
+  // (`name` is never suppressible — a listing has to be called something.)
+  for (const field of Array.isArray(rec.disputed) ? rec.disputed : []) {
+    const published = rec[field] !== null && rec[field] !== undefined && rec[field] !== '';
+    if (!published) continue;
+    if (ACTIONABLE_FIELDS.includes(field)) {
+      fail('disputed-field', `${id} publishes "${field}", which sources conflict on — acting on it costs a trip`);
+    } else {
+      warn('disputed-disclosed', `${id} publishes a disputed "${field}"; the page must disclose the conflict`);
+    }
+  }
+
+  // Named explicitly because it was an explicit ruling: the hospital has two
+  // candidate addresses and publishes neither. Kept alongside the general rule
+  // so removing the record's `disputed` entry cannot silently unblock it.
+  if (rec.slug === 'wright-memorial-hospital' && rec.address) {
     fail('disputed-address', `${id} publishes an address, but two conflicting addresses exist`);
   }
 

@@ -1,0 +1,329 @@
+{
+  "_meta": {
+    "purpose": "Banned-phrase lint for the Trenton, Missouri directory. Merged from Team A (A3 §6.1, §6.4) and Team B (B3 §5.1, §A.6) per RULINGS §2 gate 7.",
+    "matching": "Each `pattern` is a regular expression, matched CASE-INSENSITIVELY against rendered page text (visible text nodes only, after templating). Regex metacharacters are escaped where a literal is intended.",
+    "scope_include": [
+      "hub and category intros",
+      "guide and how-to bodies",
+      "listing summary / description / good_to_know",
+      "meta descriptions and page titles",
+      "trust UX and about-page copy"
+    ],
+    "scope_exclude": [
+      "name",
+      "legal_name",
+      "aka",
+      "quoted_attributed[]",
+      "source publisher names and URLs"
+    ],
+    "override": "A `fail` may be cleared only by moving the text into `quoted_attributed[]` with a visible source attribution on the page. Reviewer sign-off is recorded in the page front matter. There is no override for `warn` other than a written justification in the same field.",
+    "generated": "2026-08-15",
+    "owner": "merge editorial lead"
+  },
+  "tiers": {
+    "fail": "Build fails.",
+    "warn": "Logged, must be justified."
+  },
+  "banned": [
+    {
+      "pattern": "\\bnestled\\b",
+      "tier": "fail",
+      "why": "Empty travel-blog filler. It describes no place in particular and survives being pasted onto any other town."
+    },
+    {
+      "pattern": "\\bin the heart of\\b",
+      "tier": "fail",
+      "why": "A placeholder standing in for a location we should simply name. If we know where it is, write the street or the landmark; if we don't, say we don't."
+    },
+    {
+      "pattern": "\\b(?:hidden gem|best[- ]kept secret|crown jewel|true gem)\\b",
+      "tier": "fail",
+      "why": "Unverifiable popularity and ranking claims dressed as description. We have visited nothing, measured nothing, and assembled no comparison set — and 'best-kept secret' is self-refuting on a public directory page."
+    },
+    {
+      "pattern": "\\bcharm(?:ing)?\\b",
+      "tier": "fail",
+      "why": "The single most common adjective applied to small towns by writers who have not been there. Says nothing checkable."
+    },
+    {
+      "pattern": "\\bquaint\\b|\\bpicturesque\\b|\\bidyllic\\b",
+      "tier": "fail",
+      "why": "Postcard adjectives about a place none of us has seen. 'Quaint' is condescending, and all three are sensory claims that ship only when they trace to a source or a photo we hold — we hold none."
+    },
+    {
+      "pattern": "\\bbustling\\b|\\bvibrant\\b|\\bthriving\\b",
+      "tier": "fail",
+      "why": "Scale and activity inflation. A town this size does not bustle; 'vibrant' implies a scene where there may be a handful of businesses; 'thriving' is an economic claim we never measured and that is often false where an employer has closed."
+    },
+    {
+      "pattern": "\\bboasts?\\b",
+      "tier": "fail",
+      "why": "Directory-speak for 'has', and it reliably precedes an unsourced claim. Use 'has' and cite it, or cut the sentence."
+    },
+    {
+      "pattern": "\\bsomething for everyone\\b|\\blook no further\\b",
+      "tier": "fail",
+      "why": "The definitional empty sentences. 'Something for everyone' is true of nowhere and informs no one; 'look no further' is sales patter asserting a completeness we do not have."
+    },
+    {
+      "pattern": "\\bwhether you(?:'|\\u2019)?(?:re| are)\\b|\\bwhether (?:you|it)(?:'|\\u2019)?s? [^.]{1,40} or (?:a|an|just)\\b",
+      "tier": "fail",
+      "why": "The audience-fanning opener, including the full 'whether you're a X or a Y' template. It invents reader personas to avoid committing to a fact, and pads the page instead of answering the question. No page may open this way."
+    },
+    {
+      "pattern": "\\b(?:rich (?:tapestry|history)|storied past)\\b|\\bstep(?:ping)? back in time\\b",
+      "tier": "fail",
+      "why": "History flavour with no dates. Where we hold a sourced date, print the date — the adjective is what you write when you don't — and 'step back in time' additionally treats a working town as a period exhibit."
+    },
+    {
+      "pattern": "\\b(?:unique|perfect|eclectic) (?:blend|mix)\\b",
+      "tier": "fail",
+      "why": "Filler that names nothing being blended. Always replaceable by listing the actual things."
+    },
+    {
+      "pattern": "\\b(?:warm|midwestern|southern) hospitality\\b|\\bfriendly locals\\b",
+      "tier": "fail",
+      "why": "A claim about the character of real residents, made by people who have never met them. Not ours to make."
+    },
+    {
+      "pattern": "\\bsmall[- ]town (?:charm|feel|vibe|atmosphere)\\b",
+      "tier": "fail",
+      "why": "Regional stereotype substituted for reporting. Let the town be its own size by describing what is there, not how it supposedly feels."
+    },
+    {
+      "pattern": "\\bbreathtaking\\b|\\bstunning\\b|\\bawe[- ]inspiring\\b",
+      "tier": "fail",
+      "why": "Superlative sensory claims about scenery we have not seen. Nothing on this site is entitled to them."
+    },
+    {
+      "pattern": "\\bworld[- ]class\\b",
+      "tier": "fail",
+      "why": "A superlative sized entirely wrong for a town of a few thousand people, and unmeasurable anywhere."
+    },
+    {
+      "pattern": "\\bmust[- ](?:visit|see|try|do)\\b|\\bbucket list\\b|\\b(?:major|premier|top|popular) destination\\b",
+      "tier": "fail",
+      "why": "Visitor hype: it instructs the reader's priorities and asserts visitor volume we have not measured. We say what a place is and let the reader decide whether to drive there."
+    },
+    {
+      "pattern": "\\bslice of americana\\b|\\bheart and soul\\b",
+      "tier": "fail",
+      "why": "Postcard vocabulary. Fails the portability test — it would read identically about any county seat in the Midwest."
+    },
+    {
+      "pattern": "\\btucked away\\b|\\boff the beaten path\\b",
+      "tier": "fail",
+      "why": "Location filler used in place of an address, on a site whose whole premise is naming where things are."
+    },
+    {
+      "pattern": "\\b(?:delve|embark|unveil)\\b",
+      "tier": "fail",
+      "why": "Register mismatch and a well-known machine-writing tell. A neighbour answering a question does not use these words."
+    },
+    {
+      "pattern": "\\b(?:iconic|legendary|renowned|beloved|cherished|treasured)\\b",
+      "tier": "fail",
+      "why": "Reputation claims with no cited source. If a place is genuinely well known, cite who said so and when."
+    },
+    {
+      "pattern": "\\b(?:plenty of|no shortage of|an array of|a wide (?:range|variety) of|countless|endless|myriad|dozens of|hundreds of|scores of)\\b",
+      "tier": "fail",
+      "why": "Plural-of-abundance: quantity language with no count behind it. It implies supply we never counted and usually contradicts the real listing count printed on the same page. Where we hold a sourced count, print the number."
+    },
+    {
+      "pattern": "\\b(?:locals (?:say|swear|know|love)|a (?:local )?favorite|popular with locals|regulars swear)\\b",
+      "tier": "fail",
+      "why": "Fabricated social proof. We host no reviews and have interviewed nobody; this is an invented citation."
+    },
+    {
+      "pattern": "\\b(?:known|famous|renowned) for its\\b",
+      "tier": "fail",
+      "why": "Asserts a reputation without naming who holds it. Either attribute it to a source or delete it."
+    },
+    {
+      "pattern": "\\byou(?:'|\\u2019)?(?:ll| will) (?:find yourself|be amazed|love|discover)\\b|\\byou can(?:no|'|\\u2019)?t help but\\b|\\bprepare to be\\b|\\bimagine (?:yourself|walking|strolling)\\b",
+      "tier": "fail",
+      "why": "Narrating the reader's experience and emotions. We do not know what they will find, and second-person fantasy is the loudest tell of generated travel copy."
+    },
+    {
+      "pattern": "\\bnot just (?:a|an|the)?\\s*\\w+,? but\\b",
+      "tier": "fail",
+      "why": "The 'X isn't just Y, it's Z' construction. Rhetorical inflation carrying zero information."
+    },
+    {
+      "pattern": "\\bin conclusion\\b|\\ball in all\\b|\\bat the end of the day\\b",
+      "tier": "fail",
+      "why": "Summary padding. Pages end on their last useful fact and then the provenance block."
+    },
+    {
+      "pattern": "\\b(?:plays? a (?:vital|key|central|crucial) role|stands as a testament)\\b",
+      "tier": "fail",
+      "why": "Abstract significance claims that cannot be sourced or falsified."
+    },
+    {
+      "pattern": "\\bin today(?:'|\\u2019)?s [a-z-]+ world\\b|\\bwhen it comes to\\b|\\bit(?:'|\\u2019)?s worth noting\\b|\\bnavigate the complexities\\b",
+      "tier": "fail",
+      "why": "Throat-clearing openers. The first sentence must carry information; these delay it."
+    },
+    {
+      "pattern": "\\bfor (?:generations|decades)\\b|\\blong[- ]standing\\b",
+      "tier": "fail",
+      "why": "Longevity claim without a founding date. If we have a sourced date, print the date instead of the adjective."
+    },
+    {
+      "pattern": "\\b(?:we|our (?:team|editors|editorial team|staff|researchers)) (?:verified|confirmed|called|phoned|visited|toured|spoke (?:to|with)|checked with)\\b",
+      "tier": "fail",
+      "why": "Asserts fieldwork we did not do. Nobody on this project opened a page, placed a call, or set foot in Grundy County."
+    },
+    {
+      "pattern": "\\bverified (?:hours|address|phone|listing|business|information|data|by us)\\b",
+      "tier": "fail",
+      "why": "The confirmation ceiling for this entire build is `unconfirmed` (RULINGS §1). No page may describe any field as verified."
+    },
+    {
+      "pattern": "\\bconfirmed hours\\b|\\bhours (?:are|have been|were) (?:confirmed|verified|accurate|current|correct|up[- ]to[- ]date)\\b",
+      "tier": "fail",
+      "why": "Hours are the fastest-rotting and most harmful field on the site, and we hold no confirmed set for any entity. Phrased as reassurance, this sends someone on a drive to a locked door on our authority."
+    },
+    {
+      "pattern": "\\b(?:100%|fully|independently|personally) (?:verified|confirmed|accurate|checked)\\b",
+      "tier": "fail",
+      "why": "Intensified verification language. The stronger the assertion, the larger the lie, since the true count of confirmed records is zero."
+    },
+    {
+      "pattern": "\\b(?:accurate|correct|current) as of\\b",
+      "tier": "fail",
+      "why": "Claims accuracy at a moment. We may say when we last looked at a source; we may never say the value was right when we looked."
+    },
+    {
+      "pattern": "\\bwe (?:can )?guarantee\\b|\\bguaranteed (?:accurate|correct|open)\\b",
+      "tier": "fail",
+      "why": "We guarantee nothing, and a directory that guarantees anything about third-party businesses is misrepresenting its own position."
+    },
+    {
+      "pattern": "\\bofficial (?:directory|guide|website|source|listing) (?:for|of|to)\\b",
+      "tier": "fail",
+      "why": "We are not official anything. Implying endorsement by the city, county, or Chamber is a false-affiliation claim."
+    },
+    {
+      "pattern": "\\b(?:complete|comprehensive|exhaustive|full) (?:list|listing|directory|guide|index) of\\b",
+      "tier": "fail",
+      "why": "Completeness overclaim. Every category page must instead state its real count and say plainly that it is not everything."
+    },
+    {
+      "pattern": "\\bevery (?:business|restaurant|shop|service|listing) in (?:town|Trenton|Grundy County)\\b",
+      "tier": "fail",
+      "why": "A coverage claim we can never support and that discourages exactly the owner submissions we depend on."
+    },
+    {
+      "pattern": "\\balways up[- ]to[- ]date\\b|\\bkept current\\b|\\bregularly updated\\b",
+      "tier": "fail",
+      "why": "Maintenance overclaim. The only honest freshness signal is a stored last-checked date, never a promise."
+    },
+    {
+      "pattern": "\\b(?:open now|currently open|now open|still in business|open today|still operating)\\b",
+      "tier": "fail",
+      "why": "`status` defaults to unknown and several records are known closed or doubtful. Asserting present-tense trading is the failure mode this schema exists to prevent."
+    },
+    {
+      "pattern": "\\b(?:trusted|reliable|reputable|established) (?:local )?(?:business|provider|shop|contractor|name)\\b|\\baward[- ]winning\\b",
+      "tier": "fail",
+      "why": "Generated business flattery and unsourced honours. This is the exact sentence a scraper writes when it knows only a name and a category, and 'award-winning' names neither the award nor the awarding body."
+    },
+    {
+      "pattern": "\\bworld[- ]renowned\\b|\\b(?:nationally|internationally) (?:known|recognized|famous|acclaimed)\\b",
+      "tier": "fail",
+      "why": "Superlative sized for a metropolis, applied to a rural county seat. Discredits the page instantly for any reader who lives there."
+    },
+    {
+      "pattern": "\\b(?:best|finest|greatest|premier|leading|number one|#1)\\b",
+      "tier": "fail",
+      "why": "Quality superlatives with no measurable referent. Legal only inside an attributed quotation held in `quoted_attributed[]`."
+    },
+    {
+      "pattern": "\\b\\w+est\\b(?=[^.]{0,40}\\bin (?:the )?(?:state|region|area|county|midwest|country|nation)\\b)",
+      "tier": "fail",
+      "why": "Catches constructed superlatives ('largest X in the region') that need a number and a comparison set we do not have."
+    },
+    {
+      "pattern": "\\b(?:metropolis|skyline|urban core|downtown core|suburbs?|suburban sprawl|metro area)\\b",
+      "tier": "fail",
+      "why": "Vocabulary borrowed from places several orders of magnitude larger. The town has a downtown, not an urban core, and it has no suburbs and no metro — a resident spots this in one line."
+    },
+    {
+      "pattern": "\\b(?:dining|culinary|food|arts|music|nightlife|shopping|bar|coffee|brewery) scene\\b",
+      "tier": "fail",
+      "why": "'Scene' implies a critical mass of venues. Name the businesses we can actually list, and let the count speak."
+    },
+    {
+      "pattern": "\\b(?:arts|entertainment|historic|warehouse|theater|theatre) district\\b",
+      "tier": "fail",
+      "why": "Districts are a big-city planning concept. Using one here invents a geography of the town that does not exist."
+    },
+    {
+      "pattern": "\\b(?:mecca|epicenter|epicentre|capital) (?:of|for)\\b",
+      "tier": "fail",
+      "why": "Regional-importance claim with nothing behind it, and 'capital of' is routinely false in a way locals will catch."
+    },
+    {
+      "pattern": "\\b(?:booming|rapidly growing|fast[- ]growing|on the rise|up[- ]and[- ]coming)\\b",
+      "tier": "fail",
+      "why": "An unsourced trend claim about a local economy. Frequently the reverse of the truth where an employer has closed."
+    },
+    {
+      "pattern": "\\bhistoric\\b",
+      "tier": "warn",
+      "why": "Allowed only where a sourced date or a listing designation is printed in the same sentence. Otherwise it is decoration; justify or replace with the date."
+    },
+    {
+      "pattern": "\\bfamily[- ](?:owned|run)\\b",
+      "tier": "warn",
+      "why": "Commonly true and commonly copied from an aggregator. Needs a first-party source or an owner submission; justify the source in review."
+    },
+    {
+      "pattern": "\\bpopular\\b",
+      "tier": "warn",
+      "why": "A popularity claim needs a cited measure. Permitted only when attributing a source's own words, with the attribution visible."
+    },
+    {
+      "pattern": "\\baffordable\\b|\\blow cost of living\\b|\\bcheap\\b",
+      "tier": "warn",
+      "why": "A cost claim that dates instantly and must be tied to a cited statistical source and its year, not asserted as a quality of the town."
+    },
+    {
+      "pattern": "\\b(?:safe|low[- ]crime|crime[- ]free)\\b",
+      "tier": "warn",
+      "why": "Safety claims about a real community carry real consequences in both directions. Permitted only against a named, dated statistical source."
+    },
+    {
+      "pattern": "\\bfriendly\\b|\\bwelcoming\\b|\\bcozy\\b|\\bauthentic\\b",
+      "tier": "warn",
+      "why": "Evaluative adjectives about places and people we have not met. Counts against the adjective budget and needs a stated reason to survive review."
+    },
+    {
+      "pattern": "\\bvibe\\b|\\batmosphere\\b|\\bambiance\\b|\\bambience\\b",
+      "tier": "warn",
+      "why": "Sensory-provenance rule: every such description must trace to a source or a photograph we hold. We hold none, so the default outcome is deletion."
+    },
+    {
+      "pattern": "\\bhome to\\b",
+      "tier": "warn",
+      "why": "Usually a longer way of writing 'has', and it often smuggles in an entity we have not sourced. Justify or rewrite plainly."
+    },
+    {
+      "pattern": "\\bjust (?:a )?(?:short |quick )?(?:drive|walk|minutes?|miles?)\\b",
+      "tier": "warn",
+      "why": "An unsourced distance or travel-time claim. Distances ship only from a cited mapping or DOT source; 'just' also editorialises the effort."
+    },
+    {
+      "pattern": "\\bthe city\\b",
+      "tier": "warn",
+      "why": "Correct for the municipal government ('the City of Trenton'), wrong as a description of the place. Check which sense is meant; default to 'town'."
+    },
+    {
+      "pattern": "\\bserving the (?:community|area|region)\\b",
+      "tier": "warn",
+      "why": "Generated business-description filler. Almost always deletable with no loss; justify if a source actually says it."
+    }
+  ]
+}

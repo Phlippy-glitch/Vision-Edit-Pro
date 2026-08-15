@@ -1,0 +1,19 @@
+{
+  "brand": "Trenton, Missouri Directory",
+  "brandShort": "Trenton MO Directory",
+  "titleHome": "Trenton, MO Directory — Businesses, Offices and Places",
+  "url": "https://phlippy-glitch.github.io/Vision-Edit-Pro",
+  "base": "/Vision-Edit-Pro/",
+  "descriptionFallback": "A sourced directory of businesses, public offices and places in Trenton, Missouri, the county seat of Grundy County. Every entry names where it came from.",
+  "ogImage": "assets/og.svg",
+  "ogImageAlt": "Trenton, Missouri Directory",
+  "repoIssuesUrl": "https://github.com/Phlippy-glitch/Vision-Edit-Pro/issues/new",
+  "place": {
+    "name": "Trenton",
+    "zip": "64683",
+    "areaCode": "660",
+    "county": "Grundy County",
+    "lat": 40.0789,
+    "lon": -93.6169
+  }
+}

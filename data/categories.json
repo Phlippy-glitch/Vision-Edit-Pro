@@ -1,0 +1,507 @@
+{
+  "_meta": {
+    "purpose": "Final category taxonomy for the Trenton, Missouri directory. Settled by the merge taxonomy lead against data/listings.json (92 records) and data/events.json (5 events), not against either architect's pre-merge estimate.",
+    "built": "2026-08-15",
+    "owner": "merge taxonomy lead",
+    "rule_applied": "A category is justified by its sourced members, not by what a town 'should' have (A2 §8.2, B2 §2.4, RULINGS §4). Where a slug's members were almost entirely a subset of another hub, or where a commissioned guide already owned the same entity set, the slug became a section rather than a URL — the precedent B1 set when /services/ was demoted.",
+    "hub_count": 11,
+    "resolves": "A2 proposed 8, B2 proposed 12, B1/B3 proposed 11. Settled at 11 by counting the merged dataset.",
+    "changes_from_provisional_slugs": [
+      "media-news DROPPED as a hub. Its 3 records (one of them a newspaper that closed in 2025) are a section inside /community/, and /guides/local-news/ carries the explanatory content. Shipping both would have broken the guide test in the merged editorial spec §6 — a guide earns a URL only if its entity set is not already a hub's.",
+      "utilities-trash KEPT as a hub. It clears 4 sourced members and no guide or how-to owns its entity set. The city-limits vs rural distinction it carries is buried if it is folded into /government/.",
+      "services NOT created. Ruled a section by RULINGS §4; it lives at /business/#services-and-trades.",
+      "stay KEPT at 2 records, noindex, and states the thinness in its own intro per RULINGS §4.",
+      "events is driven by data/events.json; the listing slugs below are the venues, which are taxonomy-independent and also appear in other hubs."
+    ],
+    "retired_slugs": {
+      "media-news": "community"
+    },
+    "thin_page_policy": "RULINGS §2.9. 0 sourced members: page not built. 1-3: stub, index=false, still internally linked. 4+: index=true. Applied to hub member counts, not to page length.",
+    "lint_note": "Intros were run against data/lint.json. Zero fail-tier hits. Two warn-tier hits, both on \\bthe city\\b, both the justified case: 'the City of Trenton' is the municipal corporation's proper name and is already exempted on the same grounds in listings.json._meta.",
+    "coverage_line": "Every hub renders the mandatory data-populated coverage line from the merged editorial spec §1.2. It is not stored here because it is generated from the member count.",
+    "ordering": "Members render alphabetically within each section (editorial spec §1.2). Sections render in the order given."
+  },
+  "categories": [
+    {
+      "slug": "government",
+      "name": "Government & Public Services",
+      "h1": "Government offices in Trenton, Missouri",
+      "title": "Government Offices in Trenton, MO",
+      "description": "City of Trenton and Grundy County offices, plus the contracted trash and recycling haulers. Which office handles what, and why a wrong call costs a trip.",
+      "intro": "Two governments operate here and they are not the same office. The City of Trenton runs utilities, streets, parks, the airport and the police department; Grundy County runs the courthouse offices, which is where taxes, deeds, voter registration and vital records live. Most wasted trips start with a call to the wrong one. We publish no phone number for police, fire or the sheriff. In an emergency, call 911.",
+      "sections": [
+        {
+          "heading": "City of Trenton",
+          "slugs": [
+            "city-of-trenton",
+            "trenton-municipal-airport",
+            "trenton-municipal-utilities",
+            "trenton-parks-and-recreation-department",
+            "trenton-street-barn"
+          ],
+          "note": "City Hall and the utility share an address at 1100 Main Street; the parks department has two conflicting addresses across our sources and we publish neither."
+        },
+        {
+          "heading": "Grundy County offices",
+          "slugs": [
+            "grundy-county-assessor",
+            "grundy-county-circuit-clerk-and-recorder",
+            "grundy-county-clerk",
+            "grundy-county-collector-treasurer",
+            "grundy-county-courthouse",
+            "grundy-county-health-department"
+          ],
+          "note": "Most of these sit inside the courthouse at 700 Main Street. Sources give an 8:30 a.m. to 4:30 p.m. window for specific offices, not for the building, so no building-wide hours are published."
+        },
+        {
+          "heading": "Police, fire and the sheriff",
+          "slugs": [
+            "grundy-county-sheriffs-office",
+            "trenton-fire-department",
+            "trenton-police-department"
+          ],
+          "note": "No phone number is published for any record in this section, from an unconfirmed source, ever. In an emergency, call 911."
+        },
+        {
+          "heading": "Trash and recycling",
+          "slugs": [
+            "hope-haven-industries",
+            "rapid-removal-disposal"
+          ],
+          "note": "Both are private haulers working under a City of Trenton contract that can be re-bid, which is why they sit under government rather than under trades."
+        },
+        {
+          "heading": "Federal and regional",
+          "slugs": [
+            "green-hills-regional-planning-commission",
+            "trenton-post-office"
+          ],
+          "note": "Sources state the post office does not offer passport services, and its published hours are retail counter hours rather than lobby access."
+        }
+      ],
+      "index": true,
+      "order": 1
+    },
+    {
+      "slug": "utilities-trash",
+      "name": "Utilities, Trash & Recycling",
+      "h1": "Utilities, trash and recycling in Trenton, Missouri",
+      "title": "Utilities, Trash & Recycling in Trenton, MO",
+      "description": "Trenton Municipal Utilities, Grundy Electric Cooperative and the contracted trash and recycling haulers, and how those charges reach one utility bill.",
+      "intro": "Which utility serves you depends on where the meter sits. Trenton Municipal Utilities covers electric, water and wastewater inside Trenton; Grundy Electric Cooperative is a member-owned co-op serving rural members outside it. Trash and recycling are collected under a City of Trenton contract, but sources report both charges arriving on the Trenton Municipal Utilities bill — so the office that bills you is not the office that set the rate. Ask who sets it before you ask to have it removed.",
+      "sections": [
+        {
+          "heading": "Electric, water and wastewater",
+          "slugs": [
+            "grundy-electric-cooperative",
+            "trenton-municipal-utilities"
+          ],
+          "note": "Two different main numbers appeared for the cooperative across sources, so no phone is published for it."
+        },
+        {
+          "heading": "Trash and recycling",
+          "slugs": [
+            "hope-haven-industries",
+            "rapid-removal-disposal"
+          ],
+          "note": "Sources state that every Trenton Municipal Utilities account with water service is billed the recycling fee whether or not the service is used."
+        }
+      ],
+      "index": true,
+      "order": 2
+    },
+    {
+      "slug": "health",
+      "name": "Health Care",
+      "h1": "Health care in Trenton, Missouri",
+      "title": "Health Care in Trenton, MO",
+      "description": "Wright Memorial Hospital, its physicians' group and specialty clinic, the county health department and two pharmacies. Two hospital addresses conflict.",
+      "intro": "In an emergency, call 911 — not a number on this page. Most care listed here runs through one operator: Wright Memorial Hospital, part of Saint Luke's Health System, along with its physicians' group and a specialty clinic that sources describe as hosting visiting specialists rather than resident ones. Our sources give two different street addresses for the hospital, so we publish neither and hand you to the operator's own page instead.",
+      "sections": [
+        {
+          "heading": "Hospital and clinics",
+          "slugs": [
+            "wright-memorial-hospital",
+            "wright-memorial-hospital-specialty-clinic",
+            "wright-memorial-physicians-group"
+          ],
+          "note": "No street address is published for the hospital while two candidates stand. Emergency departments and outpatient clinics keep different hours; when you call, ask which one you are being told."
+        },
+        {
+          "heading": "Public health and vital records",
+          "slugs": [
+            "grundy-county-health-department"
+          ],
+          "note": "This is where birth certificates, immunizations, WIC and local food inspection records sit. It is one of the two strongest records in the merged set: the state health registry and the department's own site agree independently."
+        },
+        {
+          "heading": "Pharmacies",
+          "slugs": [
+            "evercare-pharmacy",
+            "hy-vee-pharmacy"
+          ],
+          "note": null
+        },
+        {
+          "heading": "Specialists",
+          "slugs": [
+            "cleaver-dermatology"
+          ],
+          "note": "One sourced specialist practice outside the hospital. If you run another, tell us."
+        }
+      ],
+      "index": true,
+      "order": 3
+    },
+    {
+      "slug": "schools",
+      "name": "Schools & Colleges",
+      "h1": "Schools and colleges in Trenton, Missouri",
+      "title": "Schools & Colleges in Trenton, MO",
+      "description": "Trenton R-IX runs Rissler Elementary, Trenton Middle and Trenton High. North Central Missouri College adds a main campus, a farm campus and Ketcham.",
+      "intro": "The public district is Trenton R-IX. The legal name uses a roman numeral, though the district's own domain and local usage render it R-9, and both refer to one district. It covers PK-12 across three schools. North Central Missouri College is separate and public, with its main campus on Main Street, an agriculture campus outside town and the Ketcham Community Center. Enrollment figures differed across our sources, so none is printed.",
+      "sections": [
+        {
+          "heading": "Trenton R-IX School District",
+          "slugs": [
+            "sm-rissler-elementary-school",
+            "trenton-high-school",
+            "trenton-middle-school",
+            "trenton-r-ix-school-district"
+          ],
+          "note": "Rissler covers PK-4 including the district preschool, the middle school 5-8, the high school 9-12. The teams are the Bulldogs."
+        },
+        {
+          "heading": "North Central Missouri College",
+          "slugs": [
+            "ncmc-barton-farm-campus",
+            "ncmc-ketcham-community-center",
+            "north-central-missouri-college"
+          ],
+          "note": "The Barton Farm Campus sits outside Trenton in Grundy County, about a mile from town off Highway 65. The Ketcham Community Center is a college facility that also serves as a town one."
+        }
+      ],
+      "index": true,
+      "order": 4
+    },
+    {
+      "slug": "parks-recreation",
+      "name": "Parks & Recreation",
+      "h1": "Parks and recreation in Trenton, Missouri",
+      "title": "Parks & Recreation in Trenton, MO",
+      "description": "Four city parks, the Trenton Family Aquatic Center, the fairgrounds and Rock Barn, and Crowder State Park out in Grundy County rather than in town.",
+      "intro": "Four city parks are maintained by the Trenton Parks and Recreation Department, which is also the number to call about the aquatic center inside Moberly Park. Crowder State Park is in Grundy County, about three miles outside Trenton city limits — it is near the town, not in it — and its sources describe more than 17 miles of trails. Two records here run a season rather than a year: the aquatic center and the state park campground.",
+      "sections": [
+        {
+          "heading": "City parks",
+          "slugs": [
+            "eastside-park",
+            "moberly-park",
+            "ray-van-meter-park",
+            "sesquicentennial-park",
+            "trenton-family-aquatic-center"
+          ],
+          "note": "None of the four parks has a sourced street address. The number shown on each is the Park Department general line, not a park office."
+        },
+        {
+          "heading": "State park, in Grundy County",
+          "slugs": [
+            "crowder-state-park",
+            "crowder-state-park-campground"
+          ],
+          "note": "This is a Grundy County site near Trenton, and no page on this site describes it as being in Trenton. Park acreage and lake size conflicted across sources and are not published."
+        },
+        {
+          "heading": "Sports, clubs and event grounds",
+          "slugs": [
+            "ncmc-ketcham-community-center",
+            "north-central-missouri-fairgrounds-rock-barn",
+            "riverside-country-club"
+          ],
+          "note": "One source gives the fairgrounds the same address as Trenton High School; the two sites appear adjacent but the collision is unresolved, so no address is published."
+        },
+        {
+          "heading": "Who to call",
+          "slugs": [
+            "trenton-parks-and-recreation-department"
+          ],
+          "note": "Aquatic center season dates, hours and fees are set annually by the Trenton Park Board and were not observed. Call the department before travelling."
+        }
+      ],
+      "index": true,
+      "order": 5
+    },
+    {
+      "slug": "eat-drink",
+      "name": "Eat & Drink",
+      "h1": "Places to eat and drink in Trenton, Missouri",
+      "title": "Restaurants & Food in Trenton, MO",
+      "description": "Restaurants, a winery, ice cream shops and the two stores open when the kitchens close. Only two of the ten records carry hours we could source.",
+      "intro": "Ten food and drink records, and only two carry hours from a source: Black Silo Winery, on a property east of town, and the Hy-Vee supermarket. Chesapeake on Main published winter hours only, so we render those with that label and nothing else. For the rest, assume one closing day a week and call before you drive. The convenience store and the supermarket are what is open when the kitchens are not.",
+      "sections": [
+        {
+          "heading": "Restaurants",
+          "slugs": [
+            "chesapeake-on-main",
+            "china-fresh",
+            "el-toro",
+            "washington-street-food-and-drink-company"
+          ],
+          "note": "Two of these four came to us as a name on a town tourism list with no address, phone or site attached."
+        },
+        {
+          "heading": "Winery",
+          "slugs": [
+            "black-silo-winery"
+          ],
+          "note": "One winery, which is a listing rather than a category. Its grounds host the Mid-America Music Festival."
+        },
+        {
+          "heading": "Ice cream and sweets",
+          "slugs": [
+            "main-street-creamery-co",
+            "sugar-shack-and-more",
+            "uprooted-creamery"
+          ],
+          "note": "Sugar Shack & More is a trailer vendor with no fixed street address observed, so treat its location as unknown rather than missing."
+        },
+        {
+          "heading": "Open when the kitchens are closed",
+          "slugs": [
+            "caseys",
+            "hy-vee"
+          ],
+          "note": "No address was found for Casey's, and this chain often has more than one store per town, so do not read this record as the only location."
+        }
+      ],
+      "index": true,
+      "order": 6
+    },
+    {
+      "slug": "shopping",
+      "name": "Shopping",
+      "h1": "Shopping in Trenton, Missouri",
+      "title": "Shops & Stores in Trenton, MO",
+      "description": "Downtown shops, the supermarket, two thrift stores and a seasonal garden center. Six of the fourteen records are a name with no address or phone yet.",
+      "intro": "Six of these fourteen records are a name and a category and nothing else — a town tourism list gave us the name, and no source gave an address, a phone or a website. We publish them anyway, with the gaps showing, because a name you can search for beats a page that pretends the shop is not there. Barnes Greenhouses runs a season and is closed for part of the year.",
+      "sections": [
+        {
+          "heading": "Downtown shops",
+          "slugs": [
+            "browns-shoe-fit",
+            "downtown-depot",
+            "howards-dept-store",
+            "main-street-mercantile",
+            "savvy-sallys",
+            "trentons-main-street-mall"
+          ],
+          "note": "The Main Street Trenton downtown business directory is the strongest source we have not been able to open. Filling this section is the highest-value correction anyone could send us."
+        },
+        {
+          "heading": "Groceries and general merchandise",
+          "slugs": [
+            "caseys",
+            "dollar-general",
+            "hy-vee",
+            "hy-vee-pharmacy",
+            "klinginsmith-home-center"
+          ],
+          "note": null
+        },
+        {
+          "heading": "Thrift",
+          "slugs": [
+            "church-women-united-thrift-store",
+            "the-weeping-willow-thrift"
+          ],
+          "note": null
+        },
+        {
+          "heading": "Seasonal",
+          "slugs": [
+            "barnes-greenhouses"
+          ],
+          "note": "Two near-identical addresses appeared across sources, differing by one digit and a street-name form, so neither is published."
+        }
+      ],
+      "index": true,
+      "order": 7
+    },
+    {
+      "slug": "business",
+      "name": "Businesses & Services",
+      "h1": "Businesses and services in Trenton, Missouri",
+      "title": "Businesses & Services in Trenton, MO",
+      "description": "Banks, auto shops, a surveyor, farm supply, the airport, the Chamber and two manufacturers whose only sources date from 2018 and are written past tense.",
+      "intro": "This hub holds the businesses and business organizations that are not shops or kitchens, including the trades section that would otherwise have been its own thin page. Two entries need reading carefully: the Nestle plant and Modine are sourced only to material from 2018, so we write them in the past tense and assert nothing about what either does now. Three banks, three auto shops, one surveyor.",
+      "sections": [
+        {
+          "heading": "Banks",
+          "slugs": [
+            "btc-bank",
+            "farmers-bank-of-northern-missouri",
+            "farmers-state-bank"
+          ],
+          "note": "The BTC Bank address is corroborated by an unrelated source: the Rotary club meets in the bank's meeting room at the same address."
+        },
+        {
+          "heading": "Services and trades",
+          "slugs": [
+            "anderson-autobody",
+            "hattesohl-and-associates-land-surveying",
+            "midwest-tire-outlet",
+            "peoples-cooperative-mr-tire"
+          ],
+          "note": "This is the section that replaced a /services/ hub. Sources conflict on the name, address and phone of People's Cooperative / Mr. Tire, so all three fields are held. Plumbing, electrical, HVAC and roofing produced no sourced Trenton business at all and are not listed as empty headings."
+        },
+        {
+          "heading": "Farm and ag",
+          "slugs": [
+            "agchem"
+          ],
+          "note": "One sourced agricultural supplier, founded in 2012, selling agricultural chemicals, seed and foliar fertilizer. In a county this agricultural that count is a gap in our sourcing, not a description of the county."
+        },
+        {
+          "heading": "Manufacturing and major employers",
+          "slugs": [
+            "modine-manufacturing",
+            "nestle-trenton-plant"
+          ],
+          "note": "Everything we hold on both records dates from 2018. Conagra announced a closure eliminating 282 positions at the Trenton plant before selling it to Nestle that year. Current operating state and headcount are unknown and are not asserted."
+        },
+        {
+          "heading": "Business organizations",
+          "slugs": [
+            "grundy-county-industrial-development-corporation",
+            "main-street-trenton",
+            "north-central-missouri-development-alliance",
+            "trenton-area-chamber-of-commerce"
+          ],
+          "note": "Three conflicting addresses appeared for the Chamber and none is published. One of them collides with a state license office that closed in May 2023, which is the signature of an aggregator data smear."
+        },
+        {
+          "heading": "Infrastructure and clubs",
+          "slugs": [
+            "grundy-electric-cooperative",
+            "riverside-country-club",
+            "trenton-municipal-airport"
+          ],
+          "note": "The airport is city-owned and public-use, about a mile east of downtown, with a single asphalt runway."
+        }
+      ],
+      "index": true,
+      "order": 8
+    },
+    {
+      "slug": "community",
+      "name": "Community, Churches & Local News",
+      "h1": "Community, churches and local news in Trenton, Missouri",
+      "title": "Community, Churches & Local News in Trenton, MO",
+      "description": "The county library and museum, the food pantry, senior center, animal shelter, three churches, and the radio group and newspaper covering Grundy County.",
+      "intro": "This hub runs from the county library and museum to the food pantry, the senior center and the animal shelter. Local news sits here rather than on a page of its own: two outlets publish now, KTTN/KGOZ radio and The Trenton Telegraph, which launched in September 2025. The Trenton Republican-Times ran from 1864 and closed after its June 19, 2025 issue. Its old domain still resolves, which is how directories get this wrong. We list three churches, which is not all of them.",
+      "sections": [
+        {
+          "heading": "Library, museum and venues",
+          "slugs": [
+            "grundy-county-jewett-norris-library",
+            "grundy-county-museum",
+            "ncmc-ketcham-community-center",
+            "north-central-missouri-fairgrounds-rock-barn",
+            "trenton-r9-performing-arts-center"
+          ],
+          "note": "The library's domain is grundycountylibrary.org; a similarly named trentonlib.org belongs to a different town. The museum runs a season, and its seasonal hours must never be read as year-round ones."
+        },
+        {
+          "heading": "Help and services",
+          "slugs": [
+            "church-women-united-thrift-store",
+            "community-food-pantry-of-grundy-county",
+            "green-hills-animal-shelter",
+            "green-hills-community-action-agency",
+            "grundy-county-senior-center"
+          ],
+          "note": "Only a P.O. Box was found for the senior center. It is a mailing address, it never renders as a street location or a map pin, and the physical location is a known gap."
+        },
+        {
+          "heading": "Downtown and civic groups",
+          "slugs": [
+            "five-points-alive",
+            "green-hills-regional-planning-commission",
+            "main-street-trenton",
+            "rotary-club-of-trenton",
+            "trenton-area-chamber-of-commerce"
+          ],
+          "note": "Main Street Trenton runs the Saturday farmers market, downtown events, a downtown business directory and a facade grant program."
+        },
+        {
+          "heading": "Churches",
+          "slugs": [
+            "first-baptist-church",
+            "st-joseph-catholic-parish",
+            "st-philips-episcopal-church"
+          ],
+          "note": "Three congregations reached our sourcing threshold. That is a count of what we could source, not a count of the churches in Trenton. St. Philip's occupies an 1898 Gothic Revival limestone building listed on the National Register of Historic Places."
+        },
+        {
+          "heading": "Local news and radio",
+          "slugs": [
+            "kttn-kgoz-radio",
+            "trenton-republican-times",
+            "trenton-telegraph"
+          ],
+          "note": "The Republican-Times record exists so the closure is visible; its website field is deliberately empty so this site never presents it as a live outlet. The longer explanation is at /guides/local-news/."
+        }
+      ],
+      "index": true,
+      "order": 9
+    },
+    {
+      "slug": "events",
+      "name": "Events",
+      "h1": "Recurring events in Trenton, Missouri",
+      "title": "Events in Trenton, MO",
+      "description": "Missouri Day Festival, the North Central Missouri Fair, the Saturday farmers market and two more, listed by the rule that sets each date, not by the date.",
+      "intro": "Five recurring events, led by the rule that sets each date rather than by the date itself, because the rule keeps working after this year ends. The Missouri Day Festival is the third weekend of October, the North Central Missouri Fair runs late July into early August, and the farmers market is Saturdays from May through September. Sources disagreed on this year's fair dates, so we print none. Check with the organiser before you travel.",
+      "sections": [
+        {
+          "heading": "Where events happen",
+          "slugs": [
+            "black-silo-winery",
+            "north-central-missouri-fairgrounds-rock-barn",
+            "sesquicentennial-park",
+            "trenton-r9-performing-arts-center"
+          ],
+          "note": "The fairgrounds hosts both the Missouri Day Festival and the North Central Missouri Fair. The name is Missouri Day, singular, and it is a different event from the Missouri Days Marching Festival; the two names are never merged. No vendor count is published, because four different figures appeared across sources."
+        }
+      ],
+      "index": true,
+      "order": 10
+    },
+    {
+      "slug": "stay",
+      "name": "Places to Stay",
+      "h1": "Places to stay in Trenton, Missouri",
+      "title": "Places to Stay in Trenton, MO",
+      "description": "One hotel and camping in Crowder State Park. Lodging around Trenton is thin, and this page says so rather than padding the list with other towns.",
+      "intro": "Lodging in Trenton is one hotel. We sourced exactly two places to stay: Cobblestone Inn & Suites, and camping inside Crowder State Park out in Grundy County, which runs March through November rather than year-round. A second lodging record was held back because its address matched a pattern that recurs across unrelated records in this town and reads as aggregator data. If you know a place we are missing, tell us.",
+      "sections": [
+        {
+          "heading": "Hotel",
+          "slugs": [
+            "cobblestone-inn-and-suites-trenton"
+          ],
+          "note": "An aggregator carries a second address on the same street. It is recorded as a dispute rather than published."
+        },
+        {
+          "heading": "Camping",
+          "slugs": [
+            "crowder-state-park-campground"
+          ],
+          "note": "In Grundy County, not in Trenton. Site counts and hookup counts came from a third-party camping site and are not published."
+        }
+      ],
+      "index": false,
+      "order": 11
+    }
+  ]
+}

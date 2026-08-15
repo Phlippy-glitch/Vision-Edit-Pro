@@ -219,38 +219,27 @@ export function listingGraph(site, listing, category) {
     description: oneline(listing.summary),
   };
 
-  if (listing.website) node.sameAs = [listing.website];
-  if (listing.phone) node.telephone = listing.phone;
-  if (listing.email) node.email = listing.email;
+  // Locality only — deliberately, and this is the narrowest part of the build.
+  //
+  // Structured data is a machine-readable assertion of fact, and it travels
+  // without the "nothing here is confirmed" notice that every rendered page
+  // carries. Whatever we put here can be lifted into a knowledge panel and
+  // becomes very hard to correct afterwards. So we emit only what cannot be
+  // wrong given the record exists at all: that it is in Trenton, Missouri.
+  //
+  // streetAddress, telephone, openingHours and geo are all omitted on purpose.
+  // Those are exactly the properties that propagate, and exactly the ones our
+  // sources are least reliable about. Locality also does the one job we most
+  // need from structured data here: distinguishing this town from the Trentons
+  // in New Jersey, Michigan and Georgia.
+  node.address = {
+    '@type': 'PostalAddress',
+    addressLocality: listing.city || site.place.name,
+    addressRegion: 'MO',
+    addressCountry: 'US',
+  };
 
-  if (listing.address) {
-    node.address = {
-      '@type': 'PostalAddress',
-      streetAddress: listing.address,
-      addressLocality: listing.city || site.place.name,
-      addressRegion: listing.state || 'MO',
-      postalCode: listing.zip || site.place.zip,
-      addressCountry: 'US',
-    };
-  } else {
-    // No verified street address: state the locality only. Schema still gets a
-    // geographic signal without us inventing a street.
-    node.address = {
-      '@type': 'PostalAddress',
-      addressLocality: listing.city || site.place.name,
-      addressRegion: 'MO',
-      addressCountry: 'US',
-    };
-  }
-
-  if (listing.geo && listing.geo.lat && listing.geo.lon) {
-    node.geo = { '@type': 'GeoCoordinates', latitude: listing.geo.lat, longitude: listing.geo.lon };
-  }
-  if (Array.isArray(listing.openingHours) && listing.openingHours.length) {
-    node.openingHours = listing.openingHours;
-  }
   if (category) {
-    node.additionalType = undefined;
     node.isPartOf = { '@type': 'CollectionPage', name: category.name, url: absolute(site, category.path) };
   }
   node.containedInPlace = { '@id': `${site.url}/#place` };

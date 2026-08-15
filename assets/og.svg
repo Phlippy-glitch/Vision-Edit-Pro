@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Trenton, Missouri Directory">
+  <rect width="1200" height="630" fill="#f6f5f2"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#1c5a7a"/>
+  <text x="80" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700" fill="#16191d">Trenton, Missouri</text>
+  <text x="80" y="330" font-family="-apple-system, 'Segoe UI', Roboto, sans-serif" font-size="42" fill="#3d434c">Directory of Grundy County</text>
+  <text x="80" y="470" font-family="-apple-system, 'Segoe UI', Roboto, sans-serif" font-size="27" fill="#626a75">Every entry names the source it came from.</text>
+  <text x="80" y="512" font-family="-apple-system, 'Segoe UI', Roboto, sans-serif" font-size="27" fill="#626a75">Nothing on it has been confirmed by us.</text>
+  <rect x="80" y="548" width="120" height="4" fill="#8a6414"/>
+</svg>

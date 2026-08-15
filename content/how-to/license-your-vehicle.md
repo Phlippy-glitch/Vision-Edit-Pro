@@ -1,6 +1,6 @@
 ---
 slug: license-your-vehicle
-title: "Licensing a vehicle in Trenton, MO"
+title: "How to License a Vehicle in Trenton, MO"
 h1: "How to license a vehicle if you live in Trenton"
 description: "The license office serving Trenton, MO closed after May 31, 2023, and stale listings still send people there. What to do instead, and what to bring."
 summary: "Why a Trenton license-office listing may send you to a closed door, the county paperwork that has to come first, and what to ask before you drive anywhere."
@@ -19,7 +19,7 @@ sources:
     publisher: "Trenton Area Chamber of Commerce"
 faq:
   - q: "Is there a license office in Trenton, Missouri?"
-    a: "Not the one the listings show. The Missouri Department of Revenue announced that the office serving Trenton closed after May 31, 2023, with a transition to a new contractor. We could not confirm where the closest open office is today, so use the Department of Revenue's own office locator and call before you drive."
+    a: "We cannot tell you, and that is the honest answer. The Missouri Department of Revenue announced that the office serving Trenton closed after May 31, 2023, with a transition to a new contractor — so a local office may have reopened since under a different operator, or may not have. Our evidence stops in 2023. Use the Department of Revenue's own office locator and call before you drive."
   - q: "Why do search results still show a Trenton license office?"
     a: "Because aggregator and DMV-style sites copy each other and rarely delete anything. One address they repeat for a Trenton license office also turns up as a Chamber of Commerce address in our sources, which is the signature of copied data rather than a working office."
   - q: "What do I need from Grundy County before licensing a vehicle?"
@@ -29,6 +29,8 @@ faq:
 ## Do not drive to a Trenton license office
 
 **The Missouri Department of Revenue announced that the license office serving Trenton closed after May 31, 2023, with a transition to a new contractor.** Aggregator and DMV-style sites still list a local office, and one of the addresses they repeat also appears in our sources as a Chamber of Commerce address — the signature of copied data, not a working counter.
+
+Be careful how far you take that, including as we state it. Our evidence is an announcement from 2023, and the announcement itself mentions a transition to a new contractor. A new office may well have opened in or near Trenton since, under a different operator, at a different address. **We do not know what exists today, and neither does any page still repeating the old listing.** What we can say is that a listing you find in a search result is not evidence a counter is open — the state's own locator is, and a phone call is better still.
 
 **We could not confirm where the closest open office is today.** That is exactly the kind of thing to settle by phone before you burn a morning. Use the Department of Revenue's own office locator, linked below, then call the office you find to confirm it is open and takes walk-ins on the day you plan to go — whatever any listing anywhere says.
 

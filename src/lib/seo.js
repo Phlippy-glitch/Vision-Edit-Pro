@@ -247,21 +247,30 @@ export function listingGraph(site, listing, category) {
   // sources are least reliable about. Locality also does the one job we most
   // need from structured data here: distinguishing this town from the Trentons
   // in New Jersey, Michigan and Georgia.
-  node.address = {
-    '@type': 'PostalAddress',
-    addressRegion: 'MO',
-    addressCountry: 'US',
-  };
   // Only claim a locality we can stand behind. A record flagged as sitting in
   // the wider county — Crowder State Park, the Barton Farm campus — is not in
   // Trenton, and defaulting it to the site's own town would assert exactly the
   // error the data went out of its way to record.
   if (listing.proximity === 'grundy_county') {
-    node.address.addressRegion = 'MO';
+    // No `address` at all: a PostalAddress with no locality says nothing, and
+    // the containment node carries the geography properly.
     node.containedInPlace = { '@type': 'AdministrativeArea', name: 'Grundy County, Missouri' };
-  } else if (listing.city) {
-    node.address.addressLocality = listing.city;
-    if (listing.city === site.place.name && listing.zip) node.address.postalCode = listing.zip;
+  } else {
+    node.address = {
+      '@type': 'PostalAddress',
+      addressRegion: 'MO',
+      addressCountry: 'US',
+    };
+    if (listing.city) {
+      node.address.addressLocality = listing.city;
+      if (listing.city === site.place.name && listing.zip) node.address.postalCode = listing.zip;
+    }
+    // Only place a record inside the town when the record is actually in it.
+    // This assignment used to be unconditional and silently overwrote the
+    // county node set above, so every out-of-town record still claimed Trenton.
+    if (!listing.city || listing.city === site.place.name) {
+      node.containedInPlace = { '@id': `${site.url}/#place` };
+    }
   }
 
   if (category) {
@@ -277,8 +286,6 @@ export function listingGraph(site, listing, category) {
   // strongest signal available that this page describes the same entity as
   // that domain rather than competing with it.
   if (listing.website && !(listing.disputed || []).includes('website')) node.sameAs = [listing.website];
-  node.containedInPlace = { '@id': `${site.url}/#place` };
-
   return node;
 }
 

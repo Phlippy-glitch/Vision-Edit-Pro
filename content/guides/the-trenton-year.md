@@ -6,7 +6,7 @@ description: "Trenton, MO by the rules that set the dates: third weekend of Octo
 summary: "The recurring shape of a year in Trenton, Missouri, written as recurrence rules so the page does not go stale."
 published: "2026-08-15"
 updated: "2026-08-15"
-related: ["weekend-in-trenton", "crowder-state-park", "local-news"]
+related: ["things-to-do-in-trenton-mo", "crowder-state-park", "local-news"]
 places: ["sesquicentennial-park", "main-street-trenton", "north-central-missouri-fairgrounds-rock-barn", "trenton-area-chamber-of-commerce", "grundy-county-museum", "trenton-family-aquatic-center", "barnes-greenhouses", "black-silo-winery", "crowder-state-park-campground", "five-points-alive", "rotary-club-of-trenton"]
 sources:
   - url: "https://www.trentonmochamber.com/missouri-day-festival"
@@ -96,4 +96,4 @@ Every date, every season boundary and every recurrence rule on this page. We hav
 
 ## Related pages
 
-[A weekend in Trenton](/guides/weekend-in-trenton/) · [Crowder State Park, from Trenton](/guides/crowder-state-park/) · [How to follow local news](/guides/local-news/)
+[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [Crowder State Park, from Trenton](/guides/crowder-state-park/) · [How to follow local news](/guides/local-news/)

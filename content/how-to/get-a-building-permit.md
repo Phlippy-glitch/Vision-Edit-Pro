@@ -1,6 +1,6 @@
 ---
 slug: get-a-building-permit
-title: "Getting a building permit in Trenton, MO"
+title: "How to Get a Building Permit in Trenton, MO"
 h1: "How to get a building permit in Trenton"
 description: "Whether a Trenton, MO project needs a permit depends first on city limits. The order to do it in, what to have ready, and what to ask before work starts."
 summary: "The sequence for a Trenton building permit, the city-limits question that governs it, and the inspection mistakes that cost the most to undo."

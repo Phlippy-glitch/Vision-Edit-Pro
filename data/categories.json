@@ -500,7 +500,7 @@
           "note": "In Grundy County, not in Trenton. Site counts and hookup counts came from a third-party camping site and are not published."
         }
       ],
-      "index": false,
+      "index": true,
       "order": 11
     }
   ]

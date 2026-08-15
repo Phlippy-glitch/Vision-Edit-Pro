@@ -6,7 +6,7 @@ description: "The dates we can attribute in Trenton, MO — an 1891 library, a 1
 summary: "A dated, sourced chronology of Trenton and Grundy County, Missouri, with an honest account of what our sources do not contain."
 published: "2026-08-15"
 updated: "2026-08-15"
-related: ["weekend-in-trenton", "local-news", "is-trenton-a-good-place-to-live"]
+related: ["things-to-do-in-trenton-mo", "local-news", "is-trenton-a-good-place-to-live"]
 places: ["grundy-county-museum", "grundy-county-courthouse", "grundy-county-jewett-norris-library", "st-philips-episcopal-church", "north-central-missouri-fairgrounds-rock-barn", "riverside-country-club", "btc-bank", "trenton-area-chamber-of-commerce", "trenton-republican-times", "nestle-trenton-plant", "trenton-municipal-airport"]
 sources:
   - url: "https://grundycountymo.com/wordpress/buildings-and-grounds/"
@@ -109,4 +109,4 @@ Every date above, in the sense this site means it: we have not opened a single o
 
 ## Related pages
 
-[A weekend in Trenton](/guides/weekend-in-trenton/) · [How to follow local news](/guides/local-news/) · [Is Trenton a good place to live?](/guides/is-trenton-a-good-place-to-live/)
+[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [How to follow local news](/guides/local-news/) · [Is Trenton a good place to live?](/guides/is-trenton-a-good-place-to-live/)

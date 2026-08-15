@@ -1,6 +1,6 @@
 ---
 slug: trash-and-recycling
-title: "Trash and recycling in Trenton, MO"
+title: "Trash and Recycling in Trenton, MO"
 h1: "How to sort out trash and recycling in Trenton"
 description: "Trenton, MO contracts residential collection out and bills it through the city utility. Who to call for a missed pickup, and who for a charge you dispute."
 summary: "Who collects, who bills and who sets the contract for Trenton residential trash and recycling — and why those are three different phone calls."

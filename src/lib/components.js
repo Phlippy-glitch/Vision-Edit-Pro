@@ -184,8 +184,17 @@ export function emergencyNote(rec) {
  * silently discarded the most safety-relevant thing a record carried.
  */
 export function researchNote(rec) {
-  if (!rec.notes) return '';
-  return `<p class="callout"><span class="callout__title">Worth knowing</span>${esc(rec.notes)}</p>`;
+  // `notes` is internal free text: research working, build directives, and —
+  // critically — the conflicting values that the disputed-field gate exists to
+  // withhold. Rendering it verbatim republished both of the hospital's
+  // conflicting addresses in a callout box, defeating the single best judgment
+  // call in the dataset.
+  //
+  // So nothing from `notes` is ever rendered. A reader-facing warning has to be
+  // written as `caution`, and verify.js holds that field to the same standard
+  // as every other published string.
+  if (!rec.caution) return '';
+  return `<p class="callout"><span class="callout__title">Worth knowing</span>${esc(rec.caution)}</p>`;
 }
 
 export function seasonalNote(rec) {

@@ -1,6 +1,6 @@
 ---
 slug: find-local-news
-title: "Finding local news in Trenton, MO"
+title: "How to Find Local News in Trenton, MO"
 h1: "How to find local news in Trenton"
 description: "The newspaper Trenton, MO had held since 1864 closed in June 2025, and its site still ranks. Which outlets are live now, and where civic notices originate."
 summary: "Which Trenton and Grundy County news sources are live, which one is a search-results trap, and how to check something time-critical."

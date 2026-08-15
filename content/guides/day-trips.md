@@ -6,7 +6,7 @@ description: "Where people actually drive from Trenton, MO: a state park, a lice
 summary: "The destinations our sources connect to Trenton, Missouri, why people drive to each, and why this page prints no distances."
 published: "2026-08-15"
 updated: "2026-08-15"
-related: ["crowder-state-park", "health-care", "weekend-in-trenton"]
+related: ["crowder-state-park", "health-care", "things-to-do-in-trenton-mo"]
 places: ["crowder-state-park", "trenton-municipal-airport", "ncmc-barton-farm-campus"]
 sources:
   - url: "https://www.visittrentonmo.com/things-to-do"
@@ -34,7 +34,7 @@ You live in or near Trenton and you want somewhere to go for a day. Or you are v
 
 This page prints no distances and no drive times. Not one. We hold no cited mapping or state transport source, and a made-up mileage is the single most damaging small number a directory can publish — it decides when someone leaves the house. Put the destination into a mapping service yourself and check it against the day's road conditions. Everything else on this page is either a reason to go or a constraint on going, and neither of those needs a number.
 
-If you want the town itself rather than the country around it, read [a weekend in Trenton](/guides/weekend-in-trenton/) instead.
+If you want the town itself rather than the country around it, read [things to do in Trenton](/guides/things-to-do-in-trenton-mo/) instead.
 
 ## The short version
 
@@ -80,4 +80,4 @@ Every distance, every drive time, every current opening pattern, and the operati
 
 ## Related pages
 
-[Crowder State Park, from Trenton](/guides/crowder-state-park/) · [Health care in Trenton](/guides/health-care/) · [A weekend in Trenton](/guides/weekend-in-trenton/)
+[Crowder State Park, from Trenton](/guides/crowder-state-park/) · [Health care in Trenton](/guides/health-care/) · [Things to do in Trenton](/guides/things-to-do-in-trenton-mo/)

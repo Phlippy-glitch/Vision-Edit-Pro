@@ -1,6 +1,6 @@
 ---
 slug: start-a-business-in-trenton
-title: "Starting a business in Trenton, MO"
+title: "How to Start a Business in Trenton, MO"
 h1: "How to start a business in Trenton"
 description: "State, county and city each want something different before a Trenton, MO business opens. The order that avoids re-work, and what to ask each office."
 summary: "The order of registrations, licenses and inspections for a new Trenton business, and the local offices worth calling before you sign a lease."

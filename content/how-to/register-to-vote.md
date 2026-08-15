@@ -1,6 +1,6 @@
 ---
 slug: register-to-vote
-title: "Registering to vote in Trenton, MO"
+title: "How to Register to Vote in Trenton, MO"
 h1: "How to register to vote in Trenton"
 description: "The Grundy County Clerk handles voter registration and polling places for Trenton, MO. What to bring, what closes before election day, and what to ask."
 summary: "Where a Trenton resident registers to vote, what to have with you, and the deadlines and ID questions to settle before an election rather than at the polls."

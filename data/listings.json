@@ -1491,7 +1491,8 @@
         }
       ],
       "last_verified_at": "2026-08-15",
-      "notes": "A July 2025 college athletics release reported the building undergoing renovations. That report is over a year old, so status is held at unknown rather than renovating. Confirm availability before promoting it as bookable. A front-desk extension (1450) appeared in one source and is not published."
+      "notes": "A July 2025 college athletics release reported the building undergoing renovations. That report is over a year old, so status is held at unknown rather than renovating. Confirm availability before promoting it as bookable. A front-desk extension (1450) appeared in one source and is not published.",
+      "caution": "A college athletics release from mid-2025 described the building as undergoing renovation. That report is over a year old and we could not establish which facilities are currently available, so check before planning around it."
     },
     {
       "slug": "grundy-county-jewett-norris-library",
@@ -2408,7 +2409,8 @@
         }
       ],
       "last_verified_at": "2026-08-15",
-      "notes": "Whether the course is open to public play or members only was not confirmed, and that is the single fact a visiting golfer needs. Do not present it as publicly playable."
+      "notes": "Whether the course is open to public play or members only was not confirmed, and that is the single fact a visiting golfer needs. Do not present it as publicly playable.",
+      "caution": "We could not establish whether the course is open to public play or is members only — which is the one thing a visiting golfer needs to know. Call before you turn up with clubs."
     },
     {
       "slug": "north-central-missouri-fairgrounds-rock-barn",
@@ -2890,7 +2892,8 @@
         }
       ],
       "last_verified_at": "2026-08-15",
-      "notes": "The record model must tolerate a listing with no location at all."
+      "notes": "The record model must tolerate a listing with no location at all.",
+      "caution": "We found no location for this at all — not a street address, not a district, nothing. It may operate from a market stall, from home, or online. Ask before you go looking for it."
     },
     {
       "slug": "caseys",
@@ -2928,7 +2931,8 @@
         }
       ],
       "last_verified_at": "2026-08-15",
-      "notes": "No address was found. This chain often has more than one store per town, so this record must not be presented as the only location."
+      "notes": "No address was found. This chain often has more than one store per town, so this record must not be presented as the only location.",
+      "caution": "Chains like this often run more than one store in a town, and we only found evidence of one. Treat this as one location rather than the only one."
     },
     {
       "slug": "hy-vee",
@@ -3170,7 +3174,8 @@
         }
       ],
       "last_verified_at": "2026-08-15",
-      "notes": "Only store 25633 was confirmed. The chain's store directory implies Trenton may have more than one location, so this record must not be presented as the only one."
+      "notes": "Only store 25633 was confirmed. The chain's store directory implies Trenton may have more than one location, so this record must not be presented as the only one.",
+      "caution": "Our sources evidenced a single store, but the chain's own directory suggests Trenton may have more than one. Treat this as one location rather than the only one."
     },
     {
       "slug": "klinginsmith-home-center",

@@ -178,6 +178,23 @@ function checkRecord(rec, kind) {
     fail('disputed-address', `${id} publishes an address, but two conflicting addresses exist`);
   }
 
+  // --- reader-facing caution ----------------------------------------------
+  // A caution is published prose and gets the same scrutiny as any other
+  // published field. It exists because rendering raw research `notes` leaked
+  // suppressed addresses and phone numbers into the page, so this field must
+  // never carry either, nor a directive written for the build team.
+  if (rec.caution) {
+    if (/\b\d{2,5}\s+(N|S|E|W|North|South|East|West)?\s*[A-Z][a-z]+\s+(St|Street|Ave|Avenue|Rd|Road|Blvd|Boulevard|Dr|Drive|Hwy|Highway|Ct|Court|Ln|Lane)\b/.test(rec.caution)) {
+      fail('caution-leaks-address', `${id} has a caution containing a street address`);
+    }
+    if (/\b\d{3}[.\s-]?\d{3}[.\s-]?\d{4}\b/.test(rec.caution)) {
+      fail('caution-leaks-phone', `${id} has a caution containing a phone number`);
+    }
+    if (/\b(the (record|data) model|the build|must tolerate|do not (ship|render)|TODO|the template)\b/i.test(rec.caution)) {
+      fail('caution-is-a-directive', `${id} has a caution written for the build team, not a reader`);
+    }
+  }
+
   // --- forbidden keys -----------------------------------------------------
   const bad = deepFindKey(rec, FORBIDDEN_KEYS, id);
   for (const hit of bad) fail('forbidden-key', `${hit} — ratings and review counts are never published`);

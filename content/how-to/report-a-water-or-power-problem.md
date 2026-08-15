@@ -1,6 +1,6 @@
 ---
 slug: report-a-water-or-power-problem
-title: "Reporting a water or power problem in Trenton, MO"
+title: "How to Report a Water or Power Problem in Trenton, MO"
 h1: "How to report a water or power problem in Trenton"
 description: "Outages, leaks and sewer backups in Trenton, MO: which provider to call, what they ask for, and where the utility's responsibility stops and yours starts."
 summary: "Who to call about an outage, leak or backup at a Trenton address, and the line between the utility's equipment and the property owner's."

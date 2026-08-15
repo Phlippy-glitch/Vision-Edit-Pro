@@ -1,6 +1,6 @@
 ---
 slug: get-a-library-card
-title: "Getting a library card in Trenton, MO"
+title: "How to Get a Library Card in Trenton, MO"
 h1: "How to get a library card in Trenton"
 description: "The Grundy County Jewett Norris Library serves Trenton, MO. What to bring, what a card usually unlocks beyond books, and the lookalike domain to avoid."
 summary: "What to take to the Grundy County Jewett Norris Library to open a card, what to ask about, and why we print no Saturday hours."

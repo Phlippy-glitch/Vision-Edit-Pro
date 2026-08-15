@@ -1,6 +1,6 @@
 ---
 slug: enroll-a-child-in-school
-title: "Enrolling a child in school in Trenton, MO"
+title: "How to Enroll a Child in School in Trenton, MO"
 h1: "How to enrol a child in school in Trenton"
 description: "Trenton R-IX takes PK-12 across three schools. The documents to gather first, the immunisation record lead time, and the spelling that breaks form searches."
 summary: "What enrolling a new student in Trenton R-IX involves, which school takes which grades, and the paperwork that has a lead time on it."

@@ -1,6 +1,6 @@
 ---
 slug: pay-your-utility-bill
-title: "Paying a Trenton, MO utility bill"
+title: "How to Pay a Trenton, MO Utility Bill"
 h1: "How to pay your Trenton utility bill"
 description: "Which office bills a Trenton, MO address, what every payment route asks for first, and the five questions worth asking before your first late penalty."
 summary: "How a Trenton utility payment actually works, what the statement itself answers, and what to ask the utility office when it does not."

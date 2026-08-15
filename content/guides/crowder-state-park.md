@@ -6,7 +6,7 @@ description: "What to check before driving to Crowder State Park in Grundy Count
 summary: "A practical page for the drive out to Crowder State Park in Grundy County, built from the state parks agency's own description."
 published: "2026-08-15"
 updated: "2026-08-15"
-related: ["weekend-in-trenton", "day-trips", "the-trenton-year"]
+related: ["things-to-do-in-trenton-mo", "day-trips", "the-trenton-year"]
 places: ["crowder-state-park", "crowder-state-park-campground"]
 sources:
   - url: "https://mostateparks.com/park/crowder-state-park"
@@ -85,4 +85,4 @@ The park's acreage, the lake's size, any address, any fee, any trail-level rule,
 
 ## Related pages
 
-[A weekend in Trenton](/guides/weekend-in-trenton/) · [Day trips from Trenton](/guides/day-trips/) · [The Trenton year, month by month](/guides/the-trenton-year/)
+[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [Day trips from Trenton](/guides/day-trips/) · [The Trenton year, month by month](/guides/the-trenton-year/)

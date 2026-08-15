@@ -1,8 +1,8 @@
 ---
-slug: weekend-in-trenton
-title: "A weekend in Trenton, Missouri"
-h1: "A weekend in Trenton, Missouri"
-description: "What two unhurried days in Trenton, MO can hold — the park, the county museum, a walkable Main Street — and the three closure patterns that decide it."
+slug: things-to-do-in-trenton-mo
+title: "Things to Do in Trenton, MO"
+h1: "Things to do in Trenton, Missouri"
+description: "What there is to do in Trenton, MO — the park, the county museum, a walkable Main Street — and the three closure patterns that decide your day."
 summary: "An honest, unhurried two-day shape for Trenton, Missouri, written around what is open rather than what looks good in a list."
 published: "2026-08-15"
 updated: "2026-08-15"

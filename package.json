@@ -1,0 +1,17 @@
+{
+  "name": "trenton-mo-directory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local directory for Trenton, Missouri — static site generated from verified, sourced data.",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.js",
+    "verify": "node src/verify.js",
+    "serve": "node src/serve.js",
+    "dev": "npm run build && npm run serve"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

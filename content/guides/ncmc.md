@@ -25,14 +25,14 @@ faq:
   - q: "Can the public use the Ketcham Community Center?"
     a: "The college describes it as an athletic and community facility used for college sports, physical education classes, commencement and community activities, and states that memberships are available. A July 2025 college athletics release reported renovation work; that report is over a year old, so confirm current availability with the college before you plan around it."
   - q: "How many students attend NCMC?"
-    a: "We publish no enrolment number. The figures available to us carried no current, dated source we could stand behind. The college publishes its own enrolment data, and that is the version to quote."
+    a: "We publish no enrollment number. The figures available to us carried no current, dated source we could stand behind. The college publishes its own enrollment data, and that is the version to quote."
 ---
 
 ## Who this is for
 
 Two readers, and the page serves both. If you are considering the college, this is what the town around it does and does not offer. If you live in Trenton and have never set foot on campus, this is the part of the college that is a town amenity rather than a student one.
 
-It is not an admissions page and it is not a course catalogue. We hold no programme lists, no tuition, no deadlines and no enrolment figure, and we would rather point you at the college's own pages than paraphrase them into something subtly wrong.
+It is not an admissions page and it is not a course catalog. We hold no program lists, no tuition, no deadlines and no enrollment figure, and we would rather point you at the college's own pages than paraphrase them into something subtly wrong.
 
 ## The short version
 
@@ -42,13 +42,13 @@ It is not an admissions page and it is not a course catalogue. We hold no progra
 4. Teams are the Pirates. The baseball home field is at [Eastside Park](/place/eastside-park/), a city park.
 5. The [Ketcham Community Center](/place/ncmc-ketcham-community-center/) is a college facility with community use and available memberships — confirm its current state before you count on it.
 6. A student without a car should plan around a downtown campus, one supermarket and a public library within the town.
-7. For anything about cost, admission or programmes, use the college's own site. We publish none of it.
+7. For anything about cost, admission or programs, use the college's own site. We publish none of it.
 
 ## What the college is, in its own description
 
 The college describes itself as a public community college headquartered in downtown Trenton, offering transfer programs, career programs, adult education and student support services. Its athletics teams are the Pirates.
 
-Two things follow for a resident. A community college headquartered in a town of a few thousand is a significant local employer as well as an education provider. And it means the town holds a route to a two-year credential, a career programme or adult education without anybody having to move — which is not the norm for towns this size and is one of the more consequential facts on this whole site.
+Two things follow for a resident. A community college headquartered in a town of a few thousand is a significant local employer as well as an education provider. And it means the town holds a route to a two-year credential, a career program or adult education without anybody having to move — which is not the norm for towns this size and is one of the more consequential facts on this whole site.
 
 ## The campuses, and why the distinction matters
 
@@ -82,11 +82,11 @@ Transport: a downtown campus is walkable from downtown addresses. Anything beyon
 
 ## Athletics and public events
 
-The Pirates play, the community center hosts commencement, and the fairgrounds and the school performing arts venue carry other public events in the town. Schedules for all of these live with their organisers, and we publish none of them, because a wrong date on a game or a ceremony sends someone out for nothing. The college's athletics site carries its own calendar.
+The Pirates play, the community center hosts commencement, and the fairgrounds and the school performing arts venue carry other public events in the town. Schedules for all of these live with their organizers, and we publish none of them, because a wrong date on a game or a ceremony sends someone out for nothing. The college's athletics site carries its own calendar.
 
 ## What we could not confirm
 
-Enrolment, programmes, tuition, term dates, membership terms, facility hours, the current renovation status of the community center, and the direction of the farm campus from town. We have not opened the college's pages; the descriptions here reached us through search results. If you study or work there and something is out of date, [tell us](/submit/).
+Enrollment, programs, tuition, term dates, membership terms, facility hours, the current renovation status of the community center, and the direction of the farm campus from town. We have not opened the college's pages; the descriptions here reached us through search results. If you study or work there and something is out of date, [tell us](/submit/).
 
 ## Related pages
 

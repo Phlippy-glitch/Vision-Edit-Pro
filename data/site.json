@@ -5,9 +5,14 @@
   "url": "https://phlippy-glitch.github.io/Vision-Edit-Pro",
   "base": "/Vision-Edit-Pro/",
   "descriptionFallback": "A sourced directory of businesses, public offices and places in Trenton, Missouri, the county seat of Grundy County. Every entry names where it came from.",
-  "ogImage": "assets/og.svg",
+  "ogImage": "assets/og.png",
   "ogImageAlt": "Trenton, Missouri Directory",
   "repoIssuesUrl": "https://github.com/Phlippy-glitch/Vision-Edit-Pro/issues/new",
+
+  "//contact": "Set either of these and the submit page switches to it automatically. A business owner will use an email address or a form; almost none will file a GitHub issue, and that route is the project's actual verification strategy — so this is the highest-value setting in this file.",
+  "contactEmail": null,
+  "submitFormUrl": null,
+
   "place": {
     "name": "Trenton",
     "zip": "64683",

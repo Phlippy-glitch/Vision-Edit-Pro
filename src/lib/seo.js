@@ -23,10 +23,22 @@ export function absolute(site, path) {
  */
 export function buildTitle(pageTitle, site, { isHome = false } = {}) {
   if (isHome) return site.titleHome;
-  const suffix = ` | ${site.brandShort}`;
-  const room = 62 - suffix.length;
   const head = oneline(pageTitle);
-  return `${head.length > room ? truncate(head, room) : head}${suffix}`;
+  const suffix = ` | ${site.brandShort}`;
+
+  // The brand is the expendable part, not the geography.
+  //
+  // Budgeting the suffix first and truncating the title to fit was cutting
+  // ", Trenton MO" off 46 of 139 titles — removing the single token the whole
+  // site competes on, and collapsing two different pages onto identical
+  // titles. So: append the brand only when it fits, and when the title does
+  // not already carry the town's name. A title that says "Trenton" twice
+  // wastes the same budget it was trying to protect.
+  const mentionsTown = /trenton/i.test(head);
+  if (mentionsTown || head.length + suffix.length > 62) {
+    return head.length > 62 ? truncate(head, 62) : head;
+  }
+  return `${head}${suffix}`;
 }
 
 /**
@@ -76,6 +88,9 @@ export function head({
     `<meta property="og:description" content="${esc(desc)}">`,
     `<meta property="og:url" content="${esc(canonical)}">`,
     `<meta property="og:image" content="${esc(ogImage)}">`,
+    '<meta property="og:image:width" content="1200">',
+    '<meta property="og:image:height" content="630">',
+    '<meta property="og:image:type" content="image/png">',
     `<meta property="og:image:alt" content="${esc(site.ogImageAlt)}">`,
     '<meta property="og:locale" content="en_US">',
     '<meta name="twitter:card" content="summary_large_image">',
@@ -234,14 +249,34 @@ export function listingGraph(site, listing, category) {
   // in New Jersey, Michigan and Georgia.
   node.address = {
     '@type': 'PostalAddress',
-    addressLocality: listing.city || site.place.name,
     addressRegion: 'MO',
     addressCountry: 'US',
   };
+  // Only claim a locality we can stand behind. A record flagged as sitting in
+  // the wider county — Crowder State Park, the Barton Farm campus — is not in
+  // Trenton, and defaulting it to the site's own town would assert exactly the
+  // error the data went out of its way to record.
+  if (listing.proximity === 'grundy_county') {
+    node.address.addressRegion = 'MO';
+    node.containedInPlace = { '@type': 'AdministrativeArea', name: 'Grundy County, Missouri' };
+  } else if (listing.city) {
+    node.address.addressLocality = listing.city;
+    if (listing.city === site.place.name && listing.zip) node.address.postalCode = listing.zip;
+  }
 
   if (category) {
-    node.isPartOf = { '@type': 'CollectionPage', name: category.name, url: absolute(site, category.path) };
+    // Categories are addressed by slug; `path` is only set on page records.
+    // Falling through to absolute(site, undefined) silently pointed every
+    // listing's isPartOf at the home page.
+    const categoryPath = category.path || `/${category.slug}/`;
+    node.isPartOf = { '@type': 'CollectionPage', name: category.name, url: absolute(site, categoryPath) };
   }
+
+  // The operator's own site. This asserts identity, not facts — the objection
+  // that sinks telephone and streetAddress does not apply, and it is the
+  // strongest signal available that this page describes the same entity as
+  // that domain rather than competing with it.
+  if (listing.website && !(listing.disputed || []).includes('website')) node.sameAs = [listing.website];
   node.containedInPlace = { '@id': `${site.url}/#place` };
 
   return node;
@@ -273,8 +308,11 @@ export function articleGraph(site, article) {
     dateModified: article.updated || article.published,
     inLanguage: 'en-US',
     isAccessibleForFree: true,
-    publisher: { '@id': `${site.url}/#publisher` },
-    about: { '@id': `${site.url}/#place` },
+    // Named inline rather than by @id: the publisher node only exists in the
+    // home page's graph, so a bare reference from an article page dangles.
+    publisher: { '@type': 'Organization', '@id': `${site.url}/#publisher`, name: site.brand, url: `${site.url}/` },
+    author: { '@type': 'Organization', '@id': `${site.url}/#publisher`, name: site.brand, url: `${site.url}/` },
+    about: { '@type': 'Place', name: `${site.place.name}, Missouri` },
     mainEntityOfPage: { '@type': 'WebPage', '@id': absolute(site, article.path) },
   };
 }

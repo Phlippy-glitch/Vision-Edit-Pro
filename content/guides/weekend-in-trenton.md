@@ -27,7 +27,7 @@ faq:
   - q: "Where do visitors stay in Trenton?"
     a: "Our lodging records amount to one hotel in town, Cobblestone Inn & Suites, plus camping in Crowder State Park in Grundy County. That is the honest shape of it, and it is why booking ahead on a festival weekend matters more here than in a larger town."
   - q: "When is the Missouri Day Festival?"
-    a: "The rule our sources give is the third weekend of October, annually, organised by the Trenton Area Chamber of Commerce. We do not print dates for it, because a wrong date costs someone a drive. Check the organiser's own page for the current year."
+    a: "The rule our sources give is the third weekend of October, annually, organized by the Trenton Area Chamber of Commerce. We do not print dates for it, because a wrong date costs someone a drive. Check the organizer's own page for the current year."
 ---
 
 ## Who this is for, and who it isn't
@@ -58,7 +58,7 @@ We have not confirmed a season, a closing day or a set of hours with anyone on t
 
 ## Saturday, shaped rather than timed
 
-**Morning, in season.** Main Street Trenton runs a producer market on Saturday mornings in [Sesquicentennial Park](/place/sesquicentennial-park/), May through September, with vegetables, fruit, flowers, eggs, honey and baked goods per the organiser's own page. Outside those months it is not there, and no substitute exists.
+**Morning, in season.** Main Street Trenton runs a producer market on Saturday mornings in [Sesquicentennial Park](/place/sesquicentennial-park/), May through September, with vegetables, fruit, flowers, eggs, honey and baked goods per the organizer's own page. Outside those months it is not there, and no substitute exists.
 
 **Downtown on foot.** Main Street is walkable end to end. The shops we can source include [Main Street Mercantile](/place/main-street-mercantile/), a multi-vendor store, [Trenton's Main Street Mall](/place/trentons-main-street-mall/) for gifts, antiques and vintage, and [Downtown Depot](/place/downtown-depot/), which houses booths from local artisans — all three as described by the town's tourism site. Two ice cream businesses appear in the same source, [Uprooted Creamery](/place/uprooted-creamery/) and [Main Street Creamery Co.](/place/main-street-creamery-co/).
 
@@ -72,9 +72,9 @@ Sunday is the day the closure pattern bites hardest, and it is the day we can te
 
 ## The festival weekend, both ways
 
-The Missouri Day Festival is Trenton's biggest weekend, organised by the Chamber of Commerce and held at the [North Central Missouri Fairgrounds and Rock Barn](/place/north-central-missouri-fairgrounds-rock-barn/). The rule our sources give is the third weekend of October. That makes it the right weekend to come if meeting the town is the point, and the wrong one if crowds are what you are getting away from. Lodging in a town with one hotel goes first on that weekend.
+The Missouri Day Festival is Trenton's biggest weekend, organized by the Chamber of Commerce and held at the [North Central Missouri Fairgrounds and Rock Barn](/place/north-central-missouri-fairgrounds-rock-barn/). The rule our sources give is the third weekend of October. That makes it the right weekend to come if meeting the town is the point, and the wrong one if crowds are what you are getting away from. Lodging in a town with one hotel goes first on that weekend.
 
-We print no dates and no vendor count. The dates rotate, and four different vendor figures appear across our sources, which tells you what those figures are worth. The organiser publishes both; we link out.
+We print no dates and no vendor count. The dates rotate, and four different vendor figures appear across our sources, which tells you what those figures are worth. The organizer publishes both; we link out.
 
 ## Where to sleep
 

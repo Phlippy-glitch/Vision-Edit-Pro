@@ -27,7 +27,7 @@ faq:
   - q: "Why don't you publish the hospital's address?"
     a: "Our sources give two different street addresses for Wright Memorial Hospital, and a third appears in aggregator data. Rather than pick one and risk sending someone to the wrong place, we publish none and link to the operator's own page instead."
   - q: "Where do I get a birth certificate in Trenton?"
-    a: "The Grundy County Health Department describes issuing vital records including birth certificates, alongside immunisation and community clinics and the WIC programme. It is also where local food inspection records are published."
+    a: "The Grundy County Health Department describes issuing vital records including birth certificates, alongside immunisation and community clinics and the WIC program. It is also where local food inspection records are published."
   - q: "Are there specialists in Trenton?"
     a: "Saint Luke's describes a specialty clinic operated in connection with Wright Memorial Hospital that hosts visiting specialists. One source listed a roster of specialties, but we could not corroborate it, so we do not publish one. Ask the clinic which specialties visit and how often."
 ---
@@ -38,7 +38,7 @@ Do not route an emergency through this page, this site, or any directory. Our co
 
 ## Who this is for
 
-You live in or near Trenton, or you are about to, and you want to know what care exists in town and what will be a drive. This page covers the shape of local provision and the questions worth asking. It publishes no phone numbers, no hours, no prices and — deliberately — no street address for the hospital. It is not medical advice, and it cannot tell you whether a service is running this week; every organisation named here publishes its own current information.
+You live in or near Trenton, or you are about to, and you want to know what care exists in town and what will be a drive. This page covers the shape of local provision and the questions worth asking. It publishes no phone numbers, no hours, no prices and — deliberately — no street address for the hospital. It is not medical advice, and it cannot tell you whether a service is running this week; every organization named here publishes its own current information.
 
 ## The short version
 
@@ -82,7 +82,7 @@ Question four is the one that changes a year of appointments into a manageable n
 
 The [Grundy County Health Department](/place/grundy-county-health-department/) is one of the strongest records in our whole dataset — the state health agency's registry and the department's own site describe it independently and agree. Between them they describe it issuing vital records including birth certificates, running immunisation and community clinics, administering WIC, and publishing local food inspection records.
 
-For a new resident, that is three separate errands in one building: the birth certificate a school enrolment asks for, the immunisation record it asks for next, and — if you are choosing where to eat — the inspection records the department publishes.
+For a new resident, that is three separate errands in one building: the birth certificate a school enrollment asks for, the immunisation record it asks for next, and — if you are choosing where to eat — the inspection records the department publishes.
 
 ## Pharmacy, dental and behavioural health
 
@@ -92,7 +92,7 @@ For a new resident, that is three separate errands in one building: the birth ce
 
 **Dental and behavioural health.** We hold no sourced dental practice and no sourced behavioural health provider in Trenton. That is a gap in our research, and we are not going to disguise it as an absence in the town. If you know of either, [tell us](/submit/) — this is the most useful correction anyone could send us on this page.
 
-**Support services.** [Green Hills Community Action Agency](/place/green-hills-community-action-agency/) runs family support programmes from a base in Trenton, and the [Grundy County Senior Center](/place/grundy-county-senior-center/) provides meals and services for older adults, as both are described by our sources. We hold no programme lists for either.
+**Support services.** [Green Hills Community Action Agency](/place/green-hills-community-action-agency/) runs family support programs from a base in Trenton, and the [Grundy County Senior Center](/place/grundy-county-senior-center/) provides meals and services for older adults, as both are described by our sources. We hold no program lists for either.
 
 ## What you will drive for, and how to plan it
 

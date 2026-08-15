@@ -684,3 +684,13 @@ tbody tr:hover { background: var(--bg-2); }
 .status-note { font-size: .93rem; }
 
 .facts dd .unknown a { color: var(--ink-3); }
+
+/* Locality line under a listing H1. Carries the town, ZIP and county on every
+   listing page — the geographic signal the whole site competes on, and the
+   correction for records that are not in Trenton at all. */
+.place-locality {
+  font-size: .875rem;
+  color: var(--ink-3);
+  margin: -.25rem 0 1rem;
+  letter-spacing: .01em;
+}

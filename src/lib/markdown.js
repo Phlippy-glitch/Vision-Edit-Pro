@@ -79,6 +79,25 @@ export function frontMatter(raw) {
 
 /* --- Inline ---------------------------------------------------------------- */
 
+/**
+ * Site base path for root-relative links written in Markdown.
+ *
+ * Guides write `/place/x/` because that is the site-absolute URL. When the site
+ * is served from a subpath the href has to carry it, or every editorial link
+ * lands off the deployment root. Held in module state so guide authors never
+ * have to think about the deployment shape.
+ */
+let linkBase = '/';
+export function setLinkBase(base) {
+  linkBase = base || '/';
+}
+
+function withBase(href) {
+  if (!href.startsWith('/') || href.startsWith('//')) return href;
+  if (linkBase === '/' || href.startsWith(linkBase)) return href;
+  return `${linkBase.replace(/\/$/, '')}${href}`;
+}
+
 function inline(text) {
   let out = esc(text);
 
@@ -92,9 +111,13 @@ function inline(text) {
   out = out.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (whole, label, href) => {
     const safe = /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(href);
     if (!safe) return whole;
+    // Outbound links here are editorial citations, not user-submitted content.
+    // `nofollow ugc` would misdescribe them, and these publishers — the county,
+    // the college, the state parks agency — are precisely the sites this
+    // directory wants to be seen citing rather than competing with.
     const external = /^https?:\/\//i.test(href);
-    const attrs = external ? ' rel="nofollow ugc noopener" target="_blank"' : '';
-    return `<a href="${href}"${attrs}>${label}</a>`;
+    const attrs = external ? ' rel="noopener" target="_blank"' : '';
+    return `<a href="${external ? href : withBase(href)}"${attrs}>${label}</a>`;
   });
 
   out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');

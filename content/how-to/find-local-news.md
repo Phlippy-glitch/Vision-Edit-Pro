@@ -38,9 +38,9 @@ The outlets to use instead: **[KTTN / KGOZ radio](/place/kttn-kgoz-radio/)** for
 
 **The weekly.** [The Trenton Telegraph](/place/trenton-telegraph/) launched in September 2025, owned by the Grundy County Industrial Development Corporation with CherryRoad Media providing management. Its own description covers schools and youth sports, town government, community events and business news. Note what a weekly means for timing: by the time news reaches you, it can be up to seven days old.
 
-**The bodies themselves.** For meetings, notices, closures and elections, the organisation publishes before anyone reports it — the [City of Trenton](/place/city-of-trenton/) for municipal matters, the [Grundy County Clerk](/place/grundy-county-clerk/) for elections and polling places, [Trenton R-IX](/place/trenton-r-ix-school-district/) for school calendars and board business.
+**The bodies themselves.** For meetings, notices, closures and elections, the organization publishes before anyone reports it — the [City of Trenton](/place/city-of-trenton/) for municipal matters, the [Grundy County Clerk](/place/grundy-county-clerk/) for elections and polling places, [Trenton R-IX](/place/trenton-r-ix-school-district/) for school calendars and board business.
 
-**Event organisers.** [Main Street Trenton](/place/main-street-trenton/) for downtown events and the market, and the Chamber for the town's festival. Organisers change dates; calendars that copy organisers do not always follow.
+**Event organizers.** [Main Street Trenton](/place/main-street-trenton/) for downtown events and the market, and the Chamber for the town's festival. Organisers change dates; calendars that copy organizers do not always follow.
 
 ## The one to be careful with
 
@@ -53,7 +53,7 @@ Why this matters more than a normal stale listing: a closed shop sends someone o
 1. Go to the responsible body first. A meeting notice, a closure or a deadline originates there.
 2. Check the radio group for anything already decided rather than merely scheduled.
 3. Check the weekly for the fuller account, allowing for its publication cycle.
-4. If two sources disagree on a date or a time, treat the organiser as correct and the reprint as stale.
+4. If two sources disagree on a date or a time, treat the organizer as correct and the reprint as stale.
 5. If it is urgent — a road closure, an outage, an emergency — call the responsible office rather than reading anything, this site included. For an emergency, call 911.
 
 ## What to ask, if you are calling around

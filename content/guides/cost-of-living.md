@@ -87,7 +87,7 @@ Question three is the one that catches people, because the declaration deadline 
 
 **Delivery and service call-outs.** Rural addresses routinely carry surcharges, minimum call-out fees, or a wait rather than a fee. Ask before you book.
 
-**Seasonality.** Several businesses here run a season. A budget built in July against a garden centre, a pool or a market that closes in October will not hold in January.
+**Seasonality.** Several businesses here run a season. A budget built in July against a garden center, a pool or a market that closes in October will not hold in January.
 
 ## On third-party cost-of-living numbers
 

@@ -79,7 +79,7 @@ export function sourceBlock(rec) {
     return `<li class="source">
         <p class="source__line"><em>Where this came from: ${publisherPhrase(s, rec.evidence)}, quoted in a search result. ${evidenceSuffix(rec.evidence)}</em></p>
         ${fields ? `<p class="source__covers">It is our source for ${esc(fields)}.</p>` : ''}
-        ${s.url ? `<p class="source__url"><a href="${esc(s.url)}" rel="nofollow ugc noopener" target="_blank">${esc(host)}</a>${s.retrieved_at ? ` <span class="muted">· looked up ${esc(displayDate(s.retrieved_at) || s.retrieved_at)}</span>` : ''}</p>` : ''}
+        ${s.url ? `<p class="source__url"><a href="${esc(s.url)}" rel="noopener" target="_blank">${esc(host)}</a>${s.retrieved_at ? ` <span class="muted">· looked up ${esc(displayDate(s.retrieved_at) || s.retrieved_at)}</span>` : ''}</p>` : ''}
       </li>`;
   });
 
@@ -158,6 +158,36 @@ export function statusNote(rec) {
   return `<p class="callout callout--${copy.cls === 'warn' ? 'warn' : ''} status-note">${esc(copy.text)}</p>`;
 }
 
+/**
+ * Emergency services carry no phone number by rule, because a wrong number
+ * there is a harm rather than a defect. That rule shipped without its other
+ * half: the pages rendered "Phone: Not confirmed" and said nothing else, which
+ * is worse than useless to someone who arrived in a hurry. The suppression and
+ * the substitute belong in the same component so they cannot be separated again.
+ */
+const EMERGENCY_PATTERN = /\b(police|sheriff|fire\s*(department|district|protection)|ambulance|emergency\s*management|dispatch)\b/i;
+
+export function isEmergencyService(rec) {
+  return EMERGENCY_PATTERN.test(rec.name || '')
+    || ['PoliceStation', 'FireStation', 'EmergencyService'].includes(rec.schemaType);
+}
+
+export function emergencyNote(rec) {
+  if (!isEmergencyService(rec)) return '';
+  return `<p class="callout callout--warn"><span class="callout__title">In an emergency, call 911</span>We publish no phone number for emergency services, because an unconfirmed number here could cost someone time they do not have. For non-urgent matters, find the current number on the operator's own page rather than ours.</p>`;
+}
+
+/**
+ * Research notes that qualify how a place may be used — "not publicly
+ * playable", "closed for renovation", "not the only location in town". These
+ * were being recorded in the data and then dropped by the templates, which
+ * silently discarded the most safety-relevant thing a record carried.
+ */
+export function researchNote(rec) {
+  if (!rec.notes) return '';
+  return `<p class="callout"><span class="callout__title">Worth knowing</span>${esc(rec.notes)}</p>`;
+}
+
 export function seasonalNote(rec) {
   if (!rec.seasonal) return '';
   const text = typeof rec.seasonal === 'string' ? rec.seasonal : (rec.seasonal.note || rec.seasonal.period);
@@ -166,6 +196,17 @@ export function seasonalNote(rec) {
 }
 
 /* --- Cards ---------------------------------------------------------------- */
+
+/**
+ * Compact form for sibling/related lists.
+ *
+ * Reprinting each summary on every sibling page put some descriptions on 30
+ * pages and left the thin listings ~20% unique. Name and link is all a
+ * "see also" needs, and it keeps the unique text on the page that owns it.
+ */
+export function listingLink(site, rec) {
+  return `<li><a href="${site.base}place/${esc(rec.slug)}/">${esc(rec.name)}</a></li>`;
+}
 
 export function listingCard(site, rec, { category = null } = {}) {
   const bits = [];
@@ -233,6 +274,8 @@ export function footer(site, categories) {
       <h2>About this site</h2>
       <ul>
         <li><a href="${site.base}about/how-we-source-this/">How we source this</a></li>
+        <li><a href="${site.base}about/open-questions/">What we could not confirm</a></li>
+        <li><a href="${site.base}sources/">Every source we used</a></li>
         <li><a href="${site.base}corrections/">Corrections</a></li>
         <li><a href="${site.base}submit/">Add or correct a listing</a></li>
       </ul>

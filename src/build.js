@@ -18,10 +18,12 @@ import {
   head, absolute, siteGraph, breadcrumbGraph, itemListGraph, listingGraph,
   faqGraph, articleGraph, eventGraph, sitemapXml, robotsTxt,
 } from './lib/seo.js';
-import { markdown, frontMatter, markdownToText } from './lib/markdown.js';
+import { markdown, frontMatter, markdownToText, setLinkBase } from './lib/markdown.js';
+import { canvas, drawText, encodePng } from './lib/png.js';
 import {
   disclosure, sourceBlock, corroboration, notConfirmed, correctionPath,
-  statusNote, seasonalNote, listingCard, header, footer, breadcrumbs,
+  statusNote, seasonalNote, listingCard, listingLink, header, footer, breadcrumbs,
+  emergencyNote, researchNote, isEmergencyService,
 } from './lib/components.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -56,7 +58,28 @@ const TODAY = new Date().toISOString().slice(0, 10);
 function listingIsThin(rec) {
   const hasContact = Boolean(rec.address || rec.phone || rec.website);
   const corroborated = (Number(rec.corroborated) || 1) > 1;
-  return !hasContact && !corroborated;
+  const hasSubstance = oneline(rec.summary || '').length >= 120;
+  return !hasContact && !corroborated && !hasSubstance;
+}
+
+/**
+ * Where a record actually is.
+ *
+ * Not every listing is in Trenton: one operates from Chillicothe, and several
+ * sit in the wider county rather than the town. Defaulting all of them to
+ * "Trenton, MO" in titles and headings asserted the error the data had
+ * deliberately recorded, so locality is derived once and used everywhere.
+ */
+function localityLabel(rec) {
+  if (rec.city && rec.city !== site.place.name) return `${rec.city}, MO`;
+  if (rec.proximity === 'grundy_county') return 'Grundy County, MO';
+  return `${site.place.name}, MO`;
+}
+
+function localitySubline(rec) {
+  if (rec.city && rec.city !== site.place.name) return `${rec.city}, Missouri — not in Trenton`;
+  if (rec.proximity === 'grundy_county') return 'Grundy County, Missouri — outside Trenton city limits';
+  return `Trenton, Missouri ${rec.zip || site.place.zip} · ${site.place.county}`;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -151,7 +174,10 @@ function renderListing(rec) {
         <div class="listing-layout">
           <div>
             <h1>${esc(rec.name)}</h1>
+            <p class="place-locality">${esc(localitySubline(rec))}</p>
             ${rec.summary ? `<p class="lede">${esc(rec.summary)}</p>` : `<p class="lede muted">No source told us what this is, so we have not written a description.</p>`}
+            ${emergencyNote(rec)}
+            ${researchNote(rec)}
             ${statusNote(rec)}
             ${seasonalNote(rec)}
             ${disputedNote}
@@ -160,7 +186,7 @@ function renderListing(rec) {
             ${correctionPath(site, { owner: true, slug: rec.slug })}
             ${related.length ? `
             <h2>Also in ${esc(primary ? primary.name.toLowerCase() : 'this category')}</h2>
-            <ul class="grid">${related.map((r) => listingCard(site, r)).join('\n')}</ul>` : ''}
+            <ul class="linklist">${related.map((r) => listingLink(site, r)).join('\n')}</ul>` : ''}
           </div>
           <aside class="listing-aside">
             <section class="factbox">
@@ -180,7 +206,12 @@ function renderListing(rec) {
   // Structured data is deliberately narrow. See docs/DECISIONS.md: we emit only
   // properties that cannot be wrong given the record exists, and we skip the
   // entity graph entirely for records our sources say may not be trading.
-  const emitEntity = !['closed', 'possibly_closed', 'disputed'].includes(rec.status);
+  // No entity graph for: records that may not be trading, emergency services
+  // (we publish no contact detail for them, so there is nothing to assert and
+  // a wrong assertion is a harm), or pages we are not asking to be indexed.
+  const emitEntity = !['closed', 'possibly_closed', 'disputed'].includes(rec.status)
+    && !isEmergencyService(rec)
+    && !noindex;
   const graphs = [
     breadcrumbGraph(site, crumbs),
     emitEntity ? listingGraph(site, { ...rec, path: pagePath }, primary) : null,
@@ -188,7 +219,7 @@ function renderListing(rec) {
 
   write(pagePath, layout({
     path: pagePath,
-    title: `${rec.name}, Trenton MO`,
+    title: `${rec.name}, ${localityLabel(rec)}`,
     description,
     body,
     crumbs,
@@ -279,7 +310,9 @@ function renderEvent(ev) {
         ${disclosure(site)}
         <h1>${esc(ev.name)}</h1>
         ${ev.summary ? `<p class="lede">${esc(ev.summary)}</p>` : ''}
-        ${ev.recurrence ? `<p class="callout"><span class="callout__title">When it runs</span>${esc(ev.recurrence)}${ev.startDate ? '' : ' We have no confirmed date for the next one.'}</p>` : ''}
+        ${ev.recurrence ? `<p class="callout"><span class="callout__title">When it runs</span>${esc(ev.recurrence)}${ev.startDate ? '' : '. Our sources give no specific dates, and where they gave conflicting ones we print none.'}</p>` : ''}
+        ${ev.startDate ? `<p class="callout"><span class="callout__title">Dates our sources give</span>${esc(displayDate(ev.startDate))}${ev.endDate && ev.endDate !== ev.startDate ? ` to ${esc(displayDate(ev.endDate))}` : ''}. Check with the organizer before planning around this — the pattern above outlasts any single year's dates.</p>` : ''}
+        ${researchNote(ev)}
         ${statusNote(ev)}
         ${corroboration(ev)}
         ${correctionPath(site, { slug: ev.slug })}
@@ -292,7 +325,13 @@ function renderEvent(ev) {
     description: ev.summary ? truncate(ev.summary, 150) : `${ev.name} in Trenton, Missouri.`,
     body,
     crumbs,
-    jsonld: [breadcrumbGraph(site, crumbs), eventGraph(site, { ...ev, path: pagePath })],
+    // schema.org Event requires startDate. Emitting one without it produces an
+    // invalid node, so events we hold only a recurrence pattern for get
+    // breadcrumbs and nothing else.
+    jsonld: [
+      breadcrumbGraph(site, crumbs),
+      ev.startDate ? eventGraph(site, { ...ev, path: pagePath }) : null,
+    ],
     ogType: 'article',
   }), { changefreq: 'monthly', priority: 0.6, lastmod: ev.last_verified_at || TODAY });
 }
@@ -346,6 +385,35 @@ function loadMarkdownDir(dir) {
     });
 }
 
+/**
+ * The routes by which someone can actually reach us.
+ *
+ * Generated rather than written into the page, because the honest answer
+ * changes with configuration: an owner will use an email address or a form, and
+ * almost none will file a GitHub issue. Whatever is configured is what the page
+ * offers, and when nothing better is configured the page says so plainly
+ * instead of implying a channel that does not work.
+ */
+function contactRoutes() {
+  const parts = [];
+  if (site.submitFormUrl) {
+    parts.push(`- **[Use the submission form](${site.submitFormUrl}).** It takes a minute and needs no account.`);
+  }
+  if (site.contactEmail) {
+    parts.push(`- **Email us at [${site.contactEmail}](mailto:${site.contactEmail}?subject=Trenton%20directory%20correction).** Tell us the listing name and what is wrong. If you own the business, say so — an owner's correction outranks every source we have.`);
+  }
+  if (!site.submitFormUrl && !site.contactEmail) {
+    parts.push(
+      'Being straight with you about the mechanism, since this page would otherwise promise more than it can do: **there is no submission form and no contact address set up yet.** This site is a set of static pages with no form handler behind it, and we would rather say that than point you at something that quietly goes nowhere.',
+      '',
+      `The one route that does work today is the public issue tracker for the code that builds this site: [file a correction](${site.repoIssuesUrl}). It is dated and public. It is also, frankly, a developer's tool — if you run a business and that is not a reasonable thing to ask of you, you are right, and this section will be replaced with an email address and a form as soon as there is someone to receive them.`,
+    );
+  } else {
+    parts.push(`- Prefer a paper trail in public? The issue tracker for the code behind this site also works: [file a correction](${site.repoIssuesUrl}).`);
+  }
+  return parts.join('\n');
+}
+
 function renderArticle(doc, { section, sectionLabel }) {
   const pagePath = section ? `/${section}/${doc.slug}/` : `/${doc.slug}/`;
   const crumbs = [
@@ -377,7 +445,7 @@ function renderArticle(doc, { section, sectionLabel }) {
         <h1>${esc(doc.h1 || doc.title)}</h1>
         ${doc.summary ? `<p class="lede">${esc(doc.summary)}</p>` : ''}
         <div class="prose">
-${markdown(doc.body)}
+${markdown(doc.body.replace('{{CONTACT_ROUTES}}', contactRoutes()))}
         </div>
         ${placeLinks.length ? `
         <section class="section">
@@ -606,6 +674,29 @@ function renderHome(guides) {
   }), { changefreq: 'weekly', priority: 1.0, lastmod: TODAY });
 }
 
+/** The Open Graph share card, drawn at 1200x630 with no external tooling. */
+function buildOgImage() {
+  const INK = [22, 25, 29];
+  const PAPER = [246, 245, 242];
+  const BLUE = [28, 90, 122];
+  const GREY = [98, 106, 117];
+  const GOLD = [138, 100, 20];
+
+  const cv = canvas(1200, 630, PAPER);
+  cv.rect(0, 0, 1200, 12, BLUE);
+
+  drawText(cv, 'TRENTON, MISSOURI', 80, 150, 9, INK);
+  drawText(cv, 'DIRECTORY OF GRUNDY COUNTY', 80, 260, 5, BLUE);
+
+  cv.rect(80, 350, 160, 5, GOLD);
+
+  drawText(cv, 'EVERY ENTRY NAMES THE SOURCE', 80, 410, 3, GREY);
+  drawText(cv, 'IT CAME FROM. NOTHING ON IT', 80, 460, 3, GREY);
+  drawText(cv, 'HAS BEEN CONFIRMED BY US.', 80, 510, 3, GREY);
+
+  return encodePng(cv.width, cv.height, cv.data);
+}
+
 function render404() {
   const html = layout({
     path: '/404',
@@ -628,6 +719,10 @@ function render404() {
 
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
+
+// Guides write site-absolute links like /place/x/; teach the renderer where
+// the site actually lives so they survive a subpath deployment.
+setLinkBase(site.base);
 
 const guides = loadMarkdownDir('content/guides');
 const howtos = loadMarkdownDir('content/how-to');
@@ -676,6 +771,10 @@ fs.mkdirSync(assetsOut, { recursive: true });
 for (const f of fs.readdirSync(path.join(ROOT, 'assets'))) {
   fs.copyFileSync(path.join(ROOT, 'assets', f), path.join(assetsOut, f));
 }
+
+// The share card, as a real raster file. Social platforms will not render an
+// SVG og:image, and in a town this size a shared link is a primary channel.
+fs.writeFileSync(path.join(assetsOut, 'og.png'), buildOgImage());
 // GitHub Pages otherwise strips directories beginning with an underscore and
 // runs Jekyll over the output; this opts out.
 fs.writeFileSync(path.join(DIST, '.nojekyll'), '');

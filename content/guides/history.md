@@ -25,7 +25,7 @@ sources:
     publisher: "Area Development"
 faq:
   - q: "When was Trenton, Missouri founded?"
-    a: "We do not publish a founding date. The town's tourism site describes incorporation in 1857, and we have not corroborated that against a second unrelated source or against the state historical record. Settlement, the townsite's earlier name and the organisation of Grundy County are all outside what our sources cover."
+    a: "We do not publish a founding date. The town's tourism site describes incorporation in 1857, and we have not corroborated that against a second unrelated source or against the state historical record. Settlement, the townsite's earlier name and the organization of Grundy County are all outside what our sources cover."
   - q: "Where can I research Grundy County family history?"
     a: "Start with the Grundy County Museum, the Grundy County Jewett Norris Library, and the county Recorder's office at the courthouse for recorded documents. The State Historical Society of Missouri holds county-level collections. We hold none of these records ourselves."
   - q: "How many places in Trenton are on the National Register of Historic Places?"
@@ -45,7 +45,7 @@ That distinction matters more here than on any other page of this site. Local hi
 3. A 1938 Works Progress Administration project on the fairgrounds still stands and still hosts events.
 4. The twentieth-century manufacturing story we can source is thin and recent: a plant sale in 2018, alongside a closure announcement affecting 282 positions.
 5. The newspaper that had covered the county since 1864 ceased in 2025 and was replaced by a new weekly that September.
-6. Settlement, the townsite's earlier names, the organisation of the county and the railroad era are **not** in our sources.
+6. Settlement, the townsite's earlier names, the organization of the county and the railroad era are **not** in our sources.
 7. The county museum, the library and the state historical society hold the actual record. This page does not.
 
 ## The dated chronology, with sources
@@ -56,7 +56,7 @@ Each entry names who says so. Where a date rests on one source, this page says s
 
 **1864 — a newspaper begins.** The Missouri Press Association's account of the paper's closure describes the [Trenton Republican-Times](/place/trenton-republican-times/) as having served Trenton and Grundy County from 1864.
 
-**1890 — a garden centre.** [Barnes Greenhouses](/place/barnes-greenhouses/) gives 1890 as its establishment date on its own site. Single source, and a founding year on a business's own site is a claim rather than a record.
+**1890 — a garden center.** [Barnes Greenhouses](/place/barnes-greenhouses/) gives 1890 as its establishment date on its own site. Single source, and a founding year on a business's own site is a claim rather than a record.
 
 **1891 — the library building.** The [Grundy County Jewett Norris Library](/place/grundy-county-jewett-norris-library/) occupies an 1891 Romanesque Revival brick and limestone building listed on the National Register of Historic Places. The library's own site and an encyclopaedia entry agree.
 
@@ -82,7 +82,7 @@ A real history of this place would open with things we do not hold, and pretendi
 
 - when the area was settled, or by whom;
 - what the townsite was called before it was called Trenton, or why the name changed;
-- when and how Grundy County was organised, or the origin of its name;
+- when and how Grundy County was organized, or the origin of its name;
 - when Trenton became the county seat, or whether that was ever contested;
 - the arrival of the railroad, which line it was, or what it did to the town's shape and economy;
 - the manufacturing arc across the twentieth century, of which we hold only its final decade.

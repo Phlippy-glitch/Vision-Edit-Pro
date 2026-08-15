@@ -25,7 +25,7 @@ Where sources disagreed, we did not choose a winner. We publish the disagreement
 
 We did not call anyone. We did not visit. Nobody working on this site has been to Trenton.
 
-That means **no fact on this site has been confirmed by us**, including facts that come from an organisation's own website. It also means we do not describe how anywhere looks, sounds or feels, and we never will unless we are describing a photograph we hold. We hold none.
+That means **no fact on this site has been confirmed by us**, including facts that come from an organization's own website. It also means we do not describe how anywhere looks, sounds or feels, and we never will unless we are describing a photograph we hold. We hold none.
 
 ## What we refuse to publish
 
@@ -53,4 +53,4 @@ Every page and every listing has a correction link, and the fastest route to a c
 
 ## Who we are not
 
-We are not the City of Trenton, Grundy County, the Chamber of Commerce, or any organisation listed here, and nothing on this site is endorsed by them. Where we link to an official page, it is the official page that is authoritative — not us.
+We are not the City of Trenton, Grundy County, the Chamber of Commerce, or any organization listed here, and nothing on this site is endorsed by them. Where we link to an official page, it is the official page that is authoritative — not us.

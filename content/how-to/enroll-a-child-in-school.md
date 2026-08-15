@@ -22,15 +22,15 @@ faq:
     a: "By grade band, according to the district's own material: S.M. Rissler Elementary takes PK-4 including the district preschool program, Trenton Middle School takes grades 5-8, and Trenton High School takes grades 9-12. Confirm with the district office, which is the authority on assignment."
   - q: "Is it Trenton R-IX or Trenton R-9?"
     a: "Both, in practice. State records give the legal name as Trenton R-IX with the roman numeral, while the district's own web address and local usage render it R-9. If a form or a database search comes back empty, try the other spelling before assuming the record does not exist."
-  - q: "What documents does enrolment need?"
+  - q: "What documents does enrollment need?"
     a: "Expect to be asked for a birth certificate, immunisation records, proof of your address, and the previous school's details. Any special education, health plan or custody paperwork should go in the same folder. The district office is the authority on its own list — ask before the appointment rather than at it."
 ---
 
 ## Start with the district office
 
-**Enrolment for a Trenton address runs through the [Trenton R-IX School District](/place/trenton-r-ix-school-district/), and the district office is the authority on which school your address feeds and what this year's process is.** Everything below is preparation, so that one appointment does the job.
+**Enrollment for a Trenton address runs through the [Trenton R-IX School District](/place/trenton-r-ix-school-district/), and the district office is the authority on which school your address feeds and what this year's process is.** Everything below is preparation, so that one appointment does the job.
 
-We print no enrolment deadline, office hour or fee. None has been checked with the district, and a school calendar moves without telling a directory.
+We print no enrollment deadline, office hour or fee. None has been checked with the district, and a school calendar moves without telling a directory.
 
 ## The name, before you fill in anything
 
@@ -55,10 +55,10 @@ For a family arriving with children in more than one band, that means up to thre
 
 ## The order to do it in
 
-1. Call the district office. Confirm which school, what the enrolment process is this year, and what to bring.
+1. Call the district office. Confirm which school, what the enrollment process is this year, and what to bring.
 2. Request records from the previous school in the same week. Records transfer takes as long as it takes, and starting it early is free.
 3. Book the health department for anything missing from the immunisation record.
-4. Attend the enrolment appointment with the folder complete.
+4. Attend the enrollment appointment with the folder complete.
 5. Ask about transport, meals and start times before you leave.
 6. For a high school student, ask about activities eligibility separately — transfer rules for athletics are set by the state association, not by the school.
 
@@ -89,4 +89,4 @@ Take it back to the district office first — assignment, records, transport and
 
 ## What we could not confirm
 
-Enrolment windows, document lists, office hours, transport, meal programs and eligibility rules. We have not opened the pages cited below or spoken to the district; we last looked at these sources on 15 August 2026. The district's own site is the authority on all of it. If you have enrolled a child here recently, [tell us](/submit/) what the list actually was.
+Enrollment windows, document lists, office hours, transport, meal programs and eligibility rules. We have not opened the pages cited below or spoken to the district; we last looked at these sources on 15 August 2026. The district's own site is the authority on all of it. If you have enrolled a child here recently, [tell us](/submit/) what the list actually was.

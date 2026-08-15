@@ -58,7 +58,7 @@ We also publish no trail mileages beyond the operator's own "more than 17 miles"
 
 ## Camping is a season, not a set of hours
 
-The state parks agency describes basic and electric campsites, an organised group camp and a special-use camping area, with a campground season of March through November and on-season services reported from April 15 to October 31.
+The state parks agency describes basic and electric campsites, an organized group camp and a special-use camping area, with a campground season of March through November and on-season services reported from April 15 to October 31.
 
 Read that as two different things. The season is when the campground is described as open. The services window is when the facilities that make camping comfortable are described as running. A March night and a June night are not the same trip, and the gap between those two date ranges is exactly where people get caught.
 

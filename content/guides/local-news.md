@@ -39,7 +39,7 @@ That last part is the whole point of this page. Trenton's news landscape changed
 3. The [Trenton Republican-Times](/place/trenton-republican-times/) closed after its June 19, 2025 issues. It is history, not a news source.
 4. Its former domain still resolves and still ranks in search. Do not mistake that for a live outlet.
 5. For civic decisions, the [City of Trenton](/place/city-of-trenton/), the [County Clerk](/place/grundy-county-clerk/) and the [school district](/place/trenton-r-ix-school-district/) publish their own notices.
-6. For downtown events, [Main Street Trenton](/place/main-street-trenton/) and the Chamber are the organisers, and organisers are more current than any calendar that copies them.
+6. For downtown events, [Main Street Trenton](/place/main-street-trenton/) and the Chamber are the organizers, and organizers are more current than any calendar that copies them.
 7. Cross-check anything time-critical against two of the above before you act on it.
 
 ## The outlets that are live
@@ -52,9 +52,9 @@ Worth saying plainly, because it is the sort of thing a directory usually flatte
 
 One deliberate omission: our sources give both September 11 and September 12, 2025 as the launch day, so we publish the month and not the day. A one-day discrepancy is trivial in itself and is a useful demonstration of the rule — where two publishers disagree, we print the part they agree on.
 
-**First-party civic sources.** For meetings, notices, elections and closures, the organisation itself publishes before anyone reports it: the [City of Trenton](/place/city-of-trenton/) for municipal matters, the [Grundy County Clerk](/place/grundy-county-clerk/) for elections and polling places, the [Trenton R-IX district](/place/trenton-r-ix-school-district/) for school calendars and board business, and [North Central Missouri College](/place/north-central-missouri-college/) for campus and athletics events.
+**First-party civic sources.** For meetings, notices, elections and closures, the organization itself publishes before anyone reports it: the [City of Trenton](/place/city-of-trenton/) for municipal matters, the [Grundy County Clerk](/place/grundy-county-clerk/) for elections and polling places, the [Trenton R-IX district](/place/trenton-r-ix-school-district/) for school calendars and board business, and [North Central Missouri College](/place/north-central-missouri-college/) for campus and athletics events.
 
-**Event organisers.** [Main Street Trenton](/place/main-street-trenton/) for downtown events and the market, the [Trenton Area Chamber of Commerce](/place/trenton-area-chamber-of-commerce/) for the Missouri Day Festival. Organisers change dates; calendars that copy organisers do not always follow.
+**Event organizers.** [Main Street Trenton](/place/main-street-trenton/) for downtown events and the market, the [Trenton Area Chamber of Commerce](/place/trenton-area-chamber-of-commerce/) for the Missouri Day Festival. Organisers change dates; calendars that copy organizers do not always follow.
 
 ## The outlet that is not live, and why it matters
 
@@ -74,10 +74,10 @@ What we did **not** do: open any of those pages, call either publication, or che
 
 ## How to check something time-critical
 
-1. Go to the organisation itself first — city hall, the county, the district, the organiser. A meeting notice originates there.
+1. Go to the organization itself first — city hall, the county, the district, the organizer. A meeting notice originates there.
 2. Check the radio group's coverage for anything decided rather than scheduled.
 3. Check the weekly for the fuller account, remembering that a weekly's news is up to seven days old by the time it reaches you.
-4. If two sources disagree on a date or a time, treat the organiser as correct and the reprint as stale.
+4. If two sources disagree on a date or a time, treat the organizer as correct and the reprint as stale.
 5. If it is genuinely urgent — a closure, an outage, an emergency — call the responsible office rather than reading anything, including us.
 
 ## What we could not confirm

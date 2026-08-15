@@ -47,7 +47,7 @@ This page prints no fee, no deposit, no office hour and no deadline. Every one o
 3. Ask what trash and recycling will add to that same utility statement.
 4. Change your address with the post office and with anyone who mails you anything with a deadline.
 5. Declare your personal property with the [Grundy County Assessor](/place/grundy-county-assessor/), then get whatever tax document the [Collector-Treasurer](/place/grundy-county-collector-treasurer/) issues for a new arrival.
-6. Only then deal with vehicle licensing and your driver licence, using the state's own office locator.
+6. Only then deal with vehicle licensing and your driver license, using the state's own office locator.
 7. Register to vote with the [Grundy County Clerk](/place/grundy-county-clerk/).
 8. Enrol children with [Trenton R-IX](/place/trenton-r-ix-school-district/), and collect immunisation records and birth certificates from the [Grundy County Health Department](/place/grundy-county-health-department/) first.
 9. Get a library card, and establish primary care before you need it.
@@ -86,7 +86,7 @@ Use the Department of Revenue's own office locator, and confirm the location the
 
 **Voting.** The [County Clerk](/place/grundy-county-clerk/) handles voter registration and polling places.
 
-**Schools.** Enrolment, grade bands and what to bring are covered in [schools in Trenton](/guides/schools/). Collect birth certificates and immunisation records first; the [Health Department](/place/grundy-county-health-department/) describes issuing vital records and running immunisation clinics.
+**Schools.** Enrollment, grade bands and what to bring are covered in [schools in Trenton](/guides/schools/). Collect birth certificates and immunisation records first; the [Health Department](/place/grundy-county-health-department/) describes issuing vital records and running immunisation clinics.
 
 **Library.** [Grundy County Jewett Norris Library](/place/grundy-county-jewett-norris-library/) serves the town and the county.
 
@@ -94,7 +94,7 @@ Use the Department of Revenue's own office locator, and confirm the location the
 
 ## What we could not confirm
 
-All of it, in the sense that matters: no office hour, deposit, fee, tax rate, contract date or service boundary on this page has been checked with anyone. We have not opened the pages we cite; they reached us through search results. The licence-office situation is the single largest open question here, and the utility service boundary is the second. If you complete any of these errands, [tell us what you found](/submit/) — that is how this page gets sharper.
+All of it, in the sense that matters: no office hour, deposit, fee, tax rate, contract date or service boundary on this page has been checked with anyone. We have not opened the pages we cite; they reached us through search results. The license-office situation is the single largest open question here, and the utility service boundary is the second. If you complete any of these errands, [tell us what you found](/submit/) — that is how this page gets sharper.
 
 ## Related pages
 

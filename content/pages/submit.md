@@ -25,14 +25,9 @@ We will not publish a home address or a personal mobile number, even if we found
 
 ## How to reach us right now
 
-Being straight with you about the mechanism, since this page would otherwise promise more than it can do: **this site is a set of static pages with no form handler behind it.** There is no submission form yet, no account system, and no automated email. Anyone who tells you otherwise on a site like this is describing software that does not exist.
+{{CONTACT_ROUTES}}
 
-What does work today:
-
-- **Open an issue** on the repository that builds this site. It is public, it is dated, and it is the fastest route: [file a correction](https://github.com/Phlippy-glitch/Vision-Edit-Pro/issues/new).
-- Include the listing name, what is wrong, and what it should say. If you are the owner, say so — an owner's correction outranks every source we have.
-
-When a form exists, this section will describe it and nothing else will change.
+Whichever route you use, include the listing name, what is wrong, and what it should say.
 
 ## Why we are asking you
 

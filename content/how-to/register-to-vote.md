@@ -32,7 +32,7 @@ This page prints no deadline, no fee and no office hour. None has been checked w
 
 ## What to have with you
 
-- **Proof of identity.** Expect to be asked for a Missouri driver licence or state ID number, or the last four digits of a Social Security number.
+- **Proof of identity.** Expect to be asked for a Missouri driver license or state ID number, or the last four digits of a Social Security number.
 - **Your current residential address**, including any apartment or unit. This is the field that assigns your polling place, and a mailing address is not always the same thing.
 - **Your former address**, if you have moved. It lets the clerk find and close the old registration rather than leave two.
 - **Your former name**, if it changed. Same reason.
@@ -54,7 +54,7 @@ This page prints no deadline, no fee and no office hour. None has been checked w
 
 **Moving is a registration event.** People register once, move three times, and never tell anyone. If your address on file is stale, the polling place you are sent to may not be yours.
 
-**Do not assume another office did it for you.** In many states a licence transaction offers registration; in Trenton that assumption is riskier, because the office serving the town closed in 2023 and those errands now happen elsewhere — see [licensing a vehicle](/how-to/license-your-vehicle/). Confirm with the clerk rather than assuming it travelled with a form you signed somewhere else.
+**Do not assume another office did it for you.** In many states a license transaction offers registration; in Trenton that assumption is riskier, because the office serving the town closed in 2023 and those errands now happen elsewhere — see [licensing a vehicle](/how-to/license-your-vehicle/). Confirm with the clerk rather than assuming it traveled with a form you signed somewhere else.
 
 **Students count as a special case.** Anyone living in Trenton to attend college has a choice of registration address to make deliberately, not by default, and the answer changes which local races they vote in.
 

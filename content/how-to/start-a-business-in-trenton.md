@@ -3,7 +3,7 @@ slug: start-a-business-in-trenton
 title: "Starting a business in Trenton, MO"
 h1: "How to start a business in Trenton"
 description: "State, county and city each want something different before a Trenton, MO business opens. The order that avoids re-work, and what to ask each office."
-summary: "The order of registrations, licences and inspections for a new Trenton business, and the local offices worth calling before you sign a lease."
+summary: "The order of registrations, licenses and inspections for a new Trenton business, and the local offices worth calling before you sign a lease."
 published: "2026-08-15"
 updated: "2026-08-15"
 related: ["get-a-building-permit", "pay-your-utility-bill", "license-your-vehicle"]
@@ -22,12 +22,12 @@ sources:
   - url: "https://ncmdevelopment.org/grundy-county/"
     publisher: "North Central Missouri Development Alliance"
 faq:
-  - q: "Do I need a city business licence in Trenton, Missouri?"
-    a: "Ask the City of Trenton, and ask early. Licence requirements are set in the municipal code, which is published online, and they vary by activity — a home-based service, a storefront and a food business are not treated the same. Do not infer the answer from another town."
+  - q: "Do I need a city business license in Trenton, Missouri?"
+    a: "Ask the City of Trenton, and ask early. License requirements are set in the municipal code, which is published online, and they vary by activity — a home-based service, a storefront and a food business are not treated the same. Do not infer the answer from another town."
   - q: "What does Grundy County want from a new business?"
-    a: "Two things worth asking about: whether a county merchant's licence applies to what you are selling, and how business personal property is declared. The Collector-Treasurer and the Assessor are the offices that answer those, and both are in the courthouse."
+    a: "Two things worth asking about: whether a county merchant's license applies to what you are selling, and how business personal property is declared. The Collector-Treasurer and the Assessor are the offices that answer those, and both are in the courthouse."
   - q: "Should I join the Chamber?"
-    a: "That is a judgement call, not a requirement. The Trenton Area Chamber of Commerce describes itself as maintaining a member directory and organising the Missouri Day Festival; Main Street Trenton describes a downtown directory and a facade grant program for downtown businesses. Ask each what a member actually gets before you pay for either."
+    a: "That is a judgement call, not a requirement. The Trenton Area Chamber of Commerce describes itself as maintaining a member directory and organizing the Missouri Day Festival; Main Street Trenton describes a downtown directory and a facade grant program for downtown businesses. Ask each what a member actually gets before you pay for either."
 ---
 
 ## Three levels of government, in this order
@@ -39,9 +39,9 @@ We print no fee and no processing time. None has been checked with any office, a
 ## The sequence
 
 1. **Register the business with the state.** Entity formation, a registered agent and your federal employer identification number come first. Local offices ask for them.
-2. **Register for state taxes** — sales tax and employer withholding if they apply to you. A sales tax number is often a prerequisite for a county merchant's licence.
-3. **Call the [City of Trenton](/place/city-of-trenton/) before you sign anything.** Ask whether the activity is permitted at that address, what licence it needs and whether the space needs an occupancy inspection. Zoning is the question that kills a lease.
-4. **Ask the county what it needs.** A merchant's licence, where it applies, is a county matter — ask the [Collector-Treasurer](/place/grundy-county-collector-treasurer/) — and business equipment is declared to the [Assessor](/place/grundy-county-assessor/).
+2. **Register for state taxes** — sales tax and employer withholding if they apply to you. A sales tax number is often a prerequisite for a county merchant's license.
+3. **Call the [City of Trenton](/place/city-of-trenton/) before you sign anything.** Ask whether the activity is permitted at that address, what license it needs and whether the space needs an occupancy inspection. Zoning is the question that kills a lease.
+4. **Ask the county what it needs.** A merchant's license, where it applies, is a county matter — ask the [Collector-Treasurer](/place/grundy-county-collector-treasurer/) — and business equipment is declared to the [Assessor](/place/grundy-county-assessor/).
 5. **Handle the premises.** Fit-out work usually means permits and inspections; see [getting a building permit](/how-to/get-a-building-permit/).
 6. **Open utility accounts in the business name** with [Trenton Municipal Utilities](/place/trenton-municipal-utilities/) if you are inside city limits, and ask about a commercial deposit while you are on the call.
 7. **Then market yourself.** [Main Street Trenton](/place/main-street-trenton/) and the [Chamber](/place/trenton-area-chamber-of-commerce/) come after you can legally open, not before.
@@ -58,7 +58,7 @@ We print no fee and no processing time. None has been checked with any office, a
 
 ## Where the local help is
 
-The [Trenton Area Chamber of Commerce](/place/trenton-area-chamber-of-commerce/) describes itself as maintaining a member directory and organising the town's festival. [Main Street Trenton](/place/main-street-trenton/) describes a downtown directory, downtown events, a Saturday farmers market and a facade grant program — that grant is worth asking about before you spend on a storefront, not after.
+The [Trenton Area Chamber of Commerce](/place/trenton-area-chamber-of-commerce/) describes itself as maintaining a member directory and organizing the town's festival. [Main Street Trenton](/place/main-street-trenton/) describes a downtown directory, downtown events, a Saturday farmers market and a facade grant program — that grant is worth asking about before you spend on a storefront, not after.
 
 For anything larger — a site, a building, workforce or incentive questions — the [North Central Missouri Development Alliance](/place/north-central-missouri-development-alliance/) and the [Green Hills Regional Planning Commission](/place/green-hills-regional-planning-commission/) are the regional bodies. Planning commissions administer grant programs that individual small towns cannot, which makes them a useful early call for a project with a building attached.
 
@@ -66,9 +66,9 @@ One caution: the development alliance's Grundy County profile in our sources is 
 
 ## What to ask, and who to ask
 
-**Ask the city:** Is this activity allowed at this address? What licence do I need, what does it cost, and how long does it take? Is an occupancy inspection required before I open?
+**Ask the city:** Is this activity allowed at this address? What license do I need, what does it cost, and how long does it take? Is an occupancy inspection required before I open?
 
-**Ask the county:** Does a merchant's licence apply to what I sell, and what do you need to issue one? How and when do I declare business personal property, and what happens if I open mid-year?
+**Ask the county:** Does a merchant's license apply to what I sell, and what do you need to issue one? How and when do I declare business personal property, and what happens if I open mid-year?
 
 **Ask the utility:** What deposit does a commercial account require, and what is the lead time for service in the business name?
 
@@ -76,8 +76,8 @@ One caution: the development alliance's Grundy County profile in our sources is 
 
 ## If it goes wrong
 
-An inspection failure or a licence refusal goes back to the office that issued it, in person, with the paperwork. What the rules say can be checked against the municipal code, published online and linked below. If one office contradicts another, get both answers in writing — that is the fastest route to a resolution and the only record you will have later.
+An inspection failure or a license refusal goes back to the office that issued it, in person, with the paperwork. What the rules say can be checked against the municipal code, published online and linked below. If one office contradicts another, get both answers in writing — that is the fastest route to a resolution and the only record you will have later.
 
 ## What we could not confirm
 
-Whether Trenton requires a general business licence, what any licence costs, which inspections apply to which sector, county merchant's licence requirements, and what Chamber or Main Street membership includes today. We have not opened the pages cited below or spoken to any of these offices; we last looked at these sources on 15 August 2026. If you have opened a business here recently, [tell us](/submit/) what the sequence was.
+Whether Trenton requires a general business license, what any license costs, which inspections apply to which sector, county merchant's license requirements, and what Chamber or Main Street membership includes today. We have not opened the pages cited below or spoken to any of these offices; we last looked at these sources on 15 August 2026. If you have opened a business here recently, [tell us](/submit/) what the sequence was.

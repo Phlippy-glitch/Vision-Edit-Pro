@@ -41,7 +41,7 @@ The City's material also states that the recycling fee is billed to every utilit
 ## Route your call correctly
 
 - **A missed or partial pickup, a damaged cart, a spill.** Call the hauler. They have the route sheet and the driver.
-- **A charge you do not recognise, a final bill, a service start or stop.** Call the utility billing office. The hauler cannot change a line on a bill it did not issue.
+- **A charge you do not recognize, a final bill, a service start or stop.** Call the utility billing office. The hauler cannot change a line on a bill it did not issue.
 - **Who holds the contract, what it covers, why the fee exists at all.** That is a City matter. Municipal codes are where the residential collection requirement usually lives, and Trenton's code is published online — linked below.
 
 If you are outside city limits, none of the above is automatic. Rural addresses often arrange collection privately, which means a subscription with a hauler rather than a line on a city utility bill. Ask before you assume the city arrangement follows the mailing address.

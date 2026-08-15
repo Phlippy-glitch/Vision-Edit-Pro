@@ -236,6 +236,7 @@ function outputGates() {
   }
 
   const canonicals = new Map();
+  const internalLinks = [];
 
   for (const file of files) {
     const html = fs.readFileSync(file, 'utf8');
@@ -288,14 +289,88 @@ function outputGates() {
       fail('disclosure-missing', `${rel} does not carry the sitewide sourcing disclosure`);
     }
 
-    // Structured data must parse. A malformed graph is worse than none.
+    // Structured data must parse, and must not contradict the page.
+    //
+    // Parsing alone was not enough: a graph asserted addressLocality "Trenton"
+    // on pages whose visible text said the place was outside the city limits.
+    // Structured data that disagrees with the rendered page is the textbook
+    // condition for a manual action, so the two are compared here.
     for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      let graph;
       try {
-        JSON.parse(m[1]);
+        graph = JSON.parse(m[1]);
       } catch (e) {
         fail('jsonld-invalid', `${rel}: ${e.message}`);
+        continue;
+      }
+
+      // The contradiction is specifically claiming Trenton on a page that says
+      // the place is not in Trenton. Naming a different locality is the fix,
+      // not the fault.
+      const locality = graph?.address?.addressLocality;
+      if (/^trenton$/i.test(locality || '') && /outside trenton city limits|not in trenton/i.test(text)) {
+        fail('jsonld-contradiction', `${rel} renders "not in Trenton" but its graph claims addressLocality "${locality}"`);
+      }
+
+      if (graph['@type'] === 'Event' && !graph.startDate) {
+        fail('jsonld-event-nodate', `${rel} emits an Event with no startDate, which is invalid`);
+      }
+
+      for (const key of ['telephone', 'openingHours', 'geo']) {
+        if (graph[key]) {
+          fail('jsonld-overreach', `${rel} emits "${key}", which travels without the page's caveat`);
+        }
+      }
+      if (graph?.address?.streetAddress) {
+        fail('jsonld-overreach', `${rel} emits a streetAddress in structured data`);
       }
     }
+
+    // Every internal link must resolve to something the build actually wrote.
+    // 240 editorial links once shipped without the site's base path, pointing
+    // off the deployment root — invisible in review, fatal in production.
+    for (const m of html.matchAll(/href="(\/[^"#?]*)"/g)) {
+      const href = m[1];
+      if (href.startsWith('//')) continue;
+      internalLinks.push({ from: rel, href });
+    }
+
+    // Emergency-service pages must tell the reader what to do instead. The
+    // rule that suppresses their phone numbers once shipped without its
+    // other half, leaving the pages saying nothing at all.
+    // Scoped to listing pages: an index that merely mentions the police
+    // department is not the page someone lands on in an emergency.
+    if (/\/place\//.test(rel) && /\b(police department|fire department|sheriff'?s? office)\b/i.test(text) && !/call 911/i.test(text)) {
+      fail('emergency-no-911', `${rel} is an emergency-service listing but never says to call 911`);
+    }
+  }
+
+  // Resolve collected links against what was written to disk.
+  const base = (read('data/site.json').base || '/').replace(/\/$/, '');
+  for (const { from, href } of internalLinks) {
+    if (base && !href.startsWith(`${base}/`)) {
+      fail('link-missing-base', `${from} links to ${href}, which drops the site base path "${base}/"`);
+      continue;
+    }
+    const rest = base ? href.slice(base.length) : href;
+    const target = path.join(ROOT, 'dist', rest);
+    const ok = fs.existsSync(target)
+      || fs.existsSync(path.join(target, 'index.html'))
+      || fs.existsSync(`${target}.html`);
+    if (!ok) fail('link-broken', `${from} links to ${href}, which was never built`);
+  }
+
+  // Two pages with the same title compete with each other in the SERP.
+  const titles = new Map();
+  for (const file of files) {
+    const html = fs.readFileSync(file, 'utf8');
+    const rel = path.relative(ROOT, file);
+    const t = /<title>([^<]*)<\/title>/.exec(html);
+    if (!t) continue;
+    if (titles.has(t[1])) {
+      fail('duplicate-title', `${rel} and ${titles.get(t[1])} share the title "${t[1]}"`);
+    }
+    titles.set(t[1], rel);
   }
 
   return files.length;

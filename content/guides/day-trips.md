@@ -2,7 +2,7 @@
 slug: day-trips
 title: "Day trips from Trenton, MO: what's within reach"
 h1: "Day trips from Trenton, Missouri"
-description: "Where people actually drive from Trenton, MO: a state park, a licence office, regional appointments — and why this page prints no mileage for any of them."
+description: "Where people actually drive from Trenton, MO: a state park, a license office, regional appointments — and why this page prints no mileage for any of them."
 summary: "The destinations our sources connect to Trenton, Missouri, why people drive to each, and why this page prints no distances."
 published: "2026-08-15"
 updated: "2026-08-15"
@@ -40,7 +40,7 @@ If you want the town itself rather than the country around it, read [a weekend i
 
 1. Look up the drive time yourself before you commit to a destination. We do not print it and neither should anyone who has not measured it.
 2. Check the day of the week before the destination. In small towns across this region, one weekday off is normal and Sunday closures are common.
-3. Take the errand trips seriously — a licence office or a specialist appointment out of the county is a real day trip here.
+3. Take the errand trips seriously — a license office or a specialist appointment out of the county is a real day trip here.
 4. For the outdoors, [Crowder State Park](/place/crowder-state-park/) in Grundy County is the nearest option and needs no planning beyond weather.
 5. For a longer outdoors day, the town's tourism site promotes Pershing State Park, which is not in Grundy County.
 6. Fill the fuel tank in town. Assume the return leg has fewer options open than the outbound one.
@@ -54,7 +54,7 @@ If you want the town itself rather than the country around it, read [a weekend i
 
 ## The errand trips, which are the ones people actually take
 
-**Vehicle licensing and driver licences.** Missouri's Department of Revenue announced the closure of the license office serving Trenton after May 31, 2023, with a transition to a new contractor, and named offices in Gallatin and Bethany among the alternatives at the time. Whether a local office is operating now is exactly the fact we cannot establish. Use the Department of Revenue's own office locator, and phone before you drive — an hour each way for a closed door is the failure mode this whole site exists to prevent.
+**Vehicle licensing and driver licenses.** Missouri's Department of Revenue announced the closure of the license office serving Trenton after May 31, 2023, with a transition to a new contractor, and named offices in Gallatin and Bethany among the alternatives at the time. Whether a local office is operating now is exactly the fact we cannot establish. Use the Department of Revenue's own office locator, and phone before you drive — an hour each way for a closed door is the failure mode this whole site exists to prevent.
 
 **Specialist medical appointments.** Trenton has a hospital and a specialty clinic that hosts visiting specialists; care beyond that is a drive. OATS Transit's Grundy County page describes runs to Kansas City, St. Joseph and Chillicothe, which is a fair map of where regional appointments land. See [health care in Trenton](/guides/health-care/) for what to ask before you book anything at distance.
 
@@ -76,7 +76,7 @@ OATS Transit publishes a Grundy County page describing demand-response service w
 
 ## What we could not confirm
 
-Every distance, every drive time, every current opening pattern, and the operating status of every destination named here. We have not opened the pages we cite; they came to us through search results. The licence-office question and the OATS schedule are the two live gaps most likely to cost a reader a wasted morning. If you make one of these trips, [tell us what you found](/submit/).
+Every distance, every drive time, every current opening pattern, and the operating status of every destination named here. We have not opened the pages we cite; they came to us through search results. The license-office question and the OATS schedule are the two live gaps most likely to cost a reader a wasted morning. If you make one of these trips, [tell us what you found](/submit/).
 
 ## Related pages
 

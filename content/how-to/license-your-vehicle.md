@@ -61,14 +61,14 @@ Expect some combination of the following, and confirm the list with the office y
 
 **Personal property tax is annual, and it bites next year.** A missed assessment cycle produces a missing receipt, and a missing receipt stops a renewal months later.
 
-**A driver licence and a vehicle licence are different transactions,** sometimes handled at the same counter and sometimes not. Ask which the office you are going to actually does.
+**A driver license and a vehicle license are different transactions,** sometimes handled at the same counter and sometimes not. Ask which the office you are going to actually does.
 
 **Treat every third-party "DMV" listing as suspect.** They are the reason this page exists. The state agency's own locator is the authority.
 
 ## What to ask when you call
 
 1. Is this office open on the day I want to come, and does it take walk-ins or appointments?
-2. Which transactions do you handle — titling, plates, renewals, licences?
+2. Which transactions do you handle — titling, plates, renewals, licenses?
 3. Exactly which documents do you need for my transaction, and what makes a title invalid at your counter?
 4. What is my titling deadline given the date on my bill of sale, and what is the penalty if I miss it?
 5. What forms of payment do you take, and what will the total be for this transaction?

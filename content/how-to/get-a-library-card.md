@@ -19,7 +19,7 @@ faq:
   - q: "What do I need to open a library card?"
     a: "Expect to be asked for photo identification and something showing your current address — a piece of addressed mail usually does it. A card for a child normally needs a parent or guardian present to sign. Confirm the list with the library before you go."
   - q: "Why does a different Trenton library site come up in search?"
-    a: "Because another town's library uses a similar name. The correct site for this one is grundycountylibrary.org. A similarly named trentonlib.org belongs to a library in a different Trenton, and following it will give you the wrong catalogue, the wrong hours and the wrong phone number."
+    a: "Because another town's library uses a similar name. The correct site for this one is grundycountylibrary.org. A similarly named trentonlib.org belongs to a library in a different Trenton, and following it will give you the wrong catalog, the wrong hours and the wrong phone number."
 ---
 
 ## The library, and what to take with you
@@ -32,7 +32,7 @@ Take **photo identification** and **something showing your current address** —
 
 We hold **conflicting information about the Saturday closing time**, so we print no hours at all for this library. That is not an oversight. Call, or check the library's own page, before you plan a Saturday around it.
 
-There is also a name trap worth knowing. The correct address for this library online is **grundycountylibrary.org**. A similarly named site belonging to a library in a **different Trenton** turns up in searches, and it will hand you the wrong catalogue, the wrong hours and the wrong phone number with complete confidence. Check the domain before you trust the page.
+There is also a name trap worth knowing. The correct address for this library online is **grundycountylibrary.org**. A similarly named site belonging to a library in a **different Trenton** turns up in searches, and it will hand you the wrong catalog, the wrong hours and the wrong phone number with complete confidence. Check the domain before you trust the page.
 
 ## What a card usually unlocks
 

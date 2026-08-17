@@ -1210,7 +1210,8 @@
         }
       ],
       "last_verified_at": "2026-08-17",
-      "notes": "Pharmacy counter hours and phone were observed on the chain's own pharmacy-finder page in the 2026-08-17 pass; they differ from store hours by design."
+      "notes": "Pharmacy counter hours and phone were observed on the chain's own pharmacy-finder page in the 2026-08-17 pass; they differ from store hours by design.",
+      "index": false
     },
     {
       "slug": "cleaver-dermatology",
@@ -3587,7 +3588,8 @@
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Only store 25633 was confirmed. The chain's store directory implies Trenton may have more than one location, so this record must not be presented as the only one.",
-      "caution": "Our sources evidenced a single store, but the chain's own directory suggests Trenton may have more than one. Treat this as one location rather than the only one."
+      "caution": "Our sources evidenced a single store, but the chain's own directory suggests Trenton may have more than one. Treat this as one location rather than the only one.",
+      "index": false
     },
     {
       "slug": "klinginsmith-home-center",

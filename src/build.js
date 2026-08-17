@@ -23,7 +23,7 @@ import { canvas, drawText, encodePng } from './lib/png.js';
 import {
   disclosure, sourceBlock, corroboration, notConfirmed, correctionPath,
   statusNote, seasonalNote, listingCard, listingLink, header, footer, breadcrumbs,
-  emergencyNote, researchNote, isEmergencyService,
+  emergencyNote, emergencyCareNote, researchNote, isEmergencyService,
 } from './lib/components.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -208,6 +208,14 @@ function renderListing(rec) {
     ? `<p class="callout callout--warn"><span class="callout__title">Our sources disagree</span>They give different values for ${esc((rec.disputed || []).join(', '))}. Rather than pick one, we publish neither${(rec.disputed || []).includes('name') ? ' as settled' : ''}.</p>`
     : '';
 
+  // Published corrections render on the record itself, not just the log. A
+  // silently-fixed error is the aggregator behavior this site indicts — and a
+  // reader who saved the wrong value can only match it if we print it, labeled.
+  const correctionNotes = corrections
+    .filter((c) => c.slug === rec.slug)
+    .map((c) => `<p class="callout callout--warn"><span class="callout__title">Corrected ${esc(displayDate(c.date) || c.date)}</span>${esc(c.what)}</p>`)
+    .join('\n');
+
   const countyChip = inGrundyCounty(rec)
     ? `<p class="county-chip"><a class="badge badge--neutral" href="${site.base}grundy-county/">In Grundy County</a></p>`
     : '';
@@ -226,10 +234,12 @@ function renderListing(rec) {
             ${countyChip}
             ${rec.summary ? `<p class="lede">${esc(rec.summary)}</p>` : `<p class="lede muted">No source told us what this is, so we have not written a description.</p>`}
             ${emergencyNote(rec)}
+            ${emergencyCareNote(rec)}
             ${researchNote(rec)}
             ${statusNote(rec)}
             ${seasonalNote(rec)}
             ${disputedNote}
+            ${correctionNotes}
             ${corroboration(rec)}
             ${cats.length ? `<p class="row">${cats.map((c) => `<a class="badge badge--accent" href="${site.base}${esc(c.slug)}/">${esc(c.name)}</a>`).join(' ')}</p>` : ''}
             ${correctionPath(site, { owner: true, slug: rec.slug })}
@@ -390,6 +400,14 @@ function renderEventsIndex() {
   const crumbs = [{ label: 'Home', path: '/' }, { label: 'Events', path: pagePath }];
   const sorted = [...events].sort((a, b) => a.name.localeCompare(b.name));
 
+  // The `events` category's members are the venues. This page owns /events/
+  // outright — the category is not rendered separately, which used to produce
+  // two renders of the same path (a duplicate sitemap entry, and venue
+  // listings that never appeared anywhere at all).
+  const venues = listings
+    .filter((l) => (l.categories || []).includes('events'))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   const body = `      <div class="wrap">
         ${disclosure(site)}
         <div class="page-head">
@@ -403,6 +421,11 @@ function renderEventsIndex() {
             ${ev.summary ? `<p class="card__desc">${esc(ev.summary)}</p>` : ''}
             <p class="card__meta">${ev.recurrence ? `<span>${esc(ev.recurrence)}</span>` : '<span>Timing not confirmed</span>'}</p>
           </article></li>`).join('\n')}</ul>
+        ${venues.length ? `
+        <section class="section--tight">
+          <h2>Where they happen</h2>
+          <ul class="grid">${venues.map((v) => listingCard(site, v)).join('\n')}</ul>
+        </section>` : ''}
         ${correctionPath(site)}
       </div>`;
 
@@ -711,6 +734,7 @@ function renderChanges() {
         <div class="page-head">
           <h1>What's open, what closed, and what moved in Trenton, MO</h1>
           <p class="page-head__lede">The changes our sources report, plus every record where sources conflict or a place runs seasonally. Kept honest by construction: most of this page is generated from the listings themselves.</p>
+          <p class="muted"><strong>Updated ${esc(displayDate(TODAY) || TODAY)}.</strong> If you are reading this from an old share, the current version lives at ${esc(site.url)}/changes/.</p>
         </div>
 
         <h2>Closed</h2>
@@ -1125,7 +1149,9 @@ const howtos = loadMarkdownDir('content/how-to');
 const chrome = loadMarkdownDir('content/pages');
 
 for (const rec of listings) renderListing(rec);
-for (const cat of categories) renderCategory(cat);
+// The events index owns /events/; rendering the category too would write the
+// same path twice.
+for (const cat of categories.filter((c) => c.slug !== 'events')) renderCategory(cat);
 for (const ev of events) renderEvent(ev);
 renderEventsIndex();
 

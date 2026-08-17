@@ -178,6 +178,21 @@ export function emergencyNote(rec) {
 }
 
 /**
+ * A record that CLAIMS emergency care (a hospital's ER) is not an emergency
+ * service under the phone-suppression rule — but its page can still be the
+ * one someone opens in a hurry, and if its number happens to be suppressed as
+ * disputed, that page must not leave them with nothing. Round two found
+ * exactly this: the hospital's summary said "24-hour emergency department"
+ * while its phone sat suppressed and no 911 line rendered.
+ */
+export function emergencyCareNote(rec) {
+  if (isEmergencyService(rec)) return ''; // already carries the stronger note
+  const claims = `${rec.summary || ''} ${rec.caution || ''}`;
+  if (!/emergency (department|room|care|services)|24[\s-]?hour emergency/i.test(claims)) return '';
+  return `<p class="callout callout--warn"><span class="callout__title">In an emergency, call 911</span>Do not rely on this page — or any directory — for an emergency number. 911 is always right, and it is faster than checking whether a listed number is current.</p>`;
+}
+
+/**
  * Research notes that qualify how a place may be used — "not publicly
  * playable", "closed for renovation", "not the only location in town". These
  * were being recorded in the data and then dropped by the templates, which

@@ -416,14 +416,27 @@ function outputGates() {
         fail('jsonld-event-nodate', `${rel} emits an Event with no startDate, which is invalid`);
       }
 
-      for (const key of ['telephone', 'openingHours', 'geo']) {
-        if (graph[key]) {
-          fail('jsonld-overreach', `${rel} emits "${key}", which travels without the page's caveat`);
+      // Deep-walked, not top-level-checked: a mutation test proved a
+      // `telephone` nested inside `address` — or anything inside the home
+      // page's @graph array — sailed past the shallow version of this gate.
+      // The one legitimate carrier is the site's own Place node, whose `geo`
+      // is the town's coordinates rather than an entity assertion.
+      const FORBIDDEN_PROPS = ['telephone', 'openingHours', 'openingHoursSpecification', 'streetAddress', 'geo'];
+      const walkGraph = (node, trail) => {
+        if (!node || typeof node !== 'object') return;
+        if (Array.isArray(node)) {
+          node.forEach((v, i) => walkGraph(v, `${trail}[${i}]`));
+          return;
         }
-      }
-      if (graph?.address?.streetAddress) {
-        fail('jsonld-overreach', `${rel} emits a streetAddress in structured data`);
-      }
+        const isSitePlace = typeof node['@id'] === 'string' && /#place$/.test(node['@id']);
+        for (const [k, v] of Object.entries(node)) {
+          if (FORBIDDEN_PROPS.includes(k) && !(k === 'geo' && isSitePlace)) {
+            fail('jsonld-overreach', `${rel} emits "${k}" at ${trail}.${k} — it travels without the page's caveat`);
+          }
+          walkGraph(v, `${trail}.${k}`);
+        }
+      };
+      walkGraph(graph, graph['@type'] || '@graph');
 
       // isBasedOn is a CreativeWork property: it belongs to the page about the
       // entity, never to the entity itself.
@@ -434,7 +447,9 @@ function outputGates() {
       // The machine-layer caveat must not drift. These are the exact ratified
       // templates; anything else means the caveat was edited or dropped.
       if (graph.disambiguatingDescription) {
-        const ok = /^Compiled from named public sources and not independently confirmed\. This (is the .+ in Trenton, Grundy County, Missouri 64683 — not a namesake in another Trenton\.|is the .+ in Grundy County, Missouri, near Trenton — not a namesake elsewhere\.|is the .+ based in .+, Missouri, serving Trenton and Grundy County\.|event is held in Trenton, Grundy County, Missouri\.)$/.test(graph.disambiguatingDescription);
+        // "(the )?" — names that carry their own article ("The Wild Onion")
+        // drop ours rather than rendering "the The".
+        const ok = /^Compiled from named public sources and not independently confirmed\. This (is (the )?.+ in Trenton, Grundy County, Missouri 64683 — not a namesake in another Trenton\.|is (the )?.+ in Grundy County, Missouri, near Trenton — not a namesake elsewhere\.|is (the )?.+ based in .+, Missouri, serving Trenton and Grundy County\.|event is held in Trenton, Grundy County, Missouri\.)$/.test(graph.disambiguatingDescription);
         if (!ok) fail('jsonld-caveat-drift', `${rel} emits a disambiguatingDescription that matches no ratified template`);
       }
     }
@@ -455,6 +470,13 @@ function outputGates() {
     // department is not the page someone lands on in an emergency.
     if (/\/place\//.test(rel) && /\b(police department|fire department|sheriff'?s? office)\b/i.test(text) && !/call 911/i.test(text)) {
       fail('emergency-no-911', `${rel} is an emergency-service listing but never says to call 911`);
+    }
+
+    // Same rule, wider net: a page that CLAIMS emergency care — a hospital's
+    // ER — can be the page someone opens in a hurry, and with its phone
+    // suppressed as disputed it must not leave them with nothing.
+    if (/\/place\//.test(rel) && /emergency (department|room|care|services)|24[\s-]?hour emergency/i.test(text) && !/call 911/i.test(text)) {
+      fail('emergency-no-911', `${rel} claims emergency care but never says to call 911`);
     }
 
     // The printable sheet exists to be stuck on a fridge; it must lead with 911.

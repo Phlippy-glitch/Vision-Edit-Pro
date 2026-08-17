@@ -307,14 +307,17 @@ export function listingGraph(site, listing, category) {
  * every emitted disambiguatingDescription against these shapes.
  */
 export function disambiguation(site, listing) {
+  // Names that carry their own article would otherwise render as
+  // "the The Wild Onion" — drop ours when the name brings one.
+  const article = /^the\s/i.test(listing.name) ? '' : 'the ';
   const name = listing.name;
   if (listing.city && listing.city !== site.place.name) {
-    return `Compiled from named public sources and not independently confirmed. This is the ${name} based in ${listing.city}, Missouri, serving Trenton and Grundy County.`;
+    return `Compiled from named public sources and not independently confirmed. This is ${article}${name} based in ${listing.city}, Missouri, serving Trenton and Grundy County.`;
   }
   if (listing.proximity === 'grundy_county') {
-    return `Compiled from named public sources and not independently confirmed. This is the ${name} in Grundy County, Missouri, near Trenton — not a namesake elsewhere.`;
+    return `Compiled from named public sources and not independently confirmed. This is ${article}${name} in Grundy County, Missouri, near Trenton — not a namesake elsewhere.`;
   }
-  return `Compiled from named public sources and not independently confirmed. This is the ${name} in Trenton, Grundy County, Missouri 64683 — not a namesake in another Trenton.`;
+  return `Compiled from named public sources and not independently confirmed. This is ${article}${name} in Trenton, Grundy County, Missouri 64683 — not a namesake in another Trenton.`;
 }
 
 /**

@@ -149,3 +149,63 @@ manual-action condition, and a gate now checks for exactly that.
 - Everything on `/about/open-questions/` — generated from the same data as the
   listings, so the published list of what we do not know cannot drift from what
   we published.
+
+---
+
+# v2 decisions
+
+Recorded per this file's contract after the fresh-start rebuild and the
+board's delta review (five approvals, all integration rulings ratified 5–0).
+
+## 9. The correction that proves the system
+
+Round one published a phone number for Wright Memorial Hospital that round
+two's re-verification found appears to belong to the Custer Clinic. The first
+fix was silent suppression — and the risk reviewer correctly rejected that as
+the aggregator behavior this site indicts. The rule now: **a withdrawn value
+is published on the record it was withdrawn from, labeled, with the date**,
+because a reader who saved the wrong number can only match it if we print it.
+Corrections render on the record itself, not just the log.
+
+Corollary found the same way: a page that *claims* emergency care (the
+hospital's ER) must carry the 911 line even though it is not an emergency
+service under the phone-suppression rule — suppression without a substitute
+recurred twice before it became a gate.
+
+## 10. The machine-layer caveat
+
+Every entity node now carries a `disambiguatingDescription` built from four
+exact templates ("Compiled from named public sources and not independently
+confirmed…"), regex-gated so it cannot drift or vanish. This closes the
+round-one objection that structured data travels without the page's banner:
+the graph now carries its own evidence label. `isBasedOn` sits on
+WebPage/Article nodes only — sources support our page about a business, never
+the business itself — and the overreach gate deep-walks every graph after a
+mutation test proved the shallow version missed nested properties.
+
+## 11. Records without pages, pages without records
+
+- **`unlisted`**: a sourced record with negative reader value (first user: a
+  municipal works yard) keeps its data and loses its page. Gated: requires a
+  recorded reason, appears nowhere but /about/open-questions/.
+- **Redirect stubs**: moved URLs keep a noindex page carrying the target's
+  canonical and a meta refresh — the honest static-host 301. Gated: a stub's
+  target must resolve, and no indexed page may link a stub.
+- **`data/changes.json`**: /changes/ is fed by the same gates as listings so
+  the town-changes page cannot assert what the data does not.
+
+## 12. Gate calibration, learned the expensive way
+
+The bare-root-citation gate fails only government agency roots. An operator's
+homepage IS the page that describes the operator; the original finding was a
+bare dor.mo.gov standing in for a specific locator page. Blanket-failing every
+homepage citation would have forced dropping legitimate sources — a gate that
+overreaches gets worked around, and a worked-around gate is worse than none.
+
+## 13. Dino's Diner
+
+Real, and still not listed. Round one cut it as fabricated; round two found
+the fabrication was the *details*, not the place — it exists, but only on
+aggregators. The fabrication history sets its bar: it enters when a citable
+non-aggregator source exists, through the normal research path, and not
+before. Being real is necessary; it has never been sufficient here.

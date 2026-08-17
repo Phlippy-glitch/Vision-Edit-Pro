@@ -14,6 +14,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { frontMatter } from './lib/markdown.js';
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 
@@ -200,6 +202,73 @@ function checkRecord(rec, kind) {
   for (const hit of bad) fail('forbidden-key', `${hit} — ratings and review counts are never published`);
 }
 
+/**
+ * v2 data gates: the changes feed, the unlisted state, and editorial
+ * front matter. Each exists because the page it guards is generated — a
+ * malformed entry would render wrong rather than fail loudly.
+ */
+function v2DataGates() {
+  // --- data/changes.json ---------------------------------------------------
+  const changesPath = path.join(ROOT, 'data/changes.json');
+  const { listings } = read('data/listings.json');
+  const slugs = new Set((listings || []).map((l) => l.slug));
+
+  if (fs.existsSync(changesPath)) {
+    let changes;
+    try {
+      changes = JSON.parse(fs.readFileSync(changesPath, 'utf8')).changes || [];
+    } catch (e) {
+      fail('changes-unreadable', e.message);
+      changes = [];
+    }
+    for (const c of changes) {
+      const id = `change:${c.id || c.headline || '(unnamed)'}`;
+      if (!c.headline || !c.detail) fail('change-incomplete', `${id} lacks headline or detail`);
+      const sources = Array.isArray(c.sources) ? c.sources : [];
+      if (!sources.some((s) => s.url && s.publisher)) {
+        fail('change-unsourced', `${id} has no source with url and publisher — a change entry is a factual claim`);
+      }
+      if (c.listingSlug && !slugs.has(c.listingSlug)) {
+        fail('change-bad-slug', `${id} references listing "${c.listingSlug}", which does not exist`);
+      }
+      if (c.kind === 'opened' && !c.listingSlug) {
+        fail('change-opened-unanchored', `${id} claims an opening but references no record — no-new-entities applies to changes too`);
+      }
+      if (c.whenPrecision === 'unknown' && c.when) {
+        fail('change-date-overclaim', `${id} has whenPrecision "unknown" but carries a date`);
+      }
+    }
+  }
+
+  // --- unlisted records ----------------------------------------------------
+  for (const rec of listings || []) {
+    if (rec.unlisted && !rec.notes) {
+      fail('unlisted-unexplained', `listing:${rec.slug} is unlisted with no notes — the reason must be recorded`);
+    }
+  }
+
+  // --- editorial front matter ----------------------------------------------
+  // Every guide and how-to must name what it specifically could not confirm.
+  // Citations in editorial sources must be deep pages, not bare origins — a
+  // bare root is a gesture at authority, not a source for a claim.
+  for (const dir of ['content/guides', 'content/how-to']) {
+    const full = path.join(ROOT, dir);
+    if (!fs.existsSync(full)) continue;
+    for (const f of fs.readdirSync(full).filter((n) => n.endsWith('.md'))) {
+      const { data } = frontMatter(fs.readFileSync(path.join(full, f), 'utf8'));
+      const id = `${dir}/${f}`;
+      if (!Array.isArray(data.unconfirmed) || !data.unconfirmed.filter(Boolean).length) {
+        fail('scope-note-missing', `${id} has no non-empty "unconfirmed" front-matter list`);
+      }
+      for (const s of data.sources || []) {
+        if (s && s.url && /^https?:\/\/[^/]+\/?$/i.test(s.url)) {
+          fail('bare-root-citation', `${id} cites ${s.url} — a bare origin supports nothing; cite the page or drop the citation`);
+        }
+      }
+    }
+  }
+}
+
 function dataGates() {
   const { listings } = read('data/listings.json');
   const { events } = read('data/events.json');
@@ -341,6 +410,19 @@ function outputGates() {
       if (graph?.address?.streetAddress) {
         fail('jsonld-overreach', `${rel} emits a streetAddress in structured data`);
       }
+
+      // isBasedOn is a CreativeWork property: it belongs to the page about the
+      // entity, never to the entity itself.
+      if (graph.isBasedOn && !['Article', 'WebPage'].includes(graph['@type'])) {
+        fail('jsonld-isbasedon-type', `${rel} puts isBasedOn on a ${graph['@type']} node`);
+      }
+
+      // The machine-layer caveat must not drift. These are the exact ratified
+      // templates; anything else means the caveat was edited or dropped.
+      if (graph.disambiguatingDescription) {
+        const ok = /^Compiled from named public sources and not independently confirmed\. This (is the .+ in Trenton, Grundy County, Missouri 64683 — not a namesake in another Trenton\.|is the .+ in Grundy County, Missouri, near Trenton — not a namesake elsewhere\.|is the .+ based in .+, Missouri, serving Trenton and Grundy County\.|event is held in Trenton, Grundy County, Missouri\.)$/.test(graph.disambiguatingDescription);
+        if (!ok) fail('jsonld-caveat-drift', `${rel} emits a disambiguatingDescription that matches no ratified template`);
+      }
     }
 
     // Every internal link must resolve to something the build actually wrote.
@@ -360,6 +442,26 @@ function outputGates() {
     if (/\/place\//.test(rel) && /\b(police department|fire department|sheriff'?s? office)\b/i.test(text) && !/call 911/i.test(text)) {
       fail('emergency-no-911', `${rel} is an emergency-service listing but never says to call 911`);
     }
+
+    // The printable sheet exists to be stuck on a fridge; it must lead with 911.
+    if (/who-to-call\/index\.html$/.test(rel) && !/call 911/i.test(text)) {
+      fail('emergency-no-911', `${rel} is the who-to-call sheet and never says to call 911`);
+    }
+
+    // Editorial pages must carry their page-scoped unconfirmed block, and it
+    // must sit at the top — directly after the disclosure, before the H1.
+    if (/dist\/(guides|how-to)\/[^/]+\/index\.html$/.test(rel) && !/dist\/(guides|how-to)\/index\.html$/.test(rel)) {
+      const isStub = /http-equiv="refresh"/.test(html);
+      if (!isStub) {
+        const scopeIdx = html.indexOf('class="scope-note"');
+        const h1Idx = html.indexOf('<h1');
+        if (scopeIdx === -1) {
+          fail('scope-note-missing', `${rel} renders no "what this page could not confirm" block`);
+        } else if (h1Idx !== -1 && scopeIdx > h1Idx) {
+          fail('scope-note-misplaced', `${rel} renders the scope note below the H1 — it belongs directly under the disclosure`);
+        }
+      }
+    }
   }
 
   // Resolve collected links against what was written to disk.
@@ -378,16 +480,78 @@ function outputGates() {
   }
 
   // Two pages with the same title compete with each other in the SERP.
+  // Redirect stubs are exempt — their titles intentionally match their targets.
   const titles = new Map();
+  const stubPaths = [];
   for (const file of files) {
     const html = fs.readFileSync(file, 'utf8');
     const rel = path.relative(ROOT, file);
+    if (/http-equiv="refresh"/.test(html) && /content="noindex"/.test(html)) {
+      stubPaths.push(`/${path.relative(path.join(ROOT, 'dist'), path.dirname(file)).replace(/\\/g, '/')}/`);
+      continue;
+    }
     const t = /<title>([^<]*)<\/title>/.exec(html);
     if (!t) continue;
     if (titles.has(t[1])) {
       fail('duplicate-title', `${rel} and ${titles.get(t[1])} share the title "${t[1]}"`);
     }
     titles.set(t[1], rel);
+  }
+
+  // Stubs exist for external bookmarks only. Internal links must point at the
+  // target — an indexed page linking a stub means a link rewrite was missed —
+  // and a stub whose target does not resolve strands the visitor twice.
+  for (const stubPath of stubPaths) {
+    const stubFile = path.join(ROOT, 'dist', stubPath.replace(/^\//, ''), 'index.html');
+    const stubHtml = fs.readFileSync(stubFile, 'utf8');
+    const target = /url=([^">]+)"/.exec(stubHtml)?.[1];
+    if (target) {
+      const targetPath = target.replace(/^https?:\/\/[^/]+/, '');
+      const targetFile = path.join(ROOT, 'dist', targetPath.replace(/^\//, '').replace(new RegExp(`^${base.replace(/^\//, '')}/`), ''), 'index.html');
+      if (!fs.existsSync(targetFile)) {
+        fail('stub-dangling', `${stubPath} redirects to ${target}, which was never built`);
+      }
+    }
+    const stubHref = `href="${base}${stubPath}"`;
+    for (const file of files) {
+      const html = fs.readFileSync(file, 'utf8');
+      if (/http-equiv="refresh"/.test(html)) continue;
+      if (/noindex/.test(html)) continue;
+      if (html.includes(stubHref)) {
+        fail('link-to-stub', `${path.relative(ROOT, file)} links to the moved page ${stubPath} — rewrite the link to its target`);
+      }
+    }
+  }
+
+  // The home finder's inline payload must not quietly bloat the one page that
+  // has to stay light.
+  const homeFile = path.join(ROOT, 'dist/index.html');
+  if (fs.existsSync(homeFile)) {
+    const homeHtml = fs.readFileSync(homeFile, 'utf8');
+    const m = /<ul class="register" id="home-list"[\s\S]*?<\/ul>/.exec(homeHtml);
+    if (m) {
+      const kb = Buffer.byteLength(m[0], 'utf8') / 1024;
+      if (kb > 12) fail('finder-payload', `home finder payload is ${kb.toFixed(1)} KB (budget 12)`);
+      else if (kb > 10) warn('finder-payload', `home finder payload is ${kb.toFixed(1)} KB (warn at 10, budget 12)`);
+    }
+  }
+
+  // Unlisted records must be held without a page: no /place/ page, no sitemap
+  // entry, no appearance anywhere except the open-questions register.
+  const { listings: allRecs } = read('data/listings.json');
+  const sitemap = fs.existsSync(path.join(ROOT, 'dist/sitemap.xml'))
+    ? fs.readFileSync(path.join(ROOT, 'dist/sitemap.xml'), 'utf8') : '';
+  for (const rec of (allRecs || []).filter((r) => r.unlisted)) {
+    if (fs.existsSync(path.join(ROOT, 'dist/place', rec.slug, 'index.html'))) {
+      fail('unlisted-has-page', `listing:${rec.slug} is unlisted but a page was built for it`);
+    }
+    if (sitemap.includes(`/place/${rec.slug}/`)) {
+      fail('unlisted-in-sitemap', `listing:${rec.slug} is unlisted but appears in the sitemap`);
+    }
+    const oq = path.join(ROOT, 'dist/about/open-questions/index.html');
+    if (fs.existsSync(oq) && !fs.readFileSync(oq, 'utf8').includes(rec.name)) {
+      fail('unlisted-invisible', `listing:${rec.slug} is unlisted and absent from open-questions — held records must stay visible there`);
+    }
   }
 
   return files.length;
@@ -401,6 +565,7 @@ let count = 0;
 try {
   const data = dataGates();
   count = data.listings.length + data.events.length;
+  v2DataGates();
 } catch (e) {
   fail('data-unreadable', e.message);
 }

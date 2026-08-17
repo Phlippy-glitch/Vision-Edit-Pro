@@ -13,11 +13,21 @@
   --ink-3:          #626a75;
   --ink-4:          #878f9b;
 
-  --bg:             #ffffff;
-  --bg-2:           #f6f5f2;
-  --bg-3:           #edebe6;
+  /* v2: warm paper ground. Pure white reads screen-native; paper reads printed,
+     and this site's identity is the printed public record. */
+  --bg:             #fbfaf7;
+  --bg-2:           #f4f2ec;
+  --bg-3:           #eae7df;
   --line:           #dcd9d2;
   --line-2:         #c8c4ba;
+
+  /* v2: evidence-state and change-state tokens. The evidence model is
+     typographically visible — absent values are quieter than real data. */
+  --value-missing:  #8d867a;
+  --closed:         #8a2b2b;
+  --closed-soft:    #f6e8e6;
+  --closed-line:    #dcb6b0;
+  --rule:           1px solid var(--line);
 
   --accent:         #1c5a7a;
   --accent-hover:   #164962;
@@ -63,6 +73,11 @@
     --bg-3:         #23272d;
     --line:         #2f343b;
     --line-2:       #3d434c;
+
+    --value-missing: #6f6c64;
+    --closed:        #d68a80;
+    --closed-soft:   #2a1715;
+    --closed-line:   #4a2620;
 
     --accent:       #7db8d6;
     --accent-hover: #9ccce6;
@@ -694,3 +709,106 @@ tbody tr:hover { background: var(--bg-2); }
   margin: -.25rem 0 1rem;
   letter-spacing: .01em;
 }
+
+/* ==========================================================================
+   v2 — the county record
+   Serif on identity surfaces, rules instead of shadows, visible evidence
+   states, and the disclosure as a posted notice. The visual argument matches
+   the editorial one: this site is a document with provenance, so it looks
+   like a document.
+   ========================================================================== */
+
+h1, h2, .brand, .facts dt { font-family: var(--serif); }
+h1 { font-weight: 700; }
+.brand { font-weight: 700; }
+
+/* Cards: rules, not elevation. Shadows survive only on floating UI. */
+.card {
+  box-shadow: none;
+  border: var(--rule);
+  transition: border-color .15s, background .15s;
+}
+.card:hover {
+  box-shadow: none;
+  transform: none;
+  border-color: var(--line-2);
+  background: var(--bg-2);
+}
+.tile { box-shadow: none; }
+.tile:hover { transform: none; }
+
+/* The disclosure as a posted notice: full-width band, no radius, gold rules. */
+.disclosure {
+  border: 0;
+  border-block: 1px solid var(--gold-line);
+  border-radius: 0;
+  background: var(--gold-soft);
+}
+
+/* Absent values read visibly quieter than real data. */
+.facts dd .unknown,
+.fact-value--missing {
+  color: var(--value-missing);
+  font-style: italic;
+}
+.facts dd .unknown a { color: var(--value-missing); }
+
+/* Ruled register rows for dense listing lists (A-Z, who-to-call, hub sections) */
+.register { list-style: none; margin: 0 0 1.2em; padding: 0; }
+.register li {
+  margin: 0;
+  border-top: var(--rule);
+  padding: .55rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1rem;
+  align-items: baseline;
+}
+.register li:last-child { border-bottom: var(--rule); }
+.register .register__name { font-weight: 600; }
+.register .register__name a { text-decoration: none; color: var(--ink); }
+.register .register__name a:hover { color: var(--accent); text-decoration: underline; }
+.register .register__meta { color: var(--ink-3); font-size: .875rem; }
+.register .register__phone { margin-left: auto; font-variant-numeric: tabular-nums; }
+
+.letter-head {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  margin-top: 1.6em;
+  color: var(--ink-2);
+}
+
+/* /changes/ entries: kind-keyed left border */
+.change { border-left: 3px solid var(--line-2); padding: .35rem 0 .35rem 1rem; margin-bottom: 1.1rem; }
+.change--closed { border-left-color: var(--closed); }
+.change--opened { border-left-color: var(--good); }
+.change__head { font-weight: 640; }
+.change__meta { font-size: .84rem; color: var(--ink-3); }
+
+/* Scoped-unconfirmed block on editorial pages */
+.scope-note {
+  border: var(--rule);
+  background: var(--bg-2);
+  border-radius: var(--radius-sm);
+  padding: .8rem 1.05rem;
+  font-size: .9rem;
+  margin-bottom: 1.6rem;
+}
+.scope-note strong { font-weight: 660; }
+
+/* In-Grundy-County chip on out-of-town listings */
+.county-chip { margin-bottom: 1rem; }
+
+/* Print button (progressive enhancement, hidden until JS confirms) */
+.print-btn { margin-block: 1rem; }
+
+/* --- Print (sitewide) ------------------------------------------------------ */
+@media print {
+  .site-header, .site-footer, .finder, .crumbs, .print-hide, .print-btn { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .disclosure { border-block: 1px solid #000; background: none; }
+  .print-stamp { display: block; font-size: 10pt; margin-top: 1em; }
+  a { color: #000; text-decoration: none; }
+  .register li { padding: .3rem 0; }
+}
+.print-stamp { display: none; }

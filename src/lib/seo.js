@@ -147,8 +147,8 @@ export function siteGraph(site) {
       {
         '@type': 'Organization',
         '@id': `${site.url}/#publisher`,
-        name: site.brand,
-        url: `${site.url}/`,
+        name: site.publisherName || site.brand,
+        url: `${site.url}/about/who-publishes-this/`,
         areaServed: {
           '@type': 'City',
           name: site.place.name,
@@ -177,6 +177,12 @@ export function siteGraph(site) {
           postalCode: site.place.zip,
           addressCountry: 'US',
         },
+        containedInPlace: { '@id': `${site.url}/#grundy-county` },
+      },
+      {
+        '@type': 'AdministrativeArea',
+        '@id': `${site.url}/#grundy-county`,
+        name: 'Grundy County, Missouri',
       },
     ],
   };
@@ -281,11 +287,55 @@ export function listingGraph(site, listing, category) {
     node.isPartOf = { '@type': 'CollectionPage', name: category.name, url: absolute(site, categoryPath) };
   }
 
+  // The caveat, in the machine layer. Structured data travels without the
+  // page's disclosure banner — this string is how the graph carries its own
+  // evidence label, and verify.js holds every emission to these exact
+  // templates so the caveat cannot quietly drift or vanish.
+  node.disambiguatingDescription = disambiguation(site, listing);
+  node.mainEntityOfPage = { '@id': `${absolute(site, listing.path)}#webpage` };
+
   // The operator's own site. This asserts identity, not facts — the objection
   // that sinks telephone and streetAddress does not apply, and it is the
   // strongest signal available that this page describes the same entity as
   // that domain rather than competing with it.
   if (listing.website && !(listing.disputed || []).includes('website')) node.sameAs = [listing.website];
+  return node;
+}
+
+/**
+ * The disambiguation caveat templates. Exact strings — verify.js regex-gates
+ * every emitted disambiguatingDescription against these shapes.
+ */
+export function disambiguation(site, listing) {
+  const name = listing.name;
+  if (listing.city && listing.city !== site.place.name) {
+    return `Compiled from named public sources and not independently confirmed. This is the ${name} based in ${listing.city}, Missouri, serving Trenton and Grundy County.`;
+  }
+  if (listing.proximity === 'grundy_county') {
+    return `Compiled from named public sources and not independently confirmed. This is the ${name} in Grundy County, Missouri, near Trenton — not a namesake elsewhere.`;
+  }
+  return `Compiled from named public sources and not independently confirmed. This is the ${name} in Trenton, Grundy County, Missouri 64683 — not a namesake in another Trenton.`;
+}
+
+/**
+ * The WebPage sibling node carrying provenance.
+ *
+ * isBasedOn is a CreativeWork property and may never sit on a LocalBusiness,
+ * Event or Place node — and that constraint happens to be the honest shape:
+ * our sources support our PAGE about the business, not the business itself.
+ */
+export function webPageGraph(site, path, sources, lastModified) {
+  const urls = [...new Set((sources || [])
+    .map((s) => s.url)
+    .filter((u) => /^https?:\/\//i.test(u || '')))];
+  const node = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${absolute(site, path)}#webpage`,
+    url: absolute(site, path),
+  };
+  if (urls.length) node.isBasedOn = urls;
+  if (lastModified) node.dateModified = lastModified;
   return node;
 }
 
@@ -303,9 +353,18 @@ export function faqGraph(faqs) {
   };
 }
 
-/** Article graph for guides. */
+/** Article graph for guides. isBasedOn sits directly on the Article — it is a
+ *  CreativeWork, so the provenance belongs here. No disambiguatingDescription:
+ *  guides are the site's own words, and the caveat template would be false
+ *  applied to them. */
 export function articleGraph(site, article) {
-  return {
+  const publisher = {
+    '@type': 'Organization',
+    '@id': `${site.url}/#publisher`,
+    name: site.publisherName || site.brand,
+    url: `${site.url}/about/who-publishes-this/`,
+  };
+  const node = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.title,
@@ -317,11 +376,16 @@ export function articleGraph(site, article) {
     isAccessibleForFree: true,
     // Named inline rather than by @id: the publisher node only exists in the
     // home page's graph, so a bare reference from an article page dangles.
-    publisher: { '@type': 'Organization', '@id': `${site.url}/#publisher`, name: site.brand, url: `${site.url}/` },
-    author: { '@type': 'Organization', '@id': `${site.url}/#publisher`, name: site.brand, url: `${site.url}/` },
+    publisher,
+    author: publisher,
     about: { '@type': 'Place', name: `${site.place.name}, Missouri` },
     mainEntityOfPage: { '@type': 'WebPage', '@id': absolute(site, article.path) },
   };
+  const basis = [...new Set((article.sources || [])
+    .map((s) => s.url)
+    .filter((u) => /^https?:\/\//i.test(u || '')))];
+  if (basis.length) node.isBasedOn = basis;
+  return node;
 }
 
 /** Event graph — dates only when we hold a verified date. */
@@ -347,6 +411,8 @@ export function eventGraph(site, event) {
   };
   if (event.startDate) node.startDate = event.startDate;
   if (event.endDate) node.endDate = event.endDate;
+  node.disambiguatingDescription = 'Compiled from named public sources and not independently confirmed. This event is held in Trenton, Grundy County, Missouri.';
+  node.mainEntityOfPage = { '@id': `${absolute(site, event.path)}#webpage` };
   return node;
 }
 

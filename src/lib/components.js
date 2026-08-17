@@ -260,16 +260,21 @@ export function header(site, categories, currentPath) {
   </header>`;
 }
 
-export function footer(site, categories) {
+export function footer(site, categories, extras = {}) {
   const cols = [];
 
   cols.push(`<div>
       <h2>Browse</h2>
-      <ul>${categories.slice(0, 6).map((c) => `<li><a href="${site.base}${esc(c.slug)}/">${esc(c.name)}</a></li>`).join('')}</ul>
+      <ul>${categories.slice(0, 6).map((c) => `<li><a href="${site.base}${esc(c.slug)}/">${esc(c.name)}</a></li>`).join('')}
+        <li><a href="${site.base}grundy-county/">Grundy County</a></li>
+        <li><a href="${site.base}a-z/">Every place, A–Z</a></li>
+      </ul>
     </div>`);
   cols.push(`<div>
       <h2>More</h2>
-      <ul>${categories.slice(6).map((c) => `<li><a href="${site.base}${esc(c.slug)}/">${esc(c.name)}</a></li>`).join('')}</ul>
+      <ul>${categories.slice(6).map((c) => `<li><a href="${site.base}${esc(c.slug)}/">${esc(c.name)}</a></li>`).join('')}
+        <li><a href="${site.base}who-to-call/">Who to call</a></li>
+      </ul>
     </div>`);
   cols.push(`<div>
       <h2>Reading</h2>
@@ -277,11 +282,13 @@ export function footer(site, categories) {
         <li><a href="${site.base}guides/">Guides</a></li>
         <li><a href="${site.base}how-to/">How to get things done</a></li>
         <li><a href="${site.base}events/">Events</a></li>
+        <li><a href="${site.base}changes/">What closed, opened or moved</a></li>
       </ul>
     </div>`);
   cols.push(`<div>
       <h2>About this site</h2>
       <ul>
+        <li><a href="${site.base}about/who-publishes-this/">Who publishes this</a></li>
         <li><a href="${site.base}about/how-we-source-this/">How we source this</a></li>
         <li><a href="${site.base}about/open-questions/">What we could not confirm</a></li>
         <li><a href="${site.base}sources/">Every source we used</a></li>
@@ -290,13 +297,19 @@ export function footer(site, categories) {
       </ul>
     </div>`);
 
+  // Corrections line: the count when there is one, the neutral promise when
+  // there is not — "there are none yet" was the site's weakest first line.
+  const correctionsLine = extras.correctionsCount > 0
+    ? `${extras.correctionsCount} correction${extras.correctionsCount === 1 ? '' : 's'} published — latest ${esc(extras.correctionsLatest || '')}. <a href="${site.base}corrections/">See them all</a>.`
+    : `Corrections are published with dates as they arrive. <a href="${site.base}submit/">Tell us</a> if something here is wrong.`;
+
   return `<footer class="site-footer">
     <div class="wrap">
       <div class="footer-cols">${cols.join('\n')}</div>
       <div class="colophon">
-        <p>A directory of Trenton, Missouri — the county seat of Grundy County, ZIP 64683.</p>
+        <p>A directory of Trenton, Missouri — the county seat of Grundy County, ZIP 64683. Published by ${esc(site.publisherName || site.brand)} — <a href="${site.base}about/who-publishes-this/">who we are</a>.</p>
         <p>Nothing here has been confirmed by us. Every entry names where it came from and when we looked it up, and every one of them can be wrong. <a href="${site.base}about/how-we-source-this/">Read how this was put together</a> before relying on it.</p>
-        <p>Something here wrong or out of date? <a href="${site.base}submit/">Tell us</a> — we publish corrections with the date.</p>
+        <p>${correctionsLine}</p>
       </div>
     </div>
   </footer>`;

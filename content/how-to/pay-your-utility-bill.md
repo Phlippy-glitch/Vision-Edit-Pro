@@ -17,6 +17,12 @@ sources:
     publisher: "City of Trenton"
   - url: "https://www.grundyec.com/overview"
     publisher: "Grundy Electric Cooperative"
+unconfirmed:
+  - "Due dates, late penalties, deposits, reconnection costs and counter hours — the statement and the office hold all of them."
+  - "Which payment routes are live beyond the municipal online portal our sources name."
+  - "The utility service boundary at any specific address."
+own:
+  - "The use-the-statement rule and the five questions to ask are ours."
 faq:
   - q: "Who bills electricity and water at a Trenton address?"
     a: "Inside Trenton city limits, the City of Trenton's own billing pages describe Trenton Municipal Utilities as the city-owned electric, water and wastewater provider. Grundy Electric Cooperative describes itself as serving rural members in northern Missouri and southern Iowa. A mailing address is not proof of which one covers you — ask the utility to check the exact address."

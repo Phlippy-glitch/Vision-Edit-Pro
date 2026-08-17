@@ -17,6 +17,11 @@ sources:
     publisher: "Grundy County Health Department"
   - url: "https://www.mshsaa.org/Schools/AccountInfo.aspx?s=196"
     publisher: "Missouri State High School Activities Association"
+unconfirmed:
+  - "Enrollment windows, document lists, office hours, and transport and meal arrangements — none has been checked with the district."
+  - "Which school a given address feeds; the district office is the authority on assignment."
+own:
+  - "The document checklist, the ordering and the questions to ask are ours."
 faq:
   - q: "Which school will my child attend in Trenton?"
     a: "By grade band, according to the district's own material: S.M. Rissler Elementary takes PK-4 including the district preschool program, Trenton Middle School takes grades 5-8, and Trenton High School takes grades 9-12. Confirm with the district office, which is the authority on assignment."

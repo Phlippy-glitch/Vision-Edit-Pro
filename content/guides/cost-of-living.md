@@ -19,6 +19,11 @@ sources:
     publisher: "Grundy County, Missouri"
   - url: "https://grundycountymo.com/wordpress/collector-treasurer/"
     publisher: "Grundy County, Missouri"
+unconfirmed:
+  - "Every figure a budget needs: rents, utility rates, tax rates, fees and deposits — the water-rate material in our sources is dated 2022."
+  - "Which hauler currently holds the city trash and recycling contracts, and the charges attached to them."
+own:
+  - "The budgeting mechanics, the order of the errands and the questions to ask each office are ours."
 faq:
   - q: "Who provides utilities in Trenton?"
     a: "Inside Trenton city limits, the City of Trenton's own pages describe Trenton Municipal Utilities as the city-owned provider of electric, water and wastewater service. Rural addresses may instead be served by Grundy Electric Cooperative, which describes itself as serving rural members in northern Missouri and southern Iowa."

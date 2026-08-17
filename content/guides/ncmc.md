@@ -19,6 +19,12 @@ sources:
     publisher: "NCMC Pirates Athletics"
   - url: "https://www.visittrentonmo.com/parks-recreation"
     publisher: "Visit Trenton"
+unconfirmed:
+  - "The Ketcham Community Center's state since a July 2025 renovation report — over a year old as this page stands."
+  - "Enrollment, programs, tuition, term dates and membership terms — we publish none of them."
+  - "The compass direction of the Barton Farm Campus from town, on which our sources disagreed."
+own:
+  - "The resident's-eye framing and the questions to ask the college are ours."
 faq:
   - q: "Where is North Central Missouri College?"
     a: "The college describes itself as headquartered in downtown Trenton, Missouri, with the Elizabeth and Arthur Barton Farm Campus outside town in Grundy County and a further campus in Savannah. Its teams are the Pirates."

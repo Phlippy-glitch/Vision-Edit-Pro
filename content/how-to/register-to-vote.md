@@ -15,6 +15,12 @@ sources:
     publisher: "U.S. Vote Foundation"
   - url: "https://grundycountymo.com/wordpress/"
     publisher: "Grundy County, Missouri"
+unconfirmed:
+  - "The registration cutoff for any election, and every absentee request and return deadline."
+  - "Identification requirements at the polls and polling-place assignments."
+  - "The clerk's office hours."
+own:
+  - "The ordering, the moving-is-a-registration-event warning and the questions to ask are ours."
 faq:
   - q: "Who handles voter registration for Trenton, Missouri?"
     a: "The Grundy County Clerk. The county's own elections page describes the clerk's office as handling voter registration and election administration, which makes it the office to call about registering, updating an address or confirming a polling place."

@@ -15,6 +15,11 @@ sources:
     publisher: "City of Trenton"
   - url: "https://ecode360.com/28485733"
     publisher: "eCode360 (Trenton municipal code)"
+unconfirmed:
+  - "Whether Rapid Removal Disposal and Hope Haven Industries still hold the collection contracts our sources report."
+  - "Rates, collection days, holiday schedules, cart sizes and accepted materials."
+own:
+  - "The three-parties routing rule and the questions to ask are ours."
 faq:
   - q: "Who collects residential trash in Trenton, Missouri?"
     a: "The City of Trenton's own pages describe residential collection as contracted out, currently reported as Rapid Removal Disposal for trash and Hope Haven Industries for recycling. Contracts are re-bid, so confirm who holds each one now before you act on this page."

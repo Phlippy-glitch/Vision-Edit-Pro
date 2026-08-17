@@ -7,7 +7,7 @@ summary: "Who to call about an outage, leak or backup at a Trenton address, and 
 published: "2026-08-15"
 updated: "2026-08-15"
 related: ["pay-your-utility-bill", "trash-and-recycling"]
-places: ["trenton-municipal-utilities", "grundy-electric-cooperative", "city-of-trenton", "trenton-street-barn", "trenton-fire-department"]
+places: ["trenton-municipal-utilities", "grundy-electric-cooperative", "city-of-trenton", "trenton-fire-department"]
 sources:
   - url: "https://trentonmo.com/municipal-utilities/billing/"
     publisher: "City of Trenton"
@@ -17,6 +17,12 @@ sources:
     publisher: "Grundy Electric Cooperative"
   - url: "https://trentonmo.com/government/departments/administrator/"
     publisher: "City of Trenton"
+unconfirmed:
+  - "Outage and after-hours numbers for either provider."
+  - "The utility service boundary at any address, and where responsibility shifts at the meter, curb stop or lateral in Trenton."
+  - "Claims processes after an outage."
+own:
+  - "The call-911-first rule's placement, the routing logic and the what-to-have-ready list are ours."
 faq:
   - q: "A power line is down in Trenton. Who do I call?"
     a: "Call 911 first. A downed line is an emergency call, not a utility service call, and it is never something to route through a directory page. Treat any line on the ground as live and keep people and animals away from it."
@@ -69,7 +75,7 @@ We have not confirmed where any of these lines fall in Trenton. Ask, and write d
 4. If a crew comes out and the problem is on my side, is there a call-out charge?
 5. Who handles a streetlight, a water main in the street, or a sewer smell — the utility or the [City](/place/city-of-trenton/)?
 
-Question five is worth asking because street-level infrastructure is often a public works matter rather than a billing-office matter. The city's own department listings name a public works facility, the [Street Barn](/place/trenton-street-barn/), among city locations, and municipal sites usually keep a "how do I…" index that answers this faster than a phone tree.
+Question five is worth asking because street-level infrastructure is often a public works matter rather than a billing-office matter. The city's own department listings name a public works facility among city locations, and municipal sites usually keep a "how do I…" index that answers this faster than a phone tree.
 
 ## After the outage
 

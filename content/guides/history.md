@@ -6,7 +6,7 @@ description: "The dates we can attribute in Trenton, MO — an 1891 library, a 1
 summary: "A dated, sourced chronology of Trenton and Grundy County, Missouri, with an honest account of what our sources do not contain."
 published: "2026-08-15"
 updated: "2026-08-15"
-related: ["things-to-do-in-trenton-mo", "local-news", "is-trenton-a-good-place-to-live"]
+related: ["things-to-do-in-trenton-mo", "find-local-news", "is-trenton-a-good-place-to-live"]
 places: ["grundy-county-museum", "grundy-county-courthouse", "grundy-county-jewett-norris-library", "st-philips-episcopal-church", "north-central-missouri-fairgrounds-rock-barn", "riverside-country-club", "btc-bank", "trenton-area-chamber-of-commerce", "trenton-republican-times", "nestle-trenton-plant", "trenton-municipal-airport"]
 sources:
   - url: "https://grundycountymo.com/wordpress/buildings-and-grounds/"
@@ -23,6 +23,12 @@ sources:
     publisher: "Missouri Press Association"
   - url: "https://www.areadevelopment.com/newsitems/3-30-2018/nestle-manufacturing-trenton-missouri.shtml"
     publisher: "Area Development"
+unconfirmed:
+  - "Every date on the page, in the sense that none has been checked against a primary record — and the 1857 incorporation date rests on a single promotional page."
+  - "Whether St. Philip's congregation is currently active, and anything about the Trenton plant after the 2018 reporting."
+  - "Which places in the Trenton area sit on the National Register — the tourism site refers to seven, and we can name only some."
+own:
+  - "The gap list, the marker-text caution and the pointers to where the record is kept are ours."
 faq:
   - q: "When was Trenton, Missouri founded?"
     a: "We do not publish a founding date. The town's tourism site describes incorporation in 1857, and we have not corroborated that against a second unrelated source or against the state historical record. Settlement, the townsite's earlier name and the organization of Grundy County are all outside what our sources cover."
@@ -74,7 +80,7 @@ Each entry names who says so. Where a date rests on one source, this page says s
 
 **2018 — the plant.** [The Trenton plant](/place/nestle-trenton-plant/) was acquired by Nestlé from Conagra Brands in 2018. Under Conagra it was reported as the town's largest employer and produced canned meat products, and Conagra had announced a closure eliminating 282 positions before the sale. **All of that is 2018 reporting.** We assert nothing about the plant's operations, ownership or headcount today.
 
-**2025 — the paper, and its replacement.** The Republican-Times closed after its June 19, 2025 issues. [The Trenton Telegraph](/place/trenton-telegraph/) launched that September under county industrial development ownership. See [how to follow local news](/guides/local-news/).
+**2025 — the paper, and its replacement.** The Republican-Times closed after its June 19, 2025 issues. [The Trenton Telegraph](/place/trenton-telegraph/) launched that September under county industrial development ownership. See [how to find local news](/how-to/find-local-news/).
 
 ## What our sources do not contain
 
@@ -109,4 +115,4 @@ Every date above, in the sense this site means it: we have not opened a single o
 
 ## Related pages
 
-[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [How to follow local news](/guides/local-news/) · [Is Trenton a good place to live?](/guides/is-trenton-a-good-place-to-live/)
+[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [How to find local news](/how-to/find-local-news/) · [Is Trenton a good place to live?](/guides/is-trenton-a-good-place-to-live/)

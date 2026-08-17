@@ -4,13 +4,17 @@
     "built": "2026-08-15",
     "confirmation_ceiling": "unconfirmed",
     "note": "`recurrence` is the stable, evergreen fact and is what page copy should lead with. `startDate` and `endDate` are volatile and are null wherever sources disagreed. Dates that are published need an annual review before each season.",
-    "owner": "merge data lead"
+    "owner": "merge data lead",
+    "v2_merged": "2026-08-17"
   },
   "events": [
     {
       "slug": "missouri-day-festival",
       "name": "Missouri Day Festival",
-      "categories": ["events", "community"],
+      "categories": [
+        "events",
+        "community"
+      ],
       "schemaType": "Festival",
       "summary": "Trenton's autumn community festival, held at the North Central Missouri Fairgrounds and organized by the Trenton Area Chamber of Commerce. It includes a parade, a statewide high school marching band competition, children's activities, demonstrators and craft, antique and food vendors.",
       "proximity": "trenton",
@@ -34,8 +38,29 @@
       "corroborated": 2,
       "disputed": [],
       "sources": [
-        { "url": "https://www.trentonmochamber.com/missouri-day-festival", "publisher": "Trenton Area Chamber of Commerce", "covers": ["name", "summary", "website", "startDate", "endDate", "recurrence"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.visittrentonmo.com/post/celebrating-trenton-missouri-day-festival", "publisher": "Visit Trenton", "covers": ["name", "summary", "recurrence"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.trentonmochamber.com/missouri-day-festival",
+          "publisher": "Trenton Area Chamber of Commerce",
+          "covers": [
+            "name",
+            "summary",
+            "website",
+            "startDate",
+            "endDate",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/post/celebrating-trenton-missouri-day-festival",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "The name is singular: Missouri Day, not Missouri Days. It is a different event from the Missouri Days Marching Festival, and the two names must never be normalised into one. No vendor count is published: four different figures appeared across sources. Duration has varied between two and four days by year, so no fixed duration is stated. The parade is reported as Saturday morning at Main and 9th Streets, sponsored by the Rotary Club of Trenton."
@@ -43,7 +68,10 @@
     {
       "slug": "north-central-missouri-fair",
       "name": "North Central Missouri Fair",
-      "categories": ["events", "community"],
+      "categories": [
+        "events",
+        "community"
+      ],
       "schemaType": "Festival",
       "summary": "A multi-day summer fair at the Trenton fairgrounds with livestock competitions and animal shows, a carnival, live music, a parade, motorsports and grandstand events.",
       "proximity": "trenton",
@@ -58,26 +86,63 @@
       "email": null,
       "hours": null,
       "seasonal": null,
-      "startDate": null,
-      "endDate": null,
+      "startDate": "2026-07-25",
+      "endDate": "2026-08-01",
       "recurrence": "annual, late July into early August",
       "status": "unknown",
       "evidence": "reputable_third_party",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
-      "disputed": ["startDate", "endDate"],
+      "corroborated": 3,
+      "disputed": [],
       "sources": [
-        { "url": "https://www.kttn.com/v2-north-central-missouri-fair-scheduled-for-july-29-august-2-2025-in-trenton/", "publisher": "KTTN", "covers": ["name", "summary", "recurrence"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/north-central-missouri-fair-in-trenton-set-to-run-july-27-to-august-3/", "publisher": "KTTN", "covers": ["name", "recurrence"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.facebook.com/p/North-Central-Missouri-Fair-100064927860981/", "publisher": "North Central Missouri Fair (Facebook)", "covers": ["name"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.kttn.com/v2-north-central-missouri-fair-scheduled-for-july-29-august-2-2025-in-trenton/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/north-central-missouri-fair-in-trenton-set-to-run-july-27-to-august-3/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.facebook.com/p/North-Central-Missouri-Fair-100064927860981/",
+          "publisher": "North Central Missouri Fair (Facebook)",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/north-central-missouri-fair-runs-july-25-aug-1-in-trenton/",
+          "publisher": "KTTN",
+          "covers": [
+            "startDate",
+            "endDate",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Three different date spans appeared across the two research passes for overlapping years, so no dates are published. No official website was found, only a social page. The fairgrounds address is unresolved and held null on the venue listing too."
+      "last_verified_at": "2026-08-17",
+      "notes": "The 2026 dates were resolved 2026-08-17 by KTTN: Saturday, July 25 through Saturday, August 1, 2026, an eight-day slate; the recurrence pattern (late July into early August) is confirmed. Dates need an annual re-review before each season — three conflicting spans appeared across earlier passes for prior years. No official website was found, only a social page. The fairgrounds address remains disputed on the venue listing, though KTTN now attributes 1415 Oklahoma Ave to it directly."
     },
     {
       "slug": "mid-america-music-festival",
       "name": "Mid-America Music Festival",
-      "categories": ["events", "eat-drink"],
+      "categories": [
+        "events",
+        "eat-drink"
+      ],
       "schemaType": "MusicEvent",
       "summary": "A two-day country music and camping festival on the grounds of Black Silo Winery, with food vendors, a wine tent, beer stations, shopping vendors and camping. It is the main fundraiser for the Black Silo Foundation.",
       "proximity": "trenton",
@@ -101,7 +166,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.midamericamusic.com/", "publisher": "Mid-America Music Festival", "covers": ["name", "summary", "website", "startDate", "endDate", "recurrence"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.midamericamusic.com/",
+          "publisher": "Mid-America Music Festival",
+          "covers": [
+            "name",
+            "summary",
+            "website",
+            "startDate",
+            "endDate",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Lineup framing varies by year across sources, so genre description is kept generic. Ticketing, parking and camping reservations are handled on the festival's own site."
@@ -109,7 +186,11 @@
     {
       "slug": "main-street-trenton-farmers-market",
       "name": "Main Street Trenton Farmer's Market",
-      "categories": ["events", "eat-drink", "shopping"],
+      "categories": [
+        "events",
+        "eat-drink",
+        "shopping"
+      ],
       "schemaType": "Event",
       "summary": "A weekly producer market in Sesquicentennial Park in downtown Trenton with locally grown vegetables, fruit, flowers, eggs, honey and baked goods, plus handmade goods.",
       "proximity": "trenton",
@@ -136,7 +217,19 @@
       "corroborated": 1,
       "disputed": [],
       "sources": [
-        { "url": "https://www.mainstreettrentonmo.org/farmersmarket", "publisher": "Main Street Trenton", "covers": ["name", "summary", "website", "hours", "recurrence", "seasonal"], "retrieved_at": "2026-08-15" }
+        {
+          "url": "https://www.mainstreettrentonmo.org/farmersmarket",
+          "publisher": "Main Street Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "website",
+            "hours",
+            "recurrence",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-15"
+        }
       ],
       "last_verified_at": "2026-08-15",
       "notes": "Farmers markets of the same name exist in Trenton, Michigan and Trenton, New Jersey, and both outrank this one in search. The slug, page title and H1 must carry Trenton, MO disambiguation."
@@ -144,7 +237,10 @@
     {
       "slug": "downtown-christmas",
       "name": "Downtown Christmas",
-      "categories": ["events", "community"],
+      "categories": [
+        "events",
+        "community"
+      ],
       "schemaType": "Event",
       "summary": "An annual holiday celebration in downtown Trenton on the first Friday of December, with a lighted parade, a gingerbread and cookie contest, a soup supper, live music, holiday musical presentations and a Santa appearance at the Sesquicentennial Park gazebo.",
       "proximity": "trenton",
@@ -165,14 +261,53 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
-      "disputed": ["name", "startDate"],
-      "sources": [
-        { "url": "https://www.visittrentonmo.com/post/downtown-christmas-extravaganza", "publisher": "Visit Trenton", "covers": ["name", "summary", "recurrence"], "retrieved_at": "2026-08-15" },
-        { "url": "https://www.kttn.com/downtown-trenton-prepares-for-christmas-parade-and-festivities/", "publisher": "KTTN", "covers": ["name", "summary", "recurrence"], "retrieved_at": "2026-08-15" }
+      "corroborated": 3,
+      "disputed": [
+        "name",
+        "startDate"
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Sources use at least four names for this: Downtown Christmas, Downtown Christmas Extravaganza, Christmas in a Small Town and Trenton Christmas Parade. It may be one event or an umbrella with named components; that is unresolved. One report gives a December 1 parade date that does not fall on a first Friday, so no dates are published. The parade is reported to form at Farmers Bank of Northern Missouri and to stop at the town's nursing homes before reaching downtown."
+      "sources": [
+        {
+          "url": "https://www.visittrentonmo.com/post/downtown-christmas-extravaganza",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "name",
+            "summary",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/downtown-trenton-prepares-for-christmas-parade-and-festivities/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary",
+            "recurrence"
+          ],
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.mainstreettrentonmo.org/annualevents",
+          "publisher": "Main Street Trenton",
+          "covers": [
+            "recurrence",
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.trentontelegraph.com/news/11/13/itinerary-for-downtown-christmas-parade-11-14/",
+          "publisher": "The Trenton Telegraph",
+          "covers": [
+            "startDate",
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Sources use at least five names for this: Downtown Christmas, Downtown Christmas Extravaganza, Christmas in a Small Town, Trenton Christmas Parade, and (new 2026-08-17) \"Downtown Christmas Celebration and Parade\" (Trenton Telegraph). It may be one event or an umbrella with named components; that is unresolved. DATE DISPUTE DEEPENED (2026-08-17): Main Street Trenton's annual-events page says first Friday of December (parade 5:30 p.m., lineup 5:10 p.m. at Farmers Bank), while a Trenton Telegraph itinerary published November 13 is titled for a November 14 downtown Christmas parade — two live, conflicting date patterns, so no specific date is published. The parade is reported to form at Farmers Bank of Northern Missouri and to stop at the town's nursing homes before reaching downtown. The itinerary also names the Grundy County Museum, Jewett Norris Library, Howard's Department Store and Farmers Bank as active event sites."
     }
   ]
 }

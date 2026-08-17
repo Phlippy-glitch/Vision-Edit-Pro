@@ -19,6 +19,11 @@ sources:
     publisher: "Missouri State High School Activities Association"
   - url: "https://www.grundycountyhealth.org/contact"
     publisher: "Grundy County Health Department"
+unconfirmed:
+  - "District enrollment — our sources gave two different counts, so we print neither."
+  - "Every enrollment requirement, deadline, attendance boundary, calendar date and contact detail."
+own:
+  - "The document checklist, the enrollment order and the questions to ask are ours."
 faq:
   - q: "Is it Trenton R-IX or Trenton R-9?"
     a: "Both, in practice. State records give the legal name as Trenton R-IX, using the roman numeral, while the district's own web address and much local usage render it R-9. If a search or a form comes back empty, try the other spelling before you assume the record does not exist."

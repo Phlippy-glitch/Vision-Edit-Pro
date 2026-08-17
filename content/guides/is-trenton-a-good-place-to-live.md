@@ -21,6 +21,11 @@ sources:
     publisher: "Area Development"
   - url: "https://mopress.com/stories/mayor-cherryroad-team-up-to-restore-paper-in-trenton,39445"
     publisher: "Missouri Press Association"
+unconfirmed:
+  - "Every current figure beyond the 2020 census count of 5,569 and the 282 positions reported in 2018 — we hold no housing, wage, crime or school-performance data."
+  - "The Trenton plant's operations, ownership or headcount today; our reporting stops in 2018."
+own:
+  - "The weighing of who tends to do well here and who does not, and the downsides framing, are ours."
 faq:
   - q: "How many people live in Trenton, Missouri?"
     a: "5,569 at the 2020 census. It is the county seat of Grundy County. Any current-year population figure you see elsewhere is an estimate rather than a count, and should say so."
@@ -67,7 +72,7 @@ This page is for someone weighing a move. It is not a page about how to execute 
 
 **Transport without a car.** OATS Transit publishes a Grundy County page describing demand-response service with advance reservations. That serves people other systems ignore, and it is not equivalent to turning up at a stop. If nobody in the household drives, look hard at this before anything else.
 
-**Local information thinned out.** The newspaper that had served the county since 1864 closed after its June 19, 2025 issues. A weekly, [The Trenton Telegraph](/place/trenton-telegraph/), launched in September 2025 under county industrial development ownership with an outside company managing it. That is a recovery, and it is also a reminder that local coverage here is a thing that can stop. See [how to follow local news](/guides/local-news/).
+**Local information thinned out.** The newspaper that had served the county since 1864 closed after its June 19, 2025 issues. A weekly, [The Trenton Telegraph](/place/trenton-telegraph/), launched in September 2025 under county industrial development ownership with an outside company managing it. That is a recovery, and it is also a reminder that local coverage here is a thing that can stop. See [how to find local news](/how-to/find-local-news/).
 
 **What we cannot tell you.** We hold no current figures for housing costs, rents, wages, unemployment, crime or school performance in Trenton. Sites that publish confident-looking numbers for towns this size are frequently publishing models rather than measurements. Get those from the Census Bureau's own tables and the state education department, and check the year on every one.
 

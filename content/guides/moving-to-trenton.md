@@ -23,8 +23,14 @@ sources:
     publisher: "Grundy County, Missouri"
   - url: "https://tools.usps.com/locations/home.htm?location=1384973"
     publisher: "United States Postal Service"
-  - url: "https://dor.mo.gov/"
+  - url: "https://dor.mo.gov/news/newsitem/uuid/a9b0cd43-ed8c-44f4-b1fb-1b252055fe72"
     publisher: "Missouri Department of Revenue"
+unconfirmed:
+  - "Whether a license office serves Trenton today — our evidence stops at the 2023 closure announcement."
+  - "The utility service boundary at any specific address, and every fee, deposit, office hour and deadline."
+  - "Which hauler currently holds the trash and recycling contracts."
+own:
+  - "The order of operations and the questions to ask on each call are ours."
 faq:
   - q: "Who provides electricity at a Trenton address?"
     a: "It depends on the address. Trenton Municipal Utilities is the city-owned electric, water and wastewater provider inside Trenton city limits, and Grundy Electric Cooperative describes itself as serving rural members in northern Missouri and southern Iowa. Ask which one covers your exact address before you schedule a connection — we have not confirmed any service boundary."

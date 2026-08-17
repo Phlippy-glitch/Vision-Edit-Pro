@@ -962,10 +962,12 @@ function renderHome(guides, howtos) {
   // The finder's payload: a server-rendered register of every listing, hidden
   // until JS confirms and a query exists. With JS off, the visible A–Z link
   // carries the load. verify.js budgets this block so the home stays light.
-  const finderRows = [...listings].sort((a, b) => a.name.localeCompare(b.name)).map((r) => {
-    const cat = categories.find((c) => (r.categories || []).includes(c.slug));
-    return `<li><span class="register__name"><a href="${site.base}place/${esc(r.slug)}/">${esc(r.name)}</a></span>${cat ? `<span class="register__meta">${esc(cat.name)}</span>` : ''}</li>`;
-  }).join('');
+  // Name and link only — the category meta pushed the payload past its
+  // budget, and a person typing a name into a finder already knows what kind
+  // of place they are looking for.
+  const finderRows = [...listings].sort((a, b) => a.name.localeCompare(b.name))
+    .map((r) => `<li><a href="${site.base}place/${esc(r.slug)}/">${esc(r.name)}</a></li>`)
+    .join('');
 
   const taskList = [...howtos]
     .sort((a, b) => (a.title || '').localeCompare(b.title || ''))

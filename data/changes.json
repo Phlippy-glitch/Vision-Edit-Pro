@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "purpose": "Hand-curated change entries for the /changes/ page of the Trenton, Missouri directory, per v2 design spec section 1.2. The page also generates entries from listings.json status and disputed fields; this file holds the first-class narrative changes.",
+    "built": "2026-08-17",
+    "owner": "merge data lead",
+    "note": "Every entry carries at least one source with url, publisher and retrieved_at, copied from existing records or content. An entry with whenPrecision \"unknown\" must not render a date."
+  },
+  "changes": [
+    {
+      "id": "republican-times-closure",
+      "kind": "closed",
+      "headline": "The Trenton Republican-Times stopped publishing",
+      "detail": "Trenton's newspaper since 1864 was closed after its June 19, 2025 issues. Its former website still resolves and still ranks in search, but it no longer publishes.",
+      "when": "2025-06",
+      "whenPrecision": "month",
+      "listingSlug": "trenton-republican-times",
+      "sources": [
+        {
+          "url": "https://mopress.com/stories/mayor-cherryroad-team-up-to-restore-paper-in-trenton,39445",
+          "publisher": "Missouri Press Association",
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/",
+          "publisher": "KTTN",
+          "retrieved_at": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "id": "trenton-telegraph-launch",
+      "kind": "transitioned",
+      "headline": "The Trenton Telegraph launched as the town's newspaper",
+      "detail": "A weekly newspaper for Trenton and Grundy County launched in September 2025, owned by the Grundy County Industrial Development Corporation with CherryRoad Media providing management. It succeeded the closed Republican-Times.",
+      "when": "2025",
+      "whenPrecision": "year",
+      "listingSlug": "trenton-telegraph",
+      "sources": [
+        {
+          "url": "https://www.trentontelegraph.com/",
+          "publisher": "The Trenton Telegraph",
+          "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/trenton-telegraph-to-launch-sept-12-as-grundy-countys-local-newspaper/",
+          "publisher": "KTTN",
+          "retrieved_at": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "id": "license-office-closure",
+      "kind": "unclear",
+      "headline": "The state license office serving Trenton closed",
+      "detail": "The office serving Trenton closed after May 2023 with a transition to a new contractor announced; we cannot confirm what replaced it",
+      "when": "2023",
+      "whenPrecision": "year",
+      "sources": [
+        {
+          "url": "https://dor.mo.gov/",
+          "publisher": "Missouri Department of Revenue",
+          "retrieved_at": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "id": "grundy-county-museum-domain",
+      "kind": "unclear",
+      "headline": "The Grundy County Museum has two candidate web domains",
+      "detail": "Sources resolve to both grundycountymuseum.webnode.page and grundycountymuseum.org for the museum. We publish the webnode address, which is the one sources resolved to, with the disagreement disclosed on the listing.",
+      "when": null,
+      "whenPrecision": "unknown",
+      "listingSlug": "grundy-county-museum",
+      "sources": [
+        {
+          "url": "https://grundycountymuseum.webnode.page/contact/",
+          "publisher": "Grundy County Museum",
+          "retrieved_at": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "id": "ketcham-renovation-complete",
+      "kind": "transitioned",
+      "headline": "NCMC's Ketcham Community Center completed its renovations",
+      "detail": "The mid-2025 renovation turned out to be a two-week weight-area and track project; the building reopened July 22, 2025, and the college later held an open house celebrating the completed upgrades.",
+      "when": "2025-07",
+      "whenPrecision": "month",
+      "listingSlug": "ncmc-ketcham-community-center",
+      "sources": [
+        {
+          "url": "https://www.ncmissouri.edu/kcc-floor-resurfacing/",
+          "publisher": "NCMC",
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.kttn.com/ketcham-community-center-celebrates-upgrades-with-an-open-house/",
+          "publisher": "KTTN",
+          "retrieved_at": "2026-08-17"
+        }
+      ]
+    }
+  ]
+}

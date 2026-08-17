@@ -6,7 +6,7 @@ description: "Trenton, MO by the rules that set the dates: third weekend of Octo
 summary: "The recurring shape of a year in Trenton, Missouri, written as recurrence rules so the page does not go stale."
 published: "2026-08-15"
 updated: "2026-08-15"
-related: ["things-to-do-in-trenton-mo", "crowder-state-park", "local-news"]
+related: ["things-to-do-in-trenton-mo", "crowder-state-park", "find-local-news"]
 places: ["sesquicentennial-park", "main-street-trenton", "north-central-missouri-fairgrounds-rock-barn", "trenton-area-chamber-of-commerce", "grundy-county-museum", "trenton-family-aquatic-center", "barnes-greenhouses", "black-silo-winery", "crowder-state-park-campground", "five-points-alive", "rotary-club-of-trenton"]
 sources:
   - url: "https://www.trentonmochamber.com/missouri-day-festival"
@@ -23,6 +23,13 @@ sources:
     publisher: "Barnes Greenhouses"
   - url: "https://mostateparks.com/park/crowder-state-park"
     publisher: "Missouri State Parks"
+unconfirmed:
+  - "The North Central Missouri Fair's dates — three different spans appeared across our sources, so we print none."
+  - "The December event's name and date — our sources use at least four names, and one reported date breaks the first-Friday rule."
+  - "The aquatic center's season, set annually by the Park Board and unknown to us."
+  - "Every recurrence rule on the page, in the sense that none has been checked with an organizer."
+own:
+  - "Writing the year as recurrence rules rather than dates is our choice, and the seasonal framing is ours."
 faq:
   - q: "When is the Missouri Day Festival in Trenton?"
     a: "The rule our sources give is annually, on the third weekend of October, organized by the Trenton Area Chamber of Commerce at the North Central Missouri Fairgrounds. That rule is the durable answer. Where a source gave us specific dates for a single year, the event's own page shows them with a caution; we publish no vendor count at all, because four different figures appear across our sources."
@@ -96,4 +103,4 @@ Every date, every season boundary and every recurrence rule on this page. We hav
 
 ## Related pages
 
-[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [Crowder State Park, from Trenton](/guides/crowder-state-park/) · [How to follow local news](/guides/local-news/)
+[Things to do in Trenton](/guides/things-to-do-in-trenton-mo/) · [Crowder State Park, from Trenton](/guides/crowder-state-park/) · [How to find local news](/how-to/find-local-news/)

@@ -5,11 +5,11 @@ h1: "How to license a vehicle if you live in Trenton"
 description: "The license office serving Trenton, MO closed after May 31, 2023, and stale listings still send people there. What to do instead, and what to bring."
 summary: "Why a Trenton license-office listing may send you to a closed door, the county paperwork that has to come first, and what to ask before you drive anywhere."
 published: "2026-08-15"
-updated: "2026-08-15"
+updated: "2026-08-17"
 related: ["register-to-vote", "start-a-business-in-trenton"]
 places: ["grundy-county-assessor", "grundy-county-collector-treasurer", "grundy-county-courthouse", "trenton-area-chamber-of-commerce"]
 sources:
-  - url: "https://dor.mo.gov/"
+  - url: "https://dor.mo.gov/news/newsitem/uuid/a9b0cd43-ed8c-44f4-b1fb-1b252055fe72"
     publisher: "Missouri Department of Revenue"
   - url: "https://grundycountymo.com/wordpress/assessors-office/"
     publisher: "Grundy County, Missouri"
@@ -17,6 +17,12 @@ sources:
     publisher: "Grundy County, Missouri"
   - url: "https://www.trentonmochamber.com/contact"
     publisher: "Trenton Area Chamber of Commerce"
+unconfirmed:
+  - "Whether any license office serves Trenton today — the state announced the office's closure after May 31, 2023 with a transition to a new contractor, and our evidence stops there."
+  - "Where the closest open office is, its hours, and what it handles."
+  - "Current fees, inspection requirements, and the titling deadline and its penalty."
+own:
+  - "The county-paperwork-first ordering and the questions to ask are ours."
 faq:
   - q: "Is there a license office in Trenton, Missouri?"
     a: "We cannot tell you, and that is the honest answer. The Missouri Department of Revenue announced that the office serving Trenton closed after May 31, 2023, with a transition to a new contractor — so a local office may have reopened since under a different operator, or may not have. Our evidence stops in 2023. Use the Department of Revenue's own office locator and call before you drive."
@@ -26,7 +32,7 @@ faq:
     a: "Missouri licensing generally requires a paid personal property tax receipt or a statement of non-assessment. The Grundy County Assessor's office maintains the property declaration and the Collector-Treasurer's page describes issuing the paid-tax receipt. Do that part before you drive anywhere."
 ---
 
-## Do not drive to a Trenton license office
+## The office that served Trenton closed in 2023 — we cannot confirm what replaced it
 
 **The Missouri Department of Revenue announced that the license office serving Trenton closed after May 31, 2023, with a transition to a new contractor.** Aggregator and DMV-style sites still list a local office, and one of the addresses they repeat also appears in our sources as a Chamber of Commerce address — the signature of copied data, not a working counter.
 

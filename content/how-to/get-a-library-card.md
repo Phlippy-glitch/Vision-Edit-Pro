@@ -13,6 +13,11 @@ sources:
     publisher: "Grundy County Jewett Norris Library"
   - url: "https://en.wikipedia.org/wiki/Jewett_Norris_Library"
     publisher: "Wikipedia"
+unconfirmed:
+  - "The library's hours — our sources conflict on the Saturday closing time, so we print none at all."
+  - "Card requirements, fees and residency terms, which the library itself holds."
+own:
+  - "The what-a-card-unlocks list, the lookalike-domain warning framing and the questions to ask are ours."
 faq:
   - q: "Which library serves Trenton, Missouri?"
     a: "The Grundy County Jewett Norris Library, on Main Street. Its own site describes it as serving Trenton and Grundy County, and the building it occupies is listed on the National Register of Historic Places."

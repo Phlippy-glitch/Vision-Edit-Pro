@@ -17,6 +17,11 @@ sources:
     publisher: "eCode360 (Trenton municipal code)"
   - url: "https://grundycountymo.com/wordpress/assessors-office/"
     publisher: "Grundy County, Missouri"
+unconfirmed:
+  - "Which city department handles permits, its fee schedule, the permit thresholds and the required inspections."
+  - "Whether the county requires anything for projects outside city limits."
+own:
+  - "The sequence, the where-projects-go-wrong list and the questions to ask are ours."
 faq:
   - q: "Where do I get a building permit in Trenton, Missouri?"
     a: "At City Hall, for an address inside Trenton city limits. The City of Trenton's own site carries its department listings and a how-do-I index, and the municipal code is published online. Outside city limits, the city has no role and the rules are different — ask the county what applies at your address."

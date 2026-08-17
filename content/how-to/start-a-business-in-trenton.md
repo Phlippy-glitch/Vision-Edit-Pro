@@ -21,6 +21,12 @@ sources:
     publisher: "Main Street Trenton"
   - url: "https://ncmdevelopment.org/grundy-county/"
     publisher: "North Central Missouri Development Alliance"
+unconfirmed:
+  - "Whether Trenton requires a general business license, and what any license or permit costs."
+  - "County merchant's license requirements, and which inspections apply to which sector."
+  - "What Chamber or Main Street membership includes today — and the development alliance's county profile in our sources is dated 2018."
+own:
+  - "The state-county-city ordering and the ask-before-you-sign-a-lease advice are ours."
 faq:
   - q: "Do I need a city business license in Trenton, Missouri?"
     a: "Ask the City of Trenton, and ask early. License requirements are set in the municipal code, which is published online, and they vary by activity — a home-based service, a storefront and a food business are not treated the same. Do not infer the answer from another town."

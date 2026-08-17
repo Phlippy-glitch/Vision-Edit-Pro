@@ -1,12 +1,12 @@
 ---
 slug: health-care
-title: "Health care in Trenton, MO: what's here, what you drive for"
-h1: "Health care in Trenton: what's here and what you drive for"
+title: "Doctors and Hospitals in Trenton, MO"
+h1: "Doctors and hospitals in Trenton, Missouri"
 description: "Trenton, MO has a 25-bed hospital with a 24-hour emergency department, a county health department and pharmacies. What that covers, and what it does not."
 summary: "The health care that exists in Trenton, Missouri, the questions to ask before an appointment, and why we publish no hospital street address."
 published: "2026-08-15"
-updated: "2026-08-15"
-related: ["is-trenton-a-good-place-to-live", "moving-to-trenton", "day-trips"]
+updated: "2026-08-17"
+related: ["is-trenton-a-good-place-to-live", "moving-to-trenton", "things-to-do-in-trenton-mo"]
 places: ["wright-memorial-hospital", "wright-memorial-physicians-group", "wright-memorial-hospital-specialty-clinic", "grundy-county-health-department", "hy-vee-pharmacy", "evercare-pharmacy", "cleaver-dermatology", "green-hills-community-action-agency", "grundy-county-senior-center"]
 sources:
   - url: "https://www.saintlukeskc.org/locations/wright-memorial-hospital"
@@ -21,6 +21,12 @@ sources:
     publisher: "Grundy County Health Department"
   - url: "https://www.hy-vee.com/store/trenton"
     publisher: "Hy-Vee"
+unconfirmed:
+  - "The hospital's street address — our sources give two different ones, with a third in aggregator data, so we publish none."
+  - "The roster of specialties at the visiting-specialist clinic, which one source listed and none corroborated."
+  - "Every hour, phone number, price and insurance arrangement for any provider named here."
+own:
+  - "The questions to ask providers, and the establish-care-before-you-need-it advice, are ours."
 faq:
   - q: "Does Trenton have an emergency room?"
     a: "Saint Luke's Health System describes Wright Memorial Hospital in Trenton as a 25-bed acute care hospital with a 24-hour emergency department. In an emergency, call 911 — do not route an emergency through this or any other directory."
@@ -104,4 +110,4 @@ Every hour, phone number, address, specialty, price and insurance arrangement on
 
 ## Related pages
 
-[Is Trenton a good place to live?](/guides/is-trenton-a-good-place-to-live/) · [Moving to Trenton](/guides/moving-to-trenton/) · [Day trips from Trenton](/guides/day-trips/)
+[Is Trenton a good place to live?](/guides/is-trenton-a-good-place-to-live/) · [Moving to Trenton](/guides/moving-to-trenton/) · [Things to do in Trenton](/guides/things-to-do-in-trenton-mo/)

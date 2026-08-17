@@ -261,8 +261,16 @@ function v2DataGates() {
         fail('scope-note-missing', `${id} has no non-empty "unconfirmed" front-matter list`);
       }
       for (const s of data.sources || []) {
-        if (s && s.url && /^https?:\/\/[^/]+\/?$/i.test(s.url)) {
-          fail('bare-root-citation', `${id} cites ${s.url} — a bare origin supports nothing; cite the page or drop the citation`);
+        if (!s || !s.url || !/^https?:\/\/[^/]+\/?$/i.test(s.url)) continue;
+        // The line this gate draws: an operator's own homepage is legitimately
+        // the page that describes the operator, but a government agency's root
+        // cited to support a procedural claim is a gesture at authority — the
+        // original finding was a bare dor.mo.gov standing in for a specific
+        // locator page. Agency roots fail; other roots are flagged for review.
+        if (/\.gov\b/i.test(s.url)) {
+          fail('bare-root-citation', `${id} cites the agency root ${s.url} — cite the specific page or drop the citation`);
+        } else {
+          warn('bare-root-citation', `${id} cites the homepage ${s.url}; fine if the operator's self-description is the claim, wrong if it stands in for a deeper page`);
         }
       }
     }
@@ -327,6 +335,12 @@ function outputGates() {
   for (const file of files) {
     const html = fs.readFileSync(file, 'utf8');
     const rel = path.relative(ROOT, file);
+
+    // Redirect stubs are not pages: they exist to move a bookmark, they claim
+    // their TARGET's canonical on purpose, and they carry no content to hold
+    // to content standards. They get their own checks further down.
+    if (/http-equiv="refresh"/.test(html) && /content="noindex"/.test(html)) continue;
+
     const text = visibleText(html);
 
     // Banned-phrase lint — the anti-slop standard, executed.

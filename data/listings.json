@@ -5,7 +5,9 @@
     "confirmation_ceiling": "unconfirmed",
     "note": "No first-party page was opened by any researcher. Every record is search-extract grade or weaker. `evidence` records how the fact was seen; `confirmation` records that nobody re-opened the source. Both axes are orthogonal to `status`, which is the operating state of the place.",
     "lint_warnings_justified": "Two warn-tier phrases survive deliberately and are exempt under the lint's own scope_exclude for proper names: 'the City of Trenton' (the municipal corporation's name, in seven records) and 'National Register of Historic Places' (a proper name, in three records). No warn-tier phrase is used as description.",
-    "owner": "merge data lead"
+    "owner": "merge data lead",
+    "v2_merged": "2026-08-17",
+    "v2_note": "v2 merge (2026-08-17): re-verification patches and gap-research additions folded in per RULINGS.md and the v2 design spec. Aggregator-only candidate records (Dino's Diner, Green House Rolls, Sonic Drive-In, Cenex) and name-only leads (Trenton Hardware LLC, Vintage Vines) were deliberately not merged and await better sources."
   },
   "listings": [
     {
@@ -24,7 +26,7 @@
       "phone": "(660) 359-2013",
       "website": "https://trentonmo.com/",
       "email": null,
-      "hours": null,
+      "hours": "Monday-Friday, 8:00 a.m. to 4:30 p.m.",
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
@@ -51,10 +53,18 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.com/contact/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Officeholder names were collected by both teams and are deliberately omitted from listing data."
+      "last_verified_at": "2026-08-17",
+      "notes": "Officeholder names were collected by both teams and are deliberately omitted from listing data. Hours are the City Hall & Utility Office window from the city's own contact page (2026-08-17)."
     },
     {
       "slug": "trenton-municipal-utilities",
@@ -78,7 +88,7 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -101,10 +111,18 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.com/contact/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Sources report a penalty of 10 percent of electric, water and wastewater charges on bills unpaid after the 18th of the month. Published water-rate figures are dated September 2022 and are not reproduced here."
+      "last_verified_at": "2026-08-17",
+      "notes": "Sources report a penalty of 10 percent of electric, water and wastewater charges on bills unpaid after the 18th of the month. Published water-rate figures are dated September 2022 and are not reproduced here. The Monday-Friday 8:00-4:30 hours were re-corroborated 2026-08-17 by the City Hall & Utility Office window on the city contact page (same building and counter)."
     },
     {
       "slug": "trenton-parks-and-recreation-department",
@@ -151,10 +169,27 @@
             "phone"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://trentonmo.com/government/departments/parks-and-recreation/",
+          "publisher": "City of Trenton",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.recsports.app/locations/loc_452501798a256b2c3a24eef6fa646359a997a2d0ad17252bd3f61c728eebbf73",
+          "publisher": "RecSports (aggregator)",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Two street addresses were reported by the two research passes (1510 E 13th Ct and 1000 E 13th Street). Neither is published."
+      "last_verified_at": "2026-08-17",
+      "notes": "Two street addresses persist across passes (1510 E 13th Ct and 1000 E 13th Street); neither is published. The 2026-08-17 pass found 1510 E 13th Ct on the city's own parks page snippet (with the shipped phone), while 1000 E 13th St persists only on aggregators (recsports.app, cmac.ws). The dispute is kept, with the first-party value annotated as the leader."
     },
     {
       "slug": "trenton-street-barn",
@@ -192,7 +227,8 @@
         }
       ],
       "last_verified_at": "2026-08-15",
-      "notes": "Function of the facility beyond its listing as a city location was not observed."
+      "notes": "Unlisted per the v2 design ruling (spec section 6.3): a municipal works yard with a street address is a place readers should not be sent, so the record is held in the dataset without a public page — it appears on the open-questions page only, and in no hub, sitemap, graph or A-Z listing. Function of the facility beyond its listing as a city location was not observed.",
+      "unlisted": true
     },
     {
       "slug": "trenton-municipal-airport",
@@ -345,7 +381,7 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [
         "phone"
       ],
@@ -368,10 +404,26 @@
             "address"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://safeelectricity.org/directory/grundy_electric_cooperative_inc/",
+          "publisher": "Safe Electricity",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.showmelocal.com/profile.aspx?bid=877791",
+          "publisher": "ShowMeLocal (aggregator)",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Two different main numbers appeared across sources ((660) 359-6030 and (660) 359-3941); neither is published. Reported office hours came from aggregators only and are not published."
+      "last_verified_at": "2026-08-17",
+      "notes": "Two different main numbers persist across sources ((660) 359-6030 via Safe Electricity and (660) 359-3941 via ShowMeLocal, both re-sighted 2026-08-17); neither has been seen first-party and neither is published. The 4100 Oklahoma Avenue address gained a further independent corroboration (Yelp, updated March 2026). Reported office hours came from aggregators only and are not published."
     },
     {
       "slug": "grundy-county-courthouse",
@@ -640,10 +692,19 @@
             "website"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.countyoffice.org/grundy-county-sheriffs-office-trenton-mo-21b/",
+          "publisher": "CountyOffice (aggregator)",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Three candidate addresses appeared across sources, one of them shared with the Trenton Police Department. None is published. No phone number is published on emergency-services records."
+      "last_verified_at": "2026-08-17",
+      "notes": "Three candidate addresses appeared across sources, one of them shared with the Trenton Police Department. The 2026-08-17 pass found 610 Main St (with 660-359-2828) across aggregator families (countyoffice.org, usacops), and the 610 Main collision with the police department increasingly reads as a genuinely shared law-enforcement building rather than a smear — but it is unpublishable until a first-party source confirms. None is published. No phone number is published on emergency-services records."
     },
     {
       "slug": "trenton-police-department",
@@ -688,10 +749,27 @@
             "name"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.countyoffice.org/trenton-police-department-trenton-mo-262/",
+          "publisher": "CountyOffice (aggregator)",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/police-dept-trenton-2",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "One research pass found an address (610 Main St) that collides with the address reported for the Grundy County Sheriff's Office; the other found no address at all. Nothing is published. No phone number is published on emergency-services records."
+      "last_verified_at": "2026-08-17",
+      "notes": "Three candidate addresses now exist (2026-08-17): 610 Main St (countyoffice/recordsfinder aggregators, shared with the Grundy County Sheriff's Office — possibly one shared law-enforcement building), 17 Harris (Yelp), and no address at all (one round-one pass). A non-emergency number, (660) 359-2121, appears on aggregators. Nothing is published. The chief is named in sources and is deliberately omitted. No phone number is published on emergency-services records."
     },
     {
       "slug": "trenton-fire-department",
@@ -882,7 +960,7 @@
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": "(660) 359-5621",
+      "phone": null,
       "website": "https://www.wrightmemorialhospital.org/",
       "email": null,
       "hours": null,
@@ -890,9 +968,10 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [
-        "address"
+        "address",
+        "phone"
       ],
       "sources": [
         {
@@ -905,10 +984,43 @@
             "website"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.saintlukeskc.org/locations/wright-memorial-hospital-emergency-department",
+          "publisher": "Saint Luke's Health System",
+          "covers": [
+            "phone",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://npino.com/primary-clinic/1700895711-wright-memorial-physicians-group/",
+          "publisher": "NPI registry (npino)",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/wright-memorial-hospital-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.trentonmochamber.com/connections/49791-wright-memorial-hospital/",
+          "publisher": "Trenton Area Chamber of Commerce (Local Connections)",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Two candidate addresses exist across sources (191 Iowa Blvd and 701 E 1st St, with a third appearing in aggregator data). Neither is published. Of every field on this site this is the one that must not be wrong."
+      "last_verified_at": "2026-08-17",
+      "notes": "PHONE DISPUTED (new, 2026-08-17): the previously shipped (660) 359-5621 now appears to be the Wright Memorial Custer Clinic (family medicine, Custer St) number per the NPI registry, while current sources including the Saint Luke's emergency-department page give 660-358-5700 as the hospital main line. Neither is published until settled. ADDRESS DISPUTED (narrowed 2026-08-17): 191 Iowa Blvd now appears across three genuinely different publishers (Saint Luke's, Yelp updated Aug 2025, Chamber connections page); 701 E 1st St did not resurface and is demoted to a historical note. Nothing is published. Of every field on this site this is the one that must not be wrong."
     },
     {
       "slug": "wright-memorial-physicians-group",
@@ -1064,15 +1176,15 @@
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": null,
+      "phone": "(660) 359-4955",
       "website": "https://www.hy-vee.com/store/trenton",
       "email": null,
-      "hours": null,
+      "hours": "Monday-Tuesday 9:00 a.m. to 5:30 p.m.; Wednesday 8:00 a.m. to 5:30 p.m.; Thursday-Friday 9:00 a.m. to 5:30 p.m.; Saturday 9:00 a.m. to 1:00 p.m.; closed Sunday",
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -1085,10 +1197,20 @@
             "website"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.hy-vee.com/my-pharmacy/pharmacy-finder/trenton-1617-e-9th-st-trenton-mo/1667",
+          "publisher": "Hy-Vee",
+          "covers": [
+            "hours",
+            "phone",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Pharmacy counter hours differ from store hours and were not observed."
+      "last_verified_at": "2026-08-17",
+      "notes": "Pharmacy counter hours and phone were observed on the chain's own pharmacy-finder page in the 2026-08-17 pass; they differ from store hours by design."
     },
     {
       "slug": "cleaver-dermatology",
@@ -1129,26 +1251,26 @@
     },
     {
       "slug": "evercare-pharmacy",
-      "name": "Evercare Pharmacy",
+      "name": "EverCare Pharmacy",
       "categories": [
         "health"
       ],
       "schemaType": "Pharmacy",
-      "summary": "A pharmacy listed at a Trenton, Missouri location in a pharmacy locator directory.",
+      "summary": "A pharmacy on East 9th Street in Trenton, formerly Hometown Pharmacy, with services sources describe as including delivery, compounding and immunizations.",
       "proximity": "trenton",
-      "address": null,
+      "address": "1903 E 9th St",
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": null,
-      "website": null,
+      "phone": "(660) 359-5700",
+      "website": "https://evercarepharmacy.org/",
       "email": null,
-      "hours": null,
+      "hours": "Monday-Friday 8:30 a.m. to 5:30 p.m.; Saturday 8:30 a.m. to 12:30 p.m.",
       "seasonal": null,
       "status": "unknown",
-      "evidence": "aggregator",
+      "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -1158,10 +1280,36 @@
             "name"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://evercarepharmacy.org/",
+          "publisher": "EverCare Pharmacy",
+          "covers": [
+            "name",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://insiderx.com/pharmacy-near-me/evercare/mo/trenton/1903-e-9th-st/1184941684",
+          "publisher": "InsideRx (NPI-backed)",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.chamberofcommerce.com/united-states/missouri/trenton/pharmacy/2002098562-evercare-pharmacy-trenton-formerly-hometown",
+          "publisher": "ChamberofCommerce.com",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Name only, from a directory listing. Nothing else about this business was observed."
+      "last_verified_at": "2026-08-17",
+      "notes": "Filled in 2026-08-17 from a name-only round-one record. Formerly \"Hometown Pharmacy - Trenton\". Multiple independent pharmacy registries (NPI-backed) plus a chamber directory agree, and the operator's own site surfaced in results. Precision note for editors: EverCare's (660) 359-5700 is one digit-cluster away from the number reported as the hospital main line (358-5700); keep both records precise. Hours are directory-grade."
     },
     {
       "slug": "trenton-r-ix-school-district",
@@ -1465,7 +1613,7 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -1488,11 +1636,26 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/ketcham-community-center-celebrates-upgrades-with-an-open-house/",
+          "publisher": "KTTN",
+          "covers": [
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.ncmissouri.edu/kcc-floor-resurfacing/",
+          "publisher": "NCMC",
+          "covers": [
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "A July 2025 college athletics release reported the building undergoing renovations. That report is over a year old, so status is held at unknown rather than renovating. Confirm availability before promoting it as bookable. A front-desk extension (1450) appeared in one source and is not published.",
-      "caution": "A college athletics release from mid-2025 described the building as undergoing renovation. That report is over a year old and we could not establish which facilities are currently available, so check before planning around it."
+      "last_verified_at": "2026-08-17",
+      "notes": "The stale renovation caution was lifted 2026-08-17: the July 2025 \"renovations\" were a two-week weight-area and track project (July 10-21, reopened July 22 per ncmissouri.edu), and KTTN has since covered an open house celebrating the completed upgrades — the building is operating. The college's long-range campus plan calls for a future Ketcham expansion; that is news, not a directory attribute. A front-desk extension (1450) appeared in one source and is not published."
     },
     {
       "slug": "grundy-county-jewett-norris-library",
@@ -1541,10 +1704,18 @@
             "address"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://poplarbluff.missourievergreen.org/eg/opac/library/GCJN",
+          "publisher": "Missouri Evergreen",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Saturday closing time conflicted across research passes and is deliberately omitted. The library and the National Register building are modelled as one place with two facets, not two listings. The correct domain is grundycountylibrary.org; a similarly named trentonlib.org belongs to a different town."
+      "last_verified_at": "2026-08-17",
+      "notes": "Saturday closing time conflicted across research passes and remains deliberately omitted. The 2026-08-17 pass found Saturday 8:30 a.m. to 12:00 p.m. on the Missouri Evergreen consortium library-details page — the library's own ILS network and the strongest hours source seen for this record — but the dispute is kept until a second sighting agrees on the Saturday close. Weekday hours were not returned in that pass. The library and the National Register building are modelled as one place with two facets, not two listings. The correct domain is grundycountylibrary.org; a similarly named trentonlib.org belongs to a different town."
     },
     {
       "slug": "trenton-area-chamber-of-commerce",
@@ -1562,7 +1733,7 @@
       "zip": "64683",
       "phone": "(660) 359-4324",
       "website": "https://www.trentonmochamber.com/",
-      "email": null,
+      "email": "trentonchambermo@gmail.com",
       "hours": null,
       "seasonal": null,
       "status": "unknown",
@@ -1591,10 +1762,35 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.chamberorganizer.com/MCCI/mem_trendonCofC",
+          "publisher": "ChamberOrganizer (chamber-affiliated)",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/trenton-area-chamber-of-commerce-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.uschamber.com/co/chambers/missouri/trenton",
+          "publisher": "US Chamber of Commerce",
+          "covers": [
+            "phone",
+            "email"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Three conflicting addresses appeared across sources (903 Main Street, 617 Main, and 1846 E 9th St). None is published. The 1846 E 9th St value also collides with a state license office that closed in May 2023, which is the signature of an aggregator data smear. The executive director is named in one source and is deliberately omitted."
+      "last_verified_at": "2026-08-17",
+      "notes": "ADDRESS DISPUTED (narrowed 2026-08-17 to two candidates): 903 Main Street (chamber-affiliated directory pages such as ChamberOrganizer and the US Chamber finder) vs 617 Main St (Yelp, updated April 2026). Neither is published. The third value, 1846 E 9th St, did not resurface in the 2026-08-17 pass and is demoted to a historical note: it collides with a state license office that closed in May 2023, the signature of an aggregator data smear. The phone was re-confirmed by an independent sighting (corroborated 2). The email is directory-grade. The executive director is named in one source and is deliberately omitted."
     },
     {
       "slug": "rotary-club-of-trenton",
@@ -1649,7 +1845,7 @@
         "community"
       ],
       "schemaType": "Organization",
-      "summary": "A senior center for Grundy County residents providing meals, activities and services for older adults, operated in connection with the Grundy County Council on Aging.",
+      "summary": "A senior center for Grundy County residents, operating as the North 65 Center, providing meals, activities and services for older adults, run by the Grundy County Council on Aging.",
       "proximity": "trenton",
       "address": null,
       "city": "Trenton",
@@ -1663,7 +1859,7 @@
       "status": "unknown",
       "evidence": "reputable_third_party",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -1684,10 +1880,20 @@
             "phone"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/grundy-county-aging-board-to-maintain-north-65-center-services/",
+          "publisher": "KTTN",
+          "covers": [
+            "name",
+            "summary",
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Only a P.O. Box was found, which is a mailing address and must never render as a street location or a map pin. The physical location is a known gap."
+      "last_verified_at": "2026-08-17",
+      "notes": "Operates as the \"North 65 Center\" (KTTN, 2026-08-17), run by Grundy County Council on Aging Inc.; KTTN reports the Aging Board maintaining current meal service and staffing, an operating signal. Only a P.O. Box was found, which is a mailing address and must never render as a street location or a map pin. The physical location is a known gap."
     },
     {
       "slug": "community-food-pantry-of-grundy-county",
@@ -1702,16 +1908,18 @@
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": null,
+      "phone": "(660) 339-7099",
       "website": null,
       "email": null,
-      "hours": null,
+      "hours": "Distribution Wednesday and Thursday, 9:00 a.m. to 12:00 p.m. and 1:00 p.m. to 3:00 p.m.",
       "seasonal": null,
       "status": "unknown",
       "evidence": "reputable_third_party",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
-      "disputed": [],
+      "corroborated": 2,
+      "disputed": [
+        "address"
+      ],
       "sources": [
         {
           "url": "https://www.causeiq.com/organizations/community-food-pantry,431530787/",
@@ -1721,10 +1929,36 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.foodpantries.org/li/community-food-pantry-of-grundy-county",
+          "publisher": "FoodPantries.org",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://food-banks.cmac.ws/community-food-pantry-of-grundy-county/1522/",
+          "publisher": "CMac.ws (aggregator)",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.helpmenow.org/sites/helpmenow/files/NW%20Missouri%20&%20NE%20Kansas%20Food%20Resources%20Updated%20October%202023.pdf",
+          "publisher": "HelpMeNow.org (October 2023 resource PDF)",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Distribution hours, address and phone are all unknown. A pantry listing without hours is close to useless to the person who needs it; this record exists so the gap is visible and correctable, and it must carry the correction path prominently."
+      "last_verified_at": "2026-08-17",
+      "notes": "Filled in 2026-08-17 from an empty round-one record. ADDRESS DISPUTED ON ARRIVAL: 1703 Harris Ave (foodpantries.org, cmac.ws) is the same address shipped for the Church Women United Thrift Store — possibly co-located charities in one building, possibly an aggregator smear — so it is held as disputed rather than published. Phone (660) 339-7099 is from cmac.ws; 339 is a Trenton-area exchange. Hours come from an October 2023 helpmenow.org resource PDF — dated, shipped with a call-to-confirm caution. This record must carry the correction path prominently.",
+      "caution": "Distribution hours come from a food-resource list dated October 2023 and may have changed since. Call ahead to confirm before making a trip."
     },
     {
       "slug": "green-hills-animal-shelter",
@@ -1781,21 +2015,22 @@
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": "(660) 359-2411",
+      "phone": null,
       "website": "https://grundycountymuseum.webnode.page/",
       "email": null,
-      "hours": null,
+      "hours": "Weekends and holidays, 1:30 p.m. to 4:30 p.m., during the open season",
       "seasonal": {
         "season": "Saturday of Memorial Day weekend through the third Sunday in October",
         "open_when_in_season": "Weekends and holidays, 1:30 p.m. to 4:30 p.m.",
-        "note": "Sources describe admission as free with donations accepted."
+        "note": "Sources describe admission as free with donations accepted. KTTN reported the 2026 (50th) season opening Saturday, May 23, 2026."
       },
       "status": "seasonal",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [
-        "website"
+        "website",
+        "phone"
       ],
       "sources": [
         {
@@ -1820,10 +2055,21 @@
             "address"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/grundy-county-museum-to-open-may-23-for-50th-season/",
+          "publisher": "KTTN",
+          "covers": [
+            "phone",
+            "hours",
+            "seasonal",
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Two candidate domains appeared (grundycountymuseum.org and grundycountymuseum.webnode.page); the webnode address is the one sources resolved to. Seasonal opening must never render as year-round hours. One extract referenced Livingston County veterans; that clause was excluded as unresolved and must not be reinstated."
+      "last_verified_at": "2026-08-17",
+      "notes": "PHONE DISPUTED (new, 2026-08-17): (660) 359-2411 (the museum's webnode contact page) vs (660) 359-7597 (KTTN's 2026 season-opening story); neither is published. Two candidate domains appeared (grundycountymuseum.org and grundycountymuseum.webnode.page); the webnode address is the one sources resolved to, and that dispute stands. KTTN's 2026 story confirms the season definition (Memorial Day weekend Saturday through the third Sunday in October) and in-season weekend hours; the one-day opening-day hours (10:30 a.m. to 4:30 p.m.) are not shipped. Seasonal opening must never render as year-round hours. One extract referenced Livingston County veterans; that clause was excluded as unresolved and must not be reinstated."
     },
     {
       "slug": "main-street-trenton",
@@ -2098,8 +2344,8 @@
           "retrieved_at": "2026-08-15"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "A reported 2026 expansion is forward-looking news and is not published as a directory attribute."
+      "last_verified_at": "2026-08-17",
+      "notes": "A reported 2026 expansion is forward-looking news and is not published as a directory attribute. 2026-08-17 flag: the same 1703 Harris Ave address surfaced on aggregators for the Community Food Pantry of Grundy County — possibly co-located charities in one building, possibly an aggregator smear. This record keeps its Chamber sourcing; the collision is held as a dispute on the pantry record."
     },
     {
       "slug": "crowder-state-park",
@@ -2110,7 +2356,7 @@
       "schemaType": "Park",
       "summary": "A Missouri state park in Grundy County, about three miles outside Trenton city limits, with more than 17 miles of hiking, bicycling, backpacking and equestrian trails through forested, rugged terrain, plus camping, picnic shelters, playgrounds and fishing on Crowder Lake.",
       "proximity": "grundy_county",
-      "address": null,
+      "address": "76 NW Hwy 128",
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
@@ -2122,7 +2368,7 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [],
       "sources": [
         {
@@ -2143,10 +2389,19 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/crowder-state-park-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Park acreage and lake acreage are deliberately unpublished: sources gave conflicting lake sizes and the address reported in one pass could not be corroborated. This park is in Grundy County near Trenton, not in Trenton, and copy must never say 'in Trenton'. Toll-free and campsite reservation numbers exist in sources and are not published as the primary phone."
+      "last_verified_at": "2026-08-17",
+      "notes": "Park acreage and lake acreage remain deliberately unpublished: sources gave conflicting lake sizes in round one, though 1,912 acres and an 18-acre Crowder Lake were corroborated again in the 2026-08-17 pass. The 76 NW Hwy 128 address, uncorroborated in round one, was re-sighted (Yelp/stateparks.com) and is now published at aggregator grade. This park is in Grundy County near Trenton, not in Trenton, and copy must never say \"in Trenton\". No hours were found. Toll-free and campsite reservation numbers exist in sources and are not published as the primary phone."
     },
     {
       "slug": "moberly-park",
@@ -2330,12 +2585,12 @@
       "hours": null,
       "seasonal": {
         "season": "Summer",
-        "note": "Season dates, opening hours and admission fees are set annually by the Trenton Park Board and were not observed. Call the Park Department before traveling."
+        "note": "Season dates, opening hours and admission fees are set annually by the Trenton Park Board. KTTN reported the 2026 season opening set for Saturday, May 23, weather permitting. Call the Park Department before traveling."
       },
       "status": "seasonal",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [],
       "sources": [
         {
@@ -2357,10 +2612,19 @@
             "seasonal"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/trenton-pool-opening-set-for-may-23-weather-conditions-permitting/",
+          "publisher": "KTTN",
+          "covers": [
+            "seasonal",
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Fees were discussed in a news report but no figures were confirmed, so none are published."
+      "last_verified_at": "2026-08-17",
+      "notes": "Fees were discussed in news reports but no figures were confirmed, so none are published; admission prices observed in the 2026 coverage are excluded by the no-prices convention."
     },
     {
       "slug": "riverside-country-club",
@@ -2465,10 +2729,18 @@
             "phone"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.kttn.com/north-central-missouri-fair-runs-july-25-aug-1-in-trenton/",
+          "publisher": "KTTN",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "One source gives the fairgrounds address as 1415 Oklahoma Ave, which is also the reported address of Trenton High School. The two sites appear adjacent but the collision is unresolved, so no address is published here. A National Park Service reference number for the Rock Barn would settle the register listing and has not been pulled."
+      "last_verified_at": "2026-08-17",
+      "notes": "One source gives the fairgrounds address as 1415 Oklahoma Ave, which is also the reported address of Trenton High School; the two sites appear adjacent but the collision is unresolved, so no address is published. The 2026-08-17 pass strengthened the 1415 Oklahoma Ave candidate: KTTN's 2026 fair coverage states plainly \"North Central Missouri Fairgrounds, 1415 Oklahoma Ave. in Trenton\", directly attributing it to the fairgrounds. The dispute is kept pending an explanation of the collision. A National Park Service reference number for the Rock Barn would settle the register listing and has not been pulled."
     },
     {
       "slug": "cobblestone-inn-and-suites-trenton",
@@ -2515,10 +2787,34 @@
             "address"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/cobblestone-inn-and-suites-trenton-3",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.hotelplanner.com/Hotels/315255/Reservations-Cobblestone-Inn-Suites-Trenton-Trenton-1845-Hoover-Dr-64683",
+          "publisher": "HotelPlanner (aggregator, duplicated)",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.hotelplanner.com/Hotels/319367/Reservations-Cobblestone-Inn-Suites-Trenton-Trenton-2900-Hoover-Dr-64683",
+          "publisher": "HotelPlanner (aggregator, duplicated)",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "An aggregator carries a second address on the same street (1845 Hoover Dr). The 1845 number recurs across several unrelated lodging records in this town and is the signature of an aggregator data smear, so it is recorded as a dispute rather than published. A toll-free brand number exists and is not published. Guest ratings are excluded by rule."
+      "last_verified_at": "2026-08-17",
+      "notes": "ADDRESS DISPUTE DEEPENED (2026-08-17): candidates are now 1845 Hoover Dr (a number that recurs across unrelated lodging records in this town — the signature of an aggregator data smear) and 2900 Hoover Dr (Yelp, updated March 2026). HotelPlanner carries both as two separate property pages for the same hotel — classic aggregator duplication. Neither is published. Staleness trap: \"Country Home Inn\", a prior lodging name, still ranks on Kayak and allhotelsinmissouri for what is now this Cobblestone property. A toll-free brand number exists and is not published. Guest ratings are excluded by rule."
     },
     {
       "slug": "crowder-state-park-campground",
@@ -2631,12 +2927,12 @@
       "phone": "(660) 359-9800",
       "website": null,
       "email": null,
-      "hours": null,
+      "hours": "Monday-Thursday 11:00 a.m. to 10:00 p.m.; Friday-Saturday 11:00 a.m. to 10:30 p.m.; Sunday 11:00 a.m. to 9:00 p.m.",
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [],
       "sources": [
         {
@@ -2656,10 +2952,18 @@
             "phone"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://local.yahoo.com/info-213981348-washington-street-food-drink-trenton/",
+          "publisher": "Yahoo Local",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "The business name references Washington Street but the reported address is on E 28th St; that is what the source says and it was not corrected. Opening hours were aggregator-derived and are withheld."
+      "last_verified_at": "2026-08-17",
+      "notes": "The business name references Washington Street but the reported address is on E 28th St; that is what the source says and it was not corrected. Address and phone were re-corroborated 2026-08-17 (Yelp updated April 2026 plus chamberofcommerce.com). Hours are aggregator-grade (Yahoo Local) and must render with their evidence label."
     },
     {
       "slug": "chesapeake-on-main",
@@ -2674,18 +2978,18 @@
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": null,
+      "phone": "(660) 358-1605",
       "website": null,
       "email": null,
       "hours": null,
       "seasonal": {
         "season": "Winter",
-        "note": "The business published winter hours through March of Wednesday to Saturday, lunch 11:00 a.m. to 1:00 p.m. and dinner 5:00 p.m. to 8:00 p.m. Hours outside that window were not observed."
+        "note": "The business published winter hours through March of Wednesday to Saturday, lunch 11:00 a.m. to 1:00 p.m. and dinner 5:00 p.m. to 8:00 p.m., with dinner to 9:00 p.m. on Friday and Saturday per an aggregator. Hours outside that window were not observed."
       },
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -2698,10 +3002,37 @@
             "seasonal"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/chesapeake-on-main-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.kttn.com/rotary-club-hears-from-chesapeake-on-main-owners-about-restaurant/",
+          "publisher": "KTTN",
+          "covers": [
+            "status",
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://local.yahoo.com/info-240353235-chesapeake-on-main-trenton/",
+          "publisher": "Yahoo Local",
+          "covers": [
+            "hours",
+            "seasonal"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "The only hours found are explicitly winter-only. Publishing them as year-round hours would be misleading, so the hours field is null and the seasonal note carries them with their label."
+      "last_verified_at": "2026-08-17",
+      "notes": "The only hours found are explicitly winter-only, so the hours field stays null and the seasonal note carries them with their label. Fresh KTTN coverage (a Rotary talk by the owners) and a December 2025 Trenton Telegraph dining story are a strong operating signal (2026-08-17). The phone is from Yelp (updated January 2026), aggregator grade."
     },
     {
       "slug": "uprooted-creamery",
@@ -2758,7 +3089,7 @@
       "phone": null,
       "website": null,
       "email": null,
-      "hours": null,
+      "hours": "Monday-Thursday 11:00 a.m. to 10:00 p.m.; Friday-Saturday 11:00 a.m. to 10:30 p.m.; Sunday 11:00 a.m. to 10:00 p.m.",
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
@@ -2774,10 +3105,18 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.restaurantji.com/mo/trenton/el-toro-/",
+          "publisher": "Restaurantji",
+          "covers": [
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Hours appeared only in a menu aggregator and are withheld. The tourism copy calls it the newest Mexican restaurant in town; that wording is time-sensitive and is not reused."
+      "last_verified_at": "2026-08-17",
+      "notes": "Hours are aggregator-grade (Restaurantji, 2026-08-17) and must render with their evidence label. An address (1410 E 9th St) and phone ((660) 654-6001) were observed on Yelp (updated January 2026) in the 2026-08-17 pass, but the sighting arrived without a citable URL, so neither is published until a source can cover it. The tourism copy calls it the newest Mexican restaurant in town; that wording is time-sensitive and is not reused."
     },
     {
       "slug": "china-fresh",
@@ -2889,36 +3228,46 @@
             "seasonal"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/food-drink",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "The record model must tolerate a listing with no location at all.",
+      "last_verified_at": "2026-08-17",
+      "notes": "Operates from a trailer (shaved ice, 15+ flavors) — a mobile, seasonal stand, so a street-address field would be wrong for this record (confirmed 2026-08-17). The record model must tolerate a listing with no location at all.",
       "caution": "We found no location for this at all — not a street address, not a district, nothing. It may operate from a market stall, from home, or online. Ask before you go looking for it."
     },
     {
       "slug": "caseys",
-      "name": "Casey's",
+      "name": "Casey's (East 9th Street)",
       "categories": [
         "eat-drink",
         "shopping"
       ],
       "schemaType": "ConvenienceStore",
-      "summary": "A convenience store and fuel stop in Trenton that also sells made-to-order pizza, with delivery at some times of the week.",
+      "summary": "A Casey's convenience store and fuel stop on East 9th Street in Trenton that also sells made-to-order pizza. Casey's own store locator lists it as store 1116, distinct from the Oklahoma Avenue store.",
       "proximity": "trenton",
-      "address": null,
+      "address": "202 E 9th St",
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
       "phone": null,
-      "website": null,
+      "website": "https://www.caseys.com/general-store/mo-trenton/202-e-9th-st/1116",
       "email": null,
       "hours": null,
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
-      "disputed": [],
+      "corroborated": 2,
+      "disputed": [
+        "phone"
+      ],
       "sources": [
         {
           "url": "https://www.visittrentonmo.com/food-drink",
@@ -2928,11 +3277,30 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.caseys.com/general-store/mo-trenton/202-e-9th-st/1116",
+          "publisher": "Casey's",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/caseys-trenton-4",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "No address was found. This chain often has more than one store per town, so this record must not be presented as the only location.",
-      "caution": "Chains like this often run more than one store in a town, and we only found evidence of one. Treat this as one location rather than the only one."
+      "last_verified_at": "2026-08-17",
+      "notes": "Re-scoped 2026-08-17 to store 1116 at 202 E 9th St per Casey's own locator, corroborated by Yelp (updated July 2026) and Tripadvisor; the round-one caution that this chain may run more than one store proved right — the second Trenton store (2008, 2711 Oklahoma Ave) now has its own record. PHONE SUPPRESSED ON CONFLICT: (660) 359-6044 (Allmenus) vs (660) 717-0163 (unattributed second number in the same synthesis). Hours (\"Daily 5:00 a.m. to 10:00 p.m.\") appeared only at search-synthesis grade and are held.",
+      "caution": "Casey's runs two stores in Trenton. This listing is the East Ninth Street store; the Oklahoma Avenue store has its own listing."
     },
     {
       "slug": "hy-vee",
@@ -3028,10 +3396,10 @@
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
-      "phone": null,
+      "phone": "(660) 635-1584",
       "website": null,
       "email": null,
-      "hours": null,
+      "hours": "Wednesday-Saturday, 10:00 a.m. to 5:30 p.m.",
       "seasonal": null,
       "status": "unknown",
       "evidence": "first_party_snippet",
@@ -3050,10 +3418,27 @@
             "address"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yellowpages.com/trenton-mo/mip/main-street-mall-c-j-s-antiques-540143944",
+          "publisher": "YellowPages (aggregator)",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://downtowndifferent.com/trenton/missouri/trentonmainstreetmall",
+          "publisher": "DowntownDifferent (aggregator)",
+          "covers": [
+            "hours",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Social media carries both Main Street Mall and Trenton's Main Street Mall as separate pages; they are likely one business but the canonical name is unresolved."
+      "last_verified_at": "2026-08-17",
+      "notes": "Social media carries both Main Street Mall and Trenton's Main Street Mall as separate pages; they are likely one business but the canonical name is unresolved, and the 2026-08-17 pass added a third candidate, \"Main Street Mall & C.J.'s Antiques\" (YellowPages). The name dispute stands. Hours and phone are aggregator-grade (DowntownDifferent) and must render with their evidence label, never as fact."
     },
     {
       "slug": "downtown-depot",
@@ -3062,7 +3447,7 @@
         "shopping"
       ],
       "schemaType": "Store",
-      "summary": "A downtown Trenton shop housing booths from local artisans.",
+      "summary": "A downtown Trenton shop housing booths from local artisans, with the \"Depot Brew\" coffee counter inside.",
       "proximity": "trenton",
       "address": null,
       "city": "Trenton",
@@ -3087,10 +3472,19 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.visittrentonmo.com/shopping",
+          "publisher": "Visit Trenton",
+          "covers": [
+            "summary",
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": null
+      "last_verified_at": "2026-08-17",
+      "notes": "The Depot Brew coffee detail and an operating signal come from the Visit Trenton shopping page snippet (2026-08-17)."
     },
     {
       "slug": "barnes-greenhouses",
@@ -3108,15 +3502,15 @@
       "phone": "(660) 359-2699",
       "website": "https://barnesgreenhouses.com/",
       "email": null,
-      "hours": null,
+      "hours": "Monday-Friday, 8:30 a.m. to 5:00 p.m., during the open season",
       "seasonal": {
         "season": "Mid-March through mid-October",
-        "note": "Sources describe the garden center as seasonal. Daily hours within the season were not observed."
+        "note": "Sources describe the garden center as seasonal, open mid-March through mid-October."
       },
       "status": "seasonal",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [
         "address"
       ],
@@ -3132,10 +3526,28 @@
             "seasonal"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.baileynurseries.com/locations/barnes-greenhouses-3235-pleasant-plain-trenton-mo/",
+          "publisher": "Bailey Nurseries",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://barnesgreenhouses.com/store-location-hours/",
+          "publisher": "Barnes Greenhouses",
+          "covers": [
+            "hours",
+            "seasonal",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Two near-identical addresses appeared across sources (3225 Pleasant Pl and 3235 Pleasant Plain), differing by one digit and a street-name form. Neither is published. The 1890 founding date is a story angle only if confirmed."
+      "last_verified_at": "2026-08-17",
+      "notes": "Two near-identical addresses appeared across sources (3225 Pleasant Pl and 3235 Pleasant Plain). Neither is published, but the 2026-08-17 pass found Bailey Nurseries — the wholesale supplier, genuinely independent — listing 3235 Pleasant Plain, while 3225 Pleasant Pl remains a Yelp-only value; the dispute is kept with 3235 annotated as the leader. Weekday hours and the seasonal window come from the first-party store-hours page snippet. A second phone, (660) 359-2600 (business office), appears on the same page and is not published as the primary. The 1890 founding date is a story angle only if confirmed."
     },
     {
       "slug": "dollar-general",
@@ -3226,7 +3638,7 @@
       "schemaType": "Store",
       "summary": "A Trenton shop listed by the town's tourism site among local shopping businesses.",
       "proximity": "trenton",
-      "address": null,
+      "address": "400 E 9th St",
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
@@ -3248,10 +3660,18 @@
             "name"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/savvy-sallys-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Name only. Nothing beyond the listing was observed."
+      "last_verified_at": "2026-08-17",
+      "notes": "The address is aggregator-grade (Yelp, updated November 2025); the store has an active first-party Facebook page (operating signal, 2026-08-17). A second Savvy Sally's exists in Princeton, MO and must never be merged into this record."
     },
     {
       "slug": "howards-dept-store",
@@ -3274,7 +3694,7 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
+      "corroborated": 2,
       "disputed": [],
       "sources": [
         {
@@ -3284,10 +3704,19 @@
             "name"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.trentontelegraph.com/news/11/13/itinerary-for-downtown-christmas-parade-11-14/",
+          "publisher": "The Trenton Telegraph",
+          "covers": [
+            "status",
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Name only. Nothing beyond the listing was observed."
+      "last_verified_at": "2026-08-17",
+      "notes": "Named as an active event site in the Trenton Telegraph's current Downtown Christmas itinerary — an operating signal (2026-08-17). Nothing else beyond the listing was observed."
     },
     {
       "slug": "browns-shoe-fit",
@@ -3332,9 +3761,9 @@
         "shopping"
       ],
       "schemaType": "Store",
-      "summary": "A Trenton thrift store listed by the town's tourism site among local shopping businesses.",
+      "summary": "A Trenton thrift store on East 9th Street, dual-branded with the Recovery Rocks Thrift Store name.",
       "proximity": "trenton",
-      "address": null,
+      "address": "1111 E. 9th",
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
@@ -3346,10 +3775,8 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 1,
-      "disputed": [
-        "name"
-      ],
+      "corroborated": 2,
+      "disputed": [],
       "sources": [
         {
           "url": "https://www.visittrentonmo.com/shopping",
@@ -3358,10 +3785,28 @@
             "name"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.instagram.com/p/DVPGpHDk553/",
+          "publisher": "The Weeping Willow Thrift (Instagram, first-party social)",
+          "covers": [
+            "name",
+            "address",
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/the-weeping-willow-thrift-recovery-rocks-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "In the source extract this name ran together with an adjacent listing, so the trailing part of the name is uncertain and a second business may be hidden inside it. Confirm the exact trading name before this record is promoted."
+      "last_verified_at": "2026-08-17",
+      "notes": "Round-one name dispute RESOLVED (2026-08-17): the run-together name in the original extract was two co-located brand names, not a hidden second listing — the store is dual-branded \"The Weeping Willow / Recovery Rocks Thrift Store\" (Yelp lists it as \"The Weeping Willow Thrift Recovery Rocks\"). The address comes from the store's own Instagram posts (first-party social); active February-March 2026 posts are an operating signal."
     },
     {
       "slug": "kttn-kgoz-radio",
@@ -3422,7 +3867,7 @@
       "status": "unknown",
       "evidence": "first_party_snippet",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [],
       "sources": [
         {
@@ -3443,10 +3888,18 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.trentontelegraph.com/news/11/13/itinerary-for-downtown-christmas-parade-11-14/",
+          "publisher": "The Trenton Telegraph",
+          "covers": [
+            "status"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Sources give both September 11 and September 12, 2025 as the launch day, so only the month is published. This is the town's current newspaper; any pre-2025 directory of Trenton media will be missing it."
+      "last_verified_at": "2026-08-17",
+      "notes": "Sources give both September 11 and September 12, 2025 as the launch day, so only the month is published. This is the town's current newspaper; any pre-2025 directory of Trenton media will be missing it. Two fresh first-party article sightings (a November 2025 Downtown Christmas itinerary and a December 2025 Chesapeake on Main story, both on trentontelegraph.com) confirm active publication as of the 2026-08-17 pass."
     },
     {
       "slug": "trenton-republican-times",
@@ -3787,7 +4240,7 @@
       "schemaType": "AutoRepair",
       "summary": "A Trenton automotive service and tire provider operating as part of a farm cooperative.",
       "proximity": "trenton",
-      "address": null,
+      "address": "1736 E 9th St",
       "city": "Trenton",
       "state": "MO",
       "zip": "64683",
@@ -3801,9 +4254,7 @@
       "confirmation": "unconfirmed",
       "corroborated": 1,
       "disputed": [
-        "address",
-        "phone",
-        "name"
+        "phone"
       ],
       "sources": [
         {
@@ -3814,10 +4265,27 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.yelp.com/biz/peoples-co-op-and-mr-tire-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.findtruckservice.com/page/peoples-co-op-mr-tire-trenton-mo-41436",
+          "publisher": "FindTruckService (aggregator)",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Two addresses and two phone numbers were reported for what may be two different operations (one possibly the cooperative's agronomy or fuel side). Nothing is published until a human establishes which is which. The trading name itself is uncertain."
+      "last_verified_at": "2026-08-17",
+      "notes": "Name dispute softened (2026-08-17): \"People's Cooperative/Mr Tire\" (also \"Peoples CO-OP & Mr Tire\") is used consistently across chamberofcommerce.com, Yelp, POSC and Facebook as one combined trading name for one full-service station. The address converged on 1736 E 9th St across that family (aggregator grade — one corroboration family, published with its evidence label). PHONE STILL DISPUTED: (660) 359-3313 (chamberofcommerce.com) vs (660) 359-2271 (FindTruckService); neither is published. Two YellowPages records still exist, consistent with a co-op agronomy/fuel side under the same name."
     },
     {
       "slug": "nestle-trenton-plant",
@@ -3840,7 +4308,7 @@
       "status": "unknown",
       "evidence": "reputable_third_party",
       "confirmation": "unconfirmed",
-      "corroborated": 2,
+      "corroborated": 3,
       "disputed": [],
       "sources": [
         {
@@ -3860,10 +4328,19 @@
             "summary"
           ],
           "retrieved_at": "2026-08-15"
+        },
+        {
+          "url": "https://www.nestleprofessional.us/manufact-investment-trenton-missouri-factory",
+          "publisher": "Nestlé Professional",
+          "covers": [
+            "status",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-17"
         }
       ],
-      "last_verified_at": "2026-08-15",
-      "notes": "Everything sourced here is from 2018 and must be written in the past tense. Current operating status and headcount are unknown and must not be asserted. The plant's history is relevant context for any page about working or moving here."
+      "last_verified_at": "2026-08-17",
+      "notes": "Everything sourced from 2018 must be written in the past tense. The 2026-08-17 pass found no closure or layoff signal in 2025-2026 results; the most recent narrative is the 2022 $7.5M expansion adding about 30 jobs (Nestlé Professional). Current headcount is unknown and must not be asserted. The plant's history is relevant context for any page about working or moving here."
     },
     {
       "slug": "modine-manufacturing",
@@ -3976,6 +4453,617 @@
       ],
       "last_verified_at": "2026-08-15",
       "notes": null
+    },
+    {
+      "slug": "chumbleys",
+      "name": "Chumbley's",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "Restaurant",
+      "summary": "A family-owned bar and grill in Trenton serving gourmet burgers, smoked meats and daily specials, with a full-service bar and live music or karaoke on weekends. Sources describe it as serving Trenton and surrounding communities since 2010.",
+      "proximity": "trenton",
+      "address": "201 W 8th St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 696-3899",
+      "website": "https://chumbleysmo.com/",
+      "email": null,
+      "hours": "Monday-Thursday 11:00 a.m. to 10:00 p.m.; Friday-Saturday 11:00 a.m. to 1:30 a.m.",
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://chumbleysmo.com/",
+          "publisher": "Chumbley's",
+          "covers": [
+            "name",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.chumbleysmo.com/chumbleys/menu/201-W-8th-St/",
+          "publisher": "Chumbley's",
+          "covers": [
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://chumbleys.placejoys.com/",
+          "publisher": "Chumbley's (Placejoys site)",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/chumbleys-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Phone and hours were returned by a search restricted to the operator's own domains; treat covers attribution as search-extract grade like everything else in this build. Sunday is absent from the first-party hours string; one aggregator (restaurantjump.com) reports closed Sunday - not published. A YellowPages listing for 'Chumbley's Hometown Billiards Bar & Grill' at this town is marked CLOSED; it appears to be a stale listing under a former name, while the current Yelp listing (updated April 2026) is active. The 'since 2010' claim comes from the operator's secondary Placejoys site and restaurantjump."
+    },
+    {
+      "slug": "el-nopal-mexicana-restaurant",
+      "name": "El Nopal Mexicana Restaurant",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "Restaurant",
+      "summary": "A family-owned Mexican restaurant on East 9th Street serving tacos, burritos, fajitas, enchiladas and quesadillas, with a full bar, kids menu and vegetarian options. Its website says it has served Trenton since 2005 and was the first restaurant in a small family-owned chain.",
+      "proximity": "trenton",
+      "address": "1100 E 9th St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 339-7040",
+      "website": "https://www.elnopaltrenton.com/",
+      "email": null,
+      "hours": "Sunday-Thursday 11:00 a.m. to 10:00 p.m.; Friday-Saturday 11:00 a.m. to 10:30 p.m.",
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://www.elnopaltrenton.com/",
+          "publisher": "El Nopal Mexican Restaurant",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "phone",
+            "hours",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://elnopalmexicanarestaurantmo.com/",
+          "publisher": "El Nopal Mexicana Restaurant",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/el-nopal-mexicana-restaurant-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Two operator domains exist for the same restaurant (elnopaltrenton.com and elnopalmexicanarestaurantmo.com); the ordering-capable one is published as website and the other would suit sameAs. Name renders as 'Mexicana' on Yelp/one domain and 'Mexican' on the other domain - variant, not a conflict. Takeout and dine-in; sources say no delivery by the restaurant itself, though a DoorDash page exists."
+    },
+    {
+      "slug": "china-one-buffet",
+      "name": "China One Buffet",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "Restaurant",
+      "summary": "A Chinese buffet and takeout restaurant on East 9th Street in Trenton, serving dishes such as General Tso's chicken, sweet and sour chicken and beef with broccoli, with delivery and carryout offered.",
+      "proximity": "trenton",
+      "address": null,
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 359-4500",
+      "website": "https://www.newchinaonebuffet.com/",
+      "email": null,
+      "hours": "Wednesday-Monday 11:00 a.m. to 9:30 p.m.; closed Tuesday",
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [
+        "address",
+        "website"
+      ],
+      "sources": [
+        {
+          "url": "https://www.newchinaonebuffet.com/contact-us/",
+          "publisher": "China One Buffet",
+          "covers": [
+            "name",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.chinaonebuffetmo.com/",
+          "publisher": "China One Buffet (chinaonebuffetmo.com)",
+          "covers": [
+            "name",
+            "summary",
+            "hours"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.beyondmenu.com/55102/trenton/china-one-buffet-trenton-64683/info.aspx",
+          "publisher": "Beyond Menu",
+          "covers": [
+            "hours",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/china-1-buffet-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "ADDRESS SUPPRESSED ON CONFLICT: 1852 E 9th St (Yelp and the first-party/Beyond Menu result block) vs 1858 E 9th St (Superpages + YellowPages, one shared feed - counts once). Same block as the known 1846 E 9th St aggregator-smear address but a distinct number; no collision observed. WEBSITE DISPUTED: two apparent operator/ordering domains, newchinaonebuffet.com and chinaonebuffetmo.com; published the one the review board seeded, other suits sameAs. Name also renders as 'China 1 Buffet' on Yelp/Superpages - variant recorded, not disputed. Hours attribution comes from a search restricted to the two operator domains plus Beyond Menu."
+    },
+    {
+      "slug": "the-wild-onion",
+      "name": "The Wild Onion",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "Restaurant",
+      "summary": "A family-owned restaurant on East 9th Street in Trenton known for hearty American comfort food, including a hand-cut, hand-breaded pork tenderloin served as strips, sandwiches or a plate with mashed potatoes and country gravy.",
+      "proximity": "trenton",
+      "address": "1830 E 9th St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 359-3050",
+      "website": null,
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "reputable_third_party",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [
+        "name"
+      ],
+      "sources": [
+        {
+          "url": "https://www.feastmagazine.com/travel/mid-missouri/stop-by-wild-onion-eatery-in-trenton-for-sandwiches-of-all-shapes-and-sizes/article_55088f9a-1566-11ec-a09c-eb6b286c9b9a.html",
+          "publisher": "Feast Magazine",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/the-wild-onion-trenton-2",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.allmenus.com/mo/trenton/193239-wild-onion-cafe/menu/",
+          "publisher": "Allmenus",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://thewildoniontrenton.mybistro.online/",
+          "publisher": "myBistro (ordering page)",
+          "covers": [
+            "name",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "NAME DISPUTED: 'The Wild Onion' (current Yelp, updated April 2026), 'Wild Onion Eatery LLC' (Zmenu, Feast Magazine, current Facebook page), 'Wild Onion Cafe' (older Yelp listing at the same address, marked CLOSED - reads as a predecessor incarnation). Names are never suppressed; the current-listing name is kept with the variants disclosed. Feast Magazine profile is dated September 2021 and names the owners; omitted. A cmac.ws scraper page places 'Wild Onion Cafe on Main St' - stale, tied to the closed incarnation; the 1830 E 9th St address is what both current listings and the ordering page show. Hours seen only as 'Monday-Saturday, closed Sundays' without a clean source - not published. thewildoniontrenton.mybistro.online may be operator-run online ordering; not published as website because operator control could not be established from snippets."
+    },
+    {
+      "slug": "resthaven-mortuary",
+      "name": "Resthaven Mortuary",
+      "categories": [
+        "business",
+        "community"
+      ],
+      "schemaType": "FuneralHome",
+      "summary": "A funeral home on North Highway 65 in Trenton offering traditional funerals, competitively priced cremations, funeral pre-planning and a selection of caskets, vaults, urns and burial containers, serving Trenton and surrounding communities. It publishes obituaries on its website.",
+      "proximity": "trenton",
+      "address": "310 North Highway 65",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 359-5672",
+      "website": "https://www.resthavenmort.com/",
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://www.resthavenmort.com/contact-us",
+          "publisher": "Resthaven Mortuary",
+          "covers": [
+            "name",
+            "address",
+            "phone",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.resthavenmort.com/our-services",
+          "publisher": "Resthaven Mortuary",
+          "covers": [
+            "summary"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.tributearchive.com/funeral-homes/us/mo/trenton/fh-1403678",
+          "publisher": "Tribute Archive",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Hours were not seen; funeral homes typically operate by arrangement. Operates in connection with Slater-Neal Funeral Home, which has its own record with its conflicts disclosed."
+    },
+    {
+      "slug": "slater-neal-funeral-home",
+      "name": "Slater-Neal Funeral Home",
+      "categories": [
+        "business",
+        "community"
+      ],
+      "schemaType": "FuneralHome",
+      "summary": "A Trenton funeral home operating in connection with Resthaven Mortuary, offering funeral and cremation services. It appears in current obituary archives as Slater-Neal Funeral Home and in older directory listings as Slater Funeral Home.",
+      "proximity": "trenton",
+      "address": null,
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": null,
+      "website": null,
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [
+        "name",
+        "address",
+        "phone"
+      ],
+      "sources": [
+        {
+          "url": "https://www.resthavenmort.com/directions",
+          "publisher": "Resthaven Mortuary",
+          "covers": [
+            "name",
+            "summary"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.tributearchive.com/funeral-homes/us/mo/trenton/fh-1403676",
+          "publisher": "Tribute Archive",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.legacy.com/funeral-homes/missouri/trenton/slater-neal-funeral-home-trenton/fh-6998",
+          "publisher": "Legacy.com",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/slater-funeral-home-trenton",
+          "publisher": "Yelp",
+          "covers": [
+            "name"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "ADDRESS SUPPRESSED ON CONFLICT: 813 Custer Street (Resthaven site / Tribute Archive cluster) vs 412 E 9th St (Yelp / YellowPages / Ever Loved cluster). PHONE SUPPRESSED ON CONFLICT: (660) 359-3932 vs (660) 359-3954, same cluster split. WEBSITE WITHHELD: aggregators cite slatersfuneralhome.com but a domain-restricted search returned zero indexed pages; likely defunct. Reading of the evidence: one business renamed to Slater-Neal and affiliated with Resthaven, with aggregators frozen at an older state - do not split into two records without human confirmation. A human phone call to Resthaven resolves this entire record."
+    },
+    {
+      "slug": "caseys-oklahoma-ave",
+      "name": "Casey's (Oklahoma Avenue)",
+      "categories": [
+        "eat-drink",
+        "shopping"
+      ],
+      "schemaType": "ConvenienceStore",
+      "summary": "A second Casey's convenience store and fuel stop in Trenton, on Oklahoma Avenue, offering the chain's made-to-order pizza for delivery and pickup. Casey's own store locator lists it as store 2008, distinct from the East 9th Street store.",
+      "proximity": "trenton",
+      "address": "2711 Oklahoma Ave",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": null,
+      "website": "https://www.caseys.com/general-store/mo-trenton/2711-oklahoma-ave/2008",
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 1,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://www.caseys.com/general-store/mo-trenton/2711-oklahoma-ave/2008",
+          "publisher": "Casey's",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Second Trenton store on Casey's own locator; see the re-scoped 'caseys' record for the E 9th St store. Slug and display name disambiguate by street so the two records cannot be conflated. No phone or hours were seen for this store specifically."
+    },
+    {
+      "slug": "sinclair-main-st",
+      "name": "Sinclair (Main Street)",
+      "categories": [
+        "business",
+        "shopping"
+      ],
+      "schemaType": "GasStation",
+      "summary": "A Sinclair-branded gas station and convenience store on Main Street in Trenton, listed on Sinclair Oil's own station locator.",
+      "proximity": "trenton",
+      "address": "410 Main St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": null,
+      "website": "https://stations.sinclairoil.com/mo/trenton/410-main-st",
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 1,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://stations.sinclairoil.com/mo/trenton/410-main-st",
+          "publisher": "Sinclair Oil",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Brand locator page only - the operating dealer's name was not seen, and fuel-brand locators can lag rebranding. Single source; do not upgrade corroborated without an independent non-aggregator sighting."
+    },
+    {
+      "slug": "subway-trenton",
+      "name": "Subway",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "FastFoodRestaurant",
+      "summary": "The Trenton location of the Subway sandwich chain, on East 9th Street, offering made-to-order subs, salads and wraps with dine-in, delivery, curbside pickup and catering.",
+      "proximity": "trenton",
+      "address": "1417 E 9th St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 359-7827",
+      "website": "https://restaurants.subway.com/united-states/mo/trenton/1417-e-9th-st",
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://restaurants.subway.com/united-states/mo/trenton/1417-e-9th-st",
+          "publisher": "Subway",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/subway-trenton-29",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "address"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.allmenus.com/mo/trenton/148537-subway/menu/",
+          "publisher": "Allmenus",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Hours seen as '9:00 AM - 9:00 PM daily' in a synthesized result without clean source attribution - not published. 1417 E 9th St is one digit from the 1417 Oklahoma Ave figure third parties give for Trenton Middle School; different street, no collision."
+    },
+    {
+      "slug": "pizza-hut-trenton",
+      "name": "Pizza Hut",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "FastFoodRestaurant",
+      "summary": "The Trenton location of the Pizza Hut chain, on Avalon Street at East 9th Street, with delivery and carryout.",
+      "proximity": "trenton",
+      "address": "815 Avalon St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 359-4306",
+      "website": "https://locations.pizzahut.com/mo/trenton/815-avalon",
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://locations.pizzahut.com/mo/trenton/815-avalon",
+          "publisher": "Pizza Hut",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://local.yahoo.com/info-17814173-pizza-hut-trenton/",
+          "publisher": "Yahoo Local",
+          "covers": [
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "The '(at E 9th St)' cross-street phrasing appeared in results; address string published as the locator URL renders it (815 Avalon)."
+    },
+    {
+      "slug": "mcdonalds-trenton",
+      "name": "McDonald's",
+      "categories": [
+        "eat-drink"
+      ],
+      "schemaType": "FastFoodRestaurant",
+      "summary": "The Trenton location of the McDonald's fast-food chain, on East 9th Street.",
+      "proximity": "trenton",
+      "address": "1861 E 9th St",
+      "city": "Trenton",
+      "state": "MO",
+      "zip": "64683",
+      "phone": "(660) 359-6738",
+      "website": "https://www.mcdonalds.com/us/en-us/location/mo/trenton/1861-e-9th-st/14113.html",
+      "email": null,
+      "hours": null,
+      "seasonal": null,
+      "status": "unknown",
+      "evidence": "first_party_snippet",
+      "confirmation": "unconfirmed",
+      "corroborated": 2,
+      "disputed": [],
+      "sources": [
+        {
+          "url": "https://www.mcdonalds.com/us/en-us/location/mo/trenton/1861-e-9th-st/14113.html",
+          "publisher": "McDonald's",
+          "covers": [
+            "name",
+            "summary",
+            "address",
+            "website"
+          ],
+          "retrieved_at": "2026-08-17"
+        },
+        {
+          "url": "https://www.yelp.com/biz/mcdonalds-trenton-2",
+          "publisher": "Yelp",
+          "covers": [
+            "name",
+            "address",
+            "phone"
+          ],
+          "retrieved_at": "2026-08-17"
+        }
+      ],
+      "last_verified_at": "2026-08-17",
+      "notes": "Yelp hours were Mon-Sat only with Sunday missing - incomplete, not published. Indeed job postings for this location (2026) are weak but consistent evidence it is actively staffed."
     }
   ]
 }

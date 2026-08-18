@@ -1,0 +1,50 @@
+# Builds the directory and publishes dist/ to GitHub Pages.
+#
+# The built site is deliberately not committed (dist/ is gitignored), so Pages
+# must build it here. verify.js runs as a deploy gate: a build that violates
+# the integrity rules does not ship.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [claude/trenton-missouri-directory-0wgn7s]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/configure-pages@v5
+        with:
+          # Creates the Pages site on first run if the token is allowed to;
+          # otherwise enable Pages once by hand: Settings → Pages → Source:
+          # GitHub Actions.
+          enablement: true
+      - run: node src/build.js
+      - run: node src/verify.js --output
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test</title></head>
+<body>
+<script>
+setTimeout(() => {
+  const btn = document.getElementById('start-btn');
+  if (btn) {
+    btn.click();
+    console.log('Button clicked programmatically');
+  } else {
+    console.log('Button not found');
+  }
+}, 1000);
+</script>
+<p>Opening game and clicking button...</p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patriot Defense</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+      <div id="hud">
+        <div class="hud-row">
+          <span id="score-label">Score: <strong id="score">0</strong></span>
+          <span id="wave-label">Wave: <strong id="wave">1</strong></span>
+          <span id="ammo-label">Patriots: <strong id="ammo">12</strong></span>
+          <span id="health-label">City: <strong id="health">100%</strong></span>
+        </div>
+        <div id="crosshair"></div>
+        <div id="message" class="hidden"></div>
+      </div>
+      <div id="start-screen">
+        <h1>Patriot Defense</h1>
+        <p>
+          Incoming ballistic missiles threaten the city. You command a Patriot
+          battery with limited interceptors.
+        </p>
+        <ul>
+          <li><kbd>Mouse</kbd> — aim the launcher</li>
+          <li><kbd>Left Click</kbd> — fire Patriot missile</li>
+          <li><kbd>R</kbd> — restart after game over</li>
+        </ul>
+        <button id="start-btn">Defend the City</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

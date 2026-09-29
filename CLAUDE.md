@@ -27,25 +27,28 @@
 Vision-Edit-Pro is a professional image/video editing application designed to provide advanced editing capabilities with a focus on user experience and performance.
 
 ### Tech Stack
-*To be updated as technologies are added to the project*
 
-**Frontend:**
-- Framework: TBD (React, Vue, Svelte, etc.)
-- UI Library: TBD
-- State Management: TBD
-- Build Tool: TBD (Vite, Webpack, etc.)
+The current product is a **mobile landscape design visualizer** for landscapers (see README.md).
 
-**Backend:**
-- Runtime: TBD (Node.js, Python, etc.)
-- Framework: TBD
-- Database: TBD
+**Frontend:** React 19 + TypeScript, Vite, installable PWA (`public/manifest.webmanifest`, `public/sw.js`). Plain CSS in `src/styles/global.css`, with no UI library. State is `useReducer` (`src/features/editor/editorReducer.ts`).
 
-**Media Processing:**
-- Image Processing: TBD (Sharp, ImageMagick, Canvas API, etc.)
-- Video Processing: TBD (FFmpeg, WebCodecs API, etc.)
+**Backend:** none. Projects live on-device in IndexedDB (`src/services/projectStore.ts`).
 
-### Key Features
-*To be documented as features are implemented*
+**Media processing:** Canvas 2D API plus hand-written pixel code on typed arrays. Removal runs in a Web Worker.
+
+**Testing:** Vitest (node environment) for canvas-free modules in `tests/unit/`.
+
+### Key Features / Architecture
+- `src/services/art/`: procedural catalog. `plants.ts` and `structures.ts` define placeable objects (`AssetDef`); `materials.ts` defines seamless surface textures; `catalog.ts` caches rendered art and thumbnails. Add a new plant by appending an `AssetDef`. Light always comes from the upper left.
+- Custom "My plants" (`src/services/customAssets.ts`, `cutout.ts`): stored in the IndexedDB `customAssets` store (DB v2) and registered into the catalog at startup under ids `custom:<recordId>`; `getAsset` resolves both kinds.
+- AI fill: `src/services/aiFill.ts` (client: crop + mask upload, blend result as a `removal` layer with `source: 'ai'`) → `server/aiEditHandler.ts` (web-standard handler; OpenAI key server-side only, access code, validation) exposed by `api/ai-edit.ts` (Vercel) and `server/viteAiPlugin.ts` (dev/preview). Never read `OPENAI_API_KEY` from client code or give it a `VITE_` prefix.
+- Native apps: Capacitor (`capacitor.config.ts`, `ios/`, `android/`). Platform differences go through `src/services/platform.ts` (`isNativeApp()`, native share). Build with `npm run cap:sync` (uses `--mode native`, reading `VITE_AI_ENDPOINT` from `.env.native`). Commit native source; the web copies inside them are gitignored.
+- `src/services/surface.ts`: ground-plane perspective fill of polygons, driven by the design's `horizonY`. It is pure, so it can be tested.
+- `src/services/inpaint.ts`: object removal (patch search + membrane blend). It is pure, so it can be tested, and runs via `inpaint.worker.ts`.
+- `src/services/renderer.ts`: `SceneRenderer` composites photo → removal patches → surfaces → objects, with per-layer caches.
+- `src/features/editor/EditorCanvas.tsx`: all pointer gestures (pan, pinch, handles, polygon drawing, brush).
+- Undo coalescing: dispatch `UPDATE_LAYER` with a shared `mergeKey` for every event of one drag or slider scrub.
+- Keep pixel algorithms free of DOM APIs (use `RGBAImage` from `src/utils/pixels.ts`) so they stay unit-testable.
 
 ---
 
@@ -780,6 +783,10 @@ npm run type-check
 ---
 
 ## Changelog
+
+### 2026-09-29 - Landscape design app
+- Added the React/TypeScript/Vite PWA for landscaping visualization (see Tech Stack)
+- There is no lint/format tooling yet; `npm run lint` / `npm run format` below do not exist
 
 ### 2026-01-18 - Initial Creation
 - Created comprehensive CLAUDE.md guide

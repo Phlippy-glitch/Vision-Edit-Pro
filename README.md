@@ -60,6 +60,23 @@ AI fill sends the painted part of the photo to OpenAI. Your OpenAI key must neve
 
 To try it locally, copy `.env.example` to `.env.local`, fill in the key, and run `npm run dev`. The dev server runs the same proxy.
 
+## Building the App Store / Play Store apps
+
+The same code also ships as native iOS and Android apps via [Capacitor](https://capacitorjs.com). The generated projects are in `ios/` and `android/`.
+
+1. Deploy the web version with AI fill first (above). The native app calls that server for AI.
+2. Create `.env.native` with your deployed endpoint:
+   ```
+   VITE_AI_ENDPOINT=https://your-app.vercel.app/api/ai-edit
+   ```
+3. Change `appId` in `capacitor.config.ts` from `com.visioneditpro.landscape` to your own reverse domain (e.g. `com.greenscape.visualizer`). It's permanent once published.
+4. Build and open the native project:
+   - **Android** (Windows/Mac/Linux, [Android Studio](https://developer.android.com/studio)): `npm run cap:android`, then *Build → Generate Signed App Bundle* and upload to the Google Play Console ($25 one-time developer fee).
+   - **iPhone** (a Mac with [Xcode](https://developer.apple.com/xcode/) is required): `npm run cap:ios`, set your Team under *Signing & Capabilities*, then *Product → Archive* and upload to App Store Connect (Apple Developer Program, $99/year).
+5. After changing web code, run `npm run cap:sync` to copy it into both native projects.
+
+Camera and photo-library permission prompts are already configured. Exported images open the native share sheet. App icons and splash screens are pre-generated in the native projects from `assets/`. To regenerate them after changing the artwork, run `npx @capacitor/assets generate --android --ios` once; it isn't a project dependency.
+
 ## Tech
 
 - React 19 + TypeScript + Vite; Canvas 2D for all rendering. There are no image assets: plants and materials are drawn procedurally at runtime.
@@ -68,6 +85,3 @@ To try it locally, copy `.env.example` to `.env.local`, fill in the key, and run
 - Designs are stored in IndexedDB (`src/services/projectStore.ts`). Photos are downscaled to 2048px on import.
 
 See [CLAUDE.md](./CLAUDE.md) for architecture notes.
-
-## Roadmap ideas
-- Wrap with Capacitor for App Store / Play Store distribution and native camera.

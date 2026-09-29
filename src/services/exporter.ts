@@ -3,6 +3,7 @@ import type { DesignDoc, ProjectMeta } from '../types/Editor.types';
 import { canvasToBlob } from '../utils/image';
 import { createCanvas, get2d } from '../utils/canvas';
 import { formatMoney, type Estimate } from './estimate';
+import { isNativeApp, shareFileNatively } from './platform';
 import type { SceneRenderer } from './renderer';
 
 export type ExportMode = 'after' | 'before-after';
@@ -142,6 +143,10 @@ export function exportFilename(name: string, mode: ExportMode): string {
 
 /** Opens the native share sheet when available (text, email, AirDrop); otherwise downloads. */
 export async function shareOrDownload(blob: Blob, filename: string, title: string): Promise<'shared' | 'downloaded'> {
+  if (isNativeApp()) {
+    await shareFileNatively(blob, filename, title);
+    return 'shared';
+  }
   const file = new File([blob], filename, { type: blob.type });
   if (navigator.canShare?.({ files: [file] })) {
     try {

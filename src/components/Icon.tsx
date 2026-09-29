@@ -24,7 +24,8 @@ const PATHS = {
   plus: 'M12 5v14M5 12h14',
   edit: 'M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4',
   more: 'M5 12h.01M12 12h.01M19 12h.01',
-  leaf: 'M5 19C5 9 11 4 20 4c0 9-5 15-15 15zM5 19l8-8',
+  receipt: 'M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6M9 16h3',
+  leaf:'M5 19C5 9 11 4 20 4c0 9-5 15-15 15zM5 19l8-8',
 } as const;
 
 export type IconName = keyof typeof PATHS;

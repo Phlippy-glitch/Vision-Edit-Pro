@@ -16,6 +16,8 @@ interface PropertiesPanelProps {
   layer: Layer;
   imageWidth: number;
   imageHeight: number;
+  /** Photo-measured ground area of the selected surface, if it has one. */
+  measuredAreaSqFt?: number;
   dispatch: Dispatch<EditorAction>;
   onDone: () => void;
 }
@@ -34,7 +36,7 @@ function useSliderUpdates(layer: Layer, dispatch: Dispatch<EditorAction>) {
   return { update, commit };
 }
 
-export function PropertiesPanel({ layer, imageWidth, imageHeight, dispatch, onDone }: PropertiesPanelProps) {
+export function PropertiesPanel({ layer, imageWidth, imageHeight, measuredAreaSqFt, dispatch, onDone }: PropertiesPanelProps) {
   const { update, commit } = useSliderUpdates(layer, dispatch);
   const set = (changes: Partial<Layer>) => dispatch({ type: 'UPDATE_LAYER', id: layer.id, changes });
 
@@ -51,7 +53,7 @@ export function PropertiesPanel({ layer, imageWidth, imageHeight, dispatch, onDo
         <StampControls layer={layer} imageHeight={imageHeight} update={update} commit={commit} set={set} />
       )}
       {layer.kind === 'area' && (
-        <AreaControls layer={layer} imageWidth={imageWidth} update={update} commit={commit} set={set} />
+        <AreaControls layer={layer} imageWidth={imageWidth} measuredAreaSqFt={measuredAreaSqFt} update={update} commit={commit} set={set} />
       )}
       {layer.kind === 'removal' && <p className="hint">Removed area. Hide it in Layers to compare, or delete it to undo the removal.</p>}
 
@@ -134,7 +136,14 @@ function StampControls({ layer, imageHeight, update, commit, set }: ControlsProp
   );
 }
 
-function AreaControls({ layer, imageWidth, update, commit, set }: ControlsProps<AreaLayer> & { imageWidth: number }) {
+function AreaControls({
+  layer,
+  imageWidth,
+  measuredAreaSqFt,
+  update,
+  commit,
+  set,
+}: ControlsProps<AreaLayer> & { imageWidth: number; measuredAreaSqFt?: number }) {
   const material = getMaterial(layer.materialId);
   const thumbs = useProgressiveThumbnails(MATERIALS, smallMaterialThumb);
   return (
@@ -155,6 +164,25 @@ function AreaControls({ layer, imageWidth, update, commit, set }: ControlsProps<
         ))}
       </div>
       <p className="hint">Drag the points to fit edges exactly. Tap + to add a point, double-tap a point to delete it.</p>
+      <label className="area-field">
+        <span>Area for estimate</span>
+        <input
+          className="num-input"
+          type="number"
+          inputMode="decimal"
+          min={0}
+          placeholder={measuredAreaSqFt !== undefined ? `≈ ${Math.round(measuredAreaSqFt)}` : 'enter'}
+          value={layer.areaOverrideSqFt ?? ''}
+          onChange={(e) => {
+            const value = Number(e.target.value);
+            set({ areaOverrideSqFt: e.target.value === '' || !Number.isFinite(value) ? undefined : Math.max(0, value) });
+          }}
+        />
+        <span>sq ft</span>
+      </label>
+      {layer.areaOverrideSqFt === undefined && measuredAreaSqFt === undefined && (
+        <p className="hint">Walls can&apos;t be measured from the photo — type the area to include it in the estimate.</p>
+      )}
       <Slider
         label="Pattern size"
         value={layer.tileSize / imageWidth}

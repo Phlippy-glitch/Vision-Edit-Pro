@@ -1,13 +1,16 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Icon, type IconName } from '../../components/Icon';
 import { Toast, type ToastMessage } from '../../components/Toast';
 import { AUTOSAVE_DELAY_MS, DEFAULT_HORIZON_FRACTION, DEFAULT_REMOVE_BRUSH, THUMBNAIL_SIZE } from '../../constants';
-import type { AssetDef } from '../../services/art/assets.types';
+import type { AssetCategory, AssetDef } from '../../services/art/assets.types';
 import type { MaterialDef } from '../../services/art/materials';
+import { buildEstimate, estimateToText, groundArea, type EstimateSettings } from '../../services/estimate';
+import { loadEstimateSettings, loadPrices, saveEstimateSettings, savePrices } from '../../services/priceList';
 import { getProject, saveProject } from '../../services/projectStore';
 import { resultToLayer, runInpaint, strokesToMask, type BrushStroke } from '../../services/removal';
 import { SceneRenderer } from '../../services/renderer';
-import type { Point, Project, Tool } from '../../types/Editor.types';
+import type { Layer, Point, Project, Tool } from '../../types/Editor.types';
+import type { Rect } from '../../utils/geometry';
 import { blobToCanvas, canvasToBlob } from '../../utils/image';
 import { CompareOverlay } from './CompareOverlay';
 import { EditorCanvas, type CanvasApi } from './EditorCanvas';
@@ -15,13 +18,14 @@ import { createEditorState, editorReducer } from './editorReducer';
 import { ExportSheet } from './ExportSheet';
 import { createAreaLayer, createStampLayer } from './layerFactory';
 import { CatalogPanel } from './panels/CatalogPanel';
+import { EstimatePanel } from './panels/EstimatePanel';
 import { HorizonPanel } from './panels/HorizonPanel';
 import { LayersPanel } from './panels/LayersPanel';
 import { PropertiesPanel } from './panels/PropertiesPanel';
 import { RemovePanel } from './panels/RemovePanel';
 import { SurfacePanel } from './panels/SurfacePanel';
 
-type PanelId = 'plants' | 'surfaces' | 'remove' | 'horizon' | 'layers';
+type PanelId = 'plants' | 'surfaces' | 'remove' | 'horizon' | 'layers' | 'estimate';
 
 const TABS: { id: PanelId; label: string; icon: IconName }[] = [
   { id: 'plants', label: 'Plants', icon: 'tree' },
@@ -29,7 +33,26 @@ const TABS: { id: PanelId; label: string; icon: IconName }[] = [
   { id: 'remove', label: 'Remove', icon: 'eraser' },
   { id: 'horizon', label: 'Perspective', icon: 'horizon' },
   { id: 'layers', label: 'Layers', icon: 'layers' },
+  { id: 'estimate', label: 'Estimate', icon: 'receipt' },
 ];
+
+/**
+ * Steps a new object sideways until it no longer sits on top of an existing
+ * one, so adding several shrubs in a row doesn't hide them behind each other.
+ */
+function freeSpotX(layers: readonly Layer[], x: number, y: number, width: number, visible: Rect): number {
+  const step = Math.max(8, width * 0.9);
+  const taken = (cx: number) =>
+    layers.some((l) => l.kind === 'stamp' && Math.abs(l.x - cx) < step * 0.6 && Math.abs(l.y - y) < l.height * 0.5);
+  for (let i = 0; i < 12; i++) {
+    // Alternate right/left: +1, -1, +2, -2...
+    const offset = Math.ceil(i / 2) * (i % 2 ? 1 : -1) * step;
+    const cx = x + offset;
+    if (cx < visible.x || cx > visible.x + visible.width) continue;
+    if (!taken(cx)) return cx;
+  }
+  return x;
+}
 
 interface EditorScreenProps {
   projectId: string;
@@ -88,6 +111,7 @@ function Editor({ project, photo, onExit }: EditorProps) {
   const [state, dispatch] = useReducer(editorReducer, project.doc, createEditorState);
   const [details, setDetails] = useState({ name: project.name, clientName: project.clientName });
   const [panel, setPanel] = useState<PanelId>('plants');
+  const [catalogCategory, setCatalogCategory] = useState<AssetCategory>('trees');
   const [draftArea, setDraftArea] = useState<Point[] | null>(null);
   const [draftMaterial, setDraftMaterial] = useState<MaterialDef | null>(null);
   const [strokes, setStrokes] = useState<BrushStroke[]>([]);
@@ -98,8 +122,26 @@ function Editor({ project, photo, onExit }: EditorProps) {
   const [exportOpen, setExportOpen] = useState(false);
   const [toast, setToast] = useState<ToastMessage | null>(null);
   const canvasApi = useRef<CanvasApi | null>(null);
+  const [prices, setPrices] = useState(loadPrices);
+  const [estimateSettings, setEstimateSettings] = useState(loadEstimateSettings);
 
   const { doc, selectedId } = state;
+  const estimate = useMemo(
+    () => buildEstimate(doc, prices, estimateSettings, { width: renderer.width, height: renderer.height }),
+    [doc, prices, estimateSettings, renderer],
+  );
+
+  const changePrice = (priceKey: string, price: number) => {
+    const next = { ...prices, [priceKey]: price };
+    setPrices(next);
+    savePrices(next);
+  };
+  const changeEstimateSettings = (next: EstimateSettings) => {
+    setEstimateSettings(next);
+    saveEstimateSettings(next);
+  };
+  const estimateText = () =>
+    estimateToText(estimate, [details.name, details.clientName].filter(Boolean).join(' – '), estimateSettings.taxRate);
   const selected = doc.layers.find((l) => l.id === selectedId) ?? null;
   const tool: Tool = panel === 'remove' ? 'remove' : panel === 'horizon' ? 'horizon' : draftArea ? 'area' : 'select';
 
@@ -111,15 +153,20 @@ function Editor({ project, photo, onExit }: EditorProps) {
   latest.current = { doc, details };
   const dirty = useRef(false);
   const firstRender = useRef(true);
+  const thumbnailRef = useRef(project.thumbnail);
 
   const save = useCallback(async () => {
     if (!dirty.current) return;
     dirty.current = false;
     const { doc: currentDoc, details: currentDetails } = latest.current;
+    const record = () => ({ ...project, ...currentDetails, doc: currentDoc, thumbnail: thumbnailRef.current, updatedAt: Date.now() });
     try {
+      // Write the design first: the app may be closing, and the thumbnail
+      // render below takes long enough to be cut off.
+      await saveProject(record());
       await renderer.whenReady(currentDoc);
-      const thumbnail = await canvasToBlob(renderer.composite(currentDoc, true, THUMBNAIL_SIZE), 'image/jpeg', 0.8);
-      await saveProject({ ...project, ...currentDetails, doc: currentDoc, thumbnail, updatedAt: Date.now() });
+      thumbnailRef.current = await canvasToBlob(renderer.composite(currentDoc, true, THUMBNAIL_SIZE), 'image/jpeg', 0.8);
+      if (!dirty.current) await saveProject(record());
     } catch (e) {
       dirty.current = true;
       console.error('Autosave failed:', e);
@@ -141,8 +188,13 @@ function Editor({ project, photo, onExit }: EditorProps) {
     const flush = () => {
       if (document.visibilityState === 'hidden') void save();
     };
+    const flushNow = () => void save();
     document.addEventListener('visibilitychange', flush);
-    return () => document.removeEventListener('visibilitychange', flush);
+    window.addEventListener('pagehide', flushNow);
+    return () => {
+      document.removeEventListener('visibilitychange', flush);
+      window.removeEventListener('pagehide', flushNow);
+    };
   }, [save]);
 
   useEffect(() => renderer.prune(doc), [doc, renderer]);
@@ -188,7 +240,9 @@ function Editor({ project, photo, onExit }: EditorProps) {
     // Objects stand on the ground, so start them in the foreground of what's
     // on screen rather than dead center (often near the horizon).
     const anchor = { x: visible.x + visible.width / 2, y: visible.y + visible.height * 0.8 };
-    dispatch({ type: 'ADD_LAYER', layer: createStampLayer(asset, anchor, renderer.height, doc.horizonY) });
+    const layer = createStampLayer(asset, anchor, renderer.height, doc.horizonY);
+    layer.x = freeSpotX(doc.layers, layer.x, layer.y, layer.height * asset.aspect, visible);
+    dispatch({ type: 'ADD_LAYER', layer });
   };
 
   const startArea = (material: MaterialDef) => {
@@ -251,12 +305,17 @@ function Editor({ project, photo, onExit }: EditorProps) {
         layer={selected}
         imageWidth={renderer.width}
         imageHeight={renderer.height}
+        measuredAreaSqFt={
+          selected.kind === 'area' && selected.perspective
+            ? groundArea(selected.points, doc.horizonY, renderer.width, renderer.height, estimateSettings.cameraHeightFt).sqFt
+            : undefined
+        }
         dispatch={dispatch}
         onDone={() => dispatch({ type: 'SELECT', id: null })}
       />
     );
   } else if (panel === 'plants') {
-    content = <CatalogPanel onPick={addAsset} />;
+    content = <CatalogPanel category={catalogCategory} onCategoryChange={setCatalogCategory} onPick={addAsset} />;
   } else if (panel === 'surfaces') {
     content = (
       <SurfacePanel
@@ -287,6 +346,21 @@ function Editor({ project, photo, onExit }: EditorProps) {
   } else if (panel === 'horizon') {
     content = (
       <HorizonPanel onReset={() => dispatch({ type: 'SET_HORIZON', y: renderer.height * DEFAULT_HORIZON_FRACTION })} />
+    );
+  } else if (panel === 'estimate') {
+    content = (
+      <EstimatePanel
+        estimate={estimate}
+        settings={estimateSettings}
+        onPriceChange={changePrice}
+        onSettingsChange={changeEstimateSettings}
+        onCopy={() =>
+          navigator.clipboard
+            .writeText(estimateText())
+            .then(() => notify('Estimate copied — paste it into a text or email.'))
+            .catch(() => notify('Could not copy on this device.', 'error'))
+        }
+      />
     );
   } else {
     content = <LayersPanel layers={doc.layers} selectedId={selectedId} dispatch={dispatch} />;
@@ -361,6 +435,8 @@ function Editor({ project, photo, onExit }: EditorProps) {
           onDetailsChange={setDetails}
           onClose={() => setExportOpen(false)}
           onMessage={notify}
+          estimate={estimate}
+          taxRate={estimateSettings.taxRate}
         />
       )}
       <Toast message={toast} onDismiss={dismissToast} />

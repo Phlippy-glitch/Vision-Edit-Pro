@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Icon } from '../../components/Icon';
 import { exportFilename, renderExport, shareOrDownload, type ExportMode } from '../../services/exporter';
+import type { Estimate } from '../../services/estimate';
 import type { SceneRenderer } from '../../services/renderer';
 import type { DesignDoc } from '../../types/Editor.types';
 
@@ -30,17 +31,33 @@ interface ExportSheetProps {
   onDetailsChange: (details: { name: string; clientName: string }) => void;
   onClose: () => void;
   onMessage: (text: string, tone?: 'info' | 'error') => void;
+  estimate: Estimate;
+  taxRate: number;
 }
 
-export function ExportSheet({ renderer, doc, name, clientName, onDetailsChange, onClose, onMessage }: ExportSheetProps) {
+export function ExportSheet({
+  renderer,
+  doc,
+  name,
+  clientName,
+  onDetailsChange,
+  onClose,
+  onMessage,
+  estimate,
+  taxRate,
+}: ExportSheetProps) {
+  const hasEstimate = estimate.lines.length > 0;
+  const [includeEstimate, setIncludeEstimate] = useState(false);
   const [company, setCompany] = useState(readCompany);
   const [busy, setBusy] = useState<ExportMode | null>(null);
   // Mobile Safari only opens the share sheet right after a tap, so images are
   // rendered ahead of time and shared without awaiting anything first.
   const prepared = useRef(new Map<string, Blob>());
-  const keyFor = (mode: ExportMode) => (mode === 'after' ? 'after' : JSON.stringify([name, clientName, company.trim()]));
+  const withEstimate = includeEstimate && hasEstimate;
+  const keyFor = (mode: ExportMode) =>
+    mode === 'after' ? 'after' : JSON.stringify([name, clientName, company.trim(), withEstimate ? estimate : null]);
   const render = (mode: ExportMode) =>
-    renderExport(renderer, doc, { name, clientName }, mode, { companyName: company.trim() });
+    renderExport(renderer, doc, { name, clientName }, mode, { companyName: company.trim() }, withEstimate ? { estimate, taxRate } : undefined);
 
   useEffect(() => {
     let cancelled = false;
@@ -60,7 +77,7 @@ export function ExportSheet({ renderer, doc, name, clientName, onDetailsChange, 
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [name, clientName, company]);
+  }, [name, clientName, company, withEstimate]);
 
   const exportImage = async (mode: ExportMode) => {
     setBusy(mode);
@@ -104,6 +121,12 @@ export function ExportSheet({ renderer, doc, name, clientName, onDetailsChange, 
             }}
           />
         </label>
+        {hasEstimate && (
+          <label className="toggle-field">
+            <input type="checkbox" checked={includeEstimate} onChange={(e) => setIncludeEstimate(e.target.checked)} />
+            <span>Include price estimate on the before &amp; after image</span>
+          </label>
+        )}
         <div className="sheet-actions">
           <button className="btn btn-primary btn-large" disabled={busy !== null} onClick={() => exportImage('before-after')}>
             {busy === 'before-after' ? <span className="spinner spinner-inline" /> : <Icon name="compare" size={18} />}

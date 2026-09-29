@@ -2,6 +2,7 @@ import { EXPORT_JPEG_QUALITY } from '../constants';
 import type { DesignDoc, ProjectMeta } from '../types/Editor.types';
 import { canvasToBlob } from '../utils/image';
 import { createCanvas, get2d } from '../utils/canvas';
+import { formatMoney, type Estimate } from './estimate';
 import type { SceneRenderer } from './renderer';
 
 export type ExportMode = 'after' | 'before-after';
@@ -36,6 +37,8 @@ export async function renderExport(
   meta: Pick<ProjectMeta, 'name' | 'clientName'>,
   mode: ExportMode,
   branding: ExportBranding,
+  /** When given, a priced plant/material list is appended below the images. */
+  estimate?: { estimate: Estimate; taxRate: number },
 ): Promise<Blob> {
   await renderer.whenReady(doc);
   const after = renderer.composite(doc, true);
@@ -48,9 +51,12 @@ export async function renderExport(
   const gap = Math.round(Math.max(width, height) * 0.01);
   const unit = Math.round(Math.max(width, height) * 0.018);
   const footer = unit * 4;
+  const estimateRows = estimate ? estimate.estimate.lines.length + (estimate.taxRate > 0 ? 3 : 2) : 0;
+  const rowHeight = unit * 2;
+  const estimateHeight = estimate ? unit * 6.5 + estimateRows * rowHeight : 0;
   const canvas = createCanvas(
     stacked ? width : width * 2 + gap,
-    (stacked ? height * 2 + gap : height) + footer,
+    (stacked ? height * 2 + gap : height) + footer + estimateHeight,
   );
   const ctx = get2d(canvas);
   ctx.fillStyle = '#ffffff';
@@ -62,7 +68,8 @@ export async function renderExport(
   label(ctx, 'BEFORE', unit, unit, unit);
   label(ctx, 'AFTER', ax + unit, ay + unit, unit);
 
-  const footerY = canvas.height - footer;
+  const footerY = canvas.height - footer - estimateHeight;
+  if (estimate) drawEstimate(ctx, estimate.estimate, estimate.taxRate, footerY + footer, canvas.width, unit, rowHeight);
   ctx.fillStyle = '#1f3d2b';
   ctx.fillRect(0, footerY, canvas.width, footer);
   ctx.fillStyle = '#ffffff';
@@ -76,6 +83,56 @@ export async function renderExport(
     ctx.fillText(`Design concept by ${branding.companyName}`, canvas.width - unit, footerY + footer / 2);
   }
   return canvasToBlob(canvas, 'image/jpeg', EXPORT_JPEG_QUALITY);
+}
+
+function drawEstimate(
+  ctx: CanvasRenderingContext2D,
+  estimate: Estimate,
+  taxRate: number,
+  top: number,
+  width: number,
+  unit: number,
+  rowHeight: number,
+) {
+  const font = (weight: number, size: number) => `${weight} ${size}px system-ui, -apple-system, Segoe UI, sans-serif`;
+  const left = unit;
+  const right = width - unit;
+  let y = top + unit * 1.8;
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#1f3d2b';
+  ctx.textAlign = 'left';
+  ctx.font = font(700, unit * 1.2);
+  ctx.fillText('Estimate', left, y);
+  y += unit * 1.2;
+  const row = (labelText: string, detail: string, amount: string, bold = false) => {
+    y += rowHeight;
+    ctx.fillStyle = '#1b1f1c';
+    ctx.textAlign = 'left';
+    ctx.font = font(bold ? 700 : 500, unit * 0.95);
+    ctx.fillText(labelText, left, y);
+    if (detail) {
+      ctx.fillStyle = '#5f6b64';
+      ctx.font = font(400, unit * 0.85);
+      ctx.fillText(detail, width * 0.45, y);
+    }
+    ctx.fillStyle = '#1b1f1c';
+    ctx.textAlign = 'right';
+    ctx.font = font(bold ? 700 : 500, unit * 0.95);
+    ctx.fillText(amount, right, y);
+    ctx.fillStyle = '#e3e8e4';
+    ctx.fillRect(left, y + rowHeight / 2, right - left, 1);
+  };
+  for (const line of estimate.lines) {
+    const qty = line.unit === 'each' ? `${line.quantity} × ${formatMoney(line.unitPrice)}` : `${line.estimated ? '≈ ' : ''}${line.quantity.toLocaleString()} sq ft × ${formatMoney(line.unitPrice)}`;
+    row(line.label, qty, formatMoney(line.total));
+  }
+  row('Subtotal', '', formatMoney(estimate.subtotal));
+  if (taxRate > 0) row(`Tax (${taxRate}%)`, '', formatMoney(estimate.tax));
+  row('Estimated total', '', formatMoney(estimate.total), true);
+  ctx.fillStyle = '#5f6b64';
+  ctx.textAlign = 'left';
+  ctx.font = font(400, unit * 0.75);
+  ctx.fillText('≈ Areas measured from the photo; final pricing confirmed after on-site measurement.', left, y + rowHeight * 1.1);
 }
 
 export function exportFilename(name: string, mode: ExportMode): string {

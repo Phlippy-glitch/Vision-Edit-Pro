@@ -49,6 +49,8 @@ export interface AreaLayer extends LayerBase {
   brightness: number;
   /** Edge softness in image pixels. */
   feather: number;
+  /** Measured area typed in by the user; replaces the photo estimate when set. */
+  areaOverrideSqFt?: number;
 }
 
 /** A patch that erases an existing feature using surrounding texture. */

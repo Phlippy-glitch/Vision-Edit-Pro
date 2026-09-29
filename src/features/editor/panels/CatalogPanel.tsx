@@ -1,16 +1,18 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { ASSET_CATEGORIES, type AssetCategory, type AssetDef } from '../../../services/art/assets.types';
 import { ASSETS, assetThumbnail } from '../../../services/art/catalog';
 import { useProgressiveThumbnails } from './useProgressiveThumbnails';
 
 interface CatalogPanelProps {
+  /** Owned by the editor so the choice survives the panel closing while an item is edited. */
+  category: AssetCategory;
+  onCategoryChange: (category: AssetCategory) => void;
   onPick: (asset: AssetDef) => void;
 }
 
 const renderThumb = (asset: AssetDef) => assetThumbnail(asset);
 
-export function CatalogPanel({ onPick }: CatalogPanelProps) {
-  const [category, setCategory] = useState<AssetCategory>('trees');
+export function CatalogPanel({ category, onCategoryChange, onPick }: CatalogPanelProps) {
   const items = useMemo(() => ASSETS.filter((a) => a.category === category), [category]);
   const thumbs = useProgressiveThumbnails(items, renderThumb);
 
@@ -23,7 +25,7 @@ export function CatalogPanel({ onPick }: CatalogPanelProps) {
             role="tab"
             aria-selected={c.id === category}
             className={`chip ${c.id === category ? 'chip-active' : ''}`}
-            onClick={() => setCategory(c.id)}
+            onClick={() => onCategoryChange(c.id)}
           >
             {c.label}
           </button>

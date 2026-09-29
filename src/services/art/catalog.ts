@@ -9,8 +9,50 @@ import { STRUCTURE_ASSETS } from './structures';
 
 export const ASSETS: readonly AssetDef[] = [...PLANT_ASSETS, ...STRUCTURE_ASSETS];
 
+/** Plants the user added from their own photos, registered at startup. */
+const customAssets = new Map<string, AssetDef>();
+export const CUSTOM_ASSET_PREFIX = 'custom:';
+
 export function getAsset(id: string): AssetDef | undefined {
-  return ASSETS.find((a) => a.id === id);
+  return ASSETS.find((a) => a.id === id) ?? customAssets.get(id);
+}
+
+export function listCustomAssetDefs(): AssetDef[] {
+  return [...customAssets.values()];
+}
+
+export function registerCustomAsset(
+  recordId: string,
+  name: string,
+  art: HTMLCanvasElement,
+  defaultHeight: number,
+): AssetDef {
+  const def: AssetDef = {
+    id: CUSTOM_ASSET_PREFIX + recordId,
+    name,
+    category: 'mine',
+    aspect: art.width / art.height,
+    defaultHeight,
+    groundShadow: true,
+    isPhoto: true,
+    draw(ctx, w, h) {
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(art, 0, 0, w, h);
+    },
+  };
+  forgetRenders(def.id);
+  customAssets.set(def.id, def);
+  return def;
+}
+
+export function unregisterCustomAsset(assetId: string): void {
+  customAssets.delete(assetId);
+  forgetRenders(assetId);
+}
+
+function forgetRenders(assetId: string) {
+  for (const key of [...assetCache.keys()]) if (key.startsWith(`${assetId}|`)) assetCache.delete(key);
+  for (const key of [...thumbnailCache.keys()]) if (key.startsWith(`${assetId}|`)) thumbnailCache.delete(key);
 }
 
 export function defaultAssetColor(asset: AssetDef): string {

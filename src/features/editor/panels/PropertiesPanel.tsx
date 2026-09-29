@@ -120,9 +120,11 @@ function StampControls({ layer, imageHeight, update, commit, set }: ControlsProp
       <Slider label="Rotation" value={layer.rotation} min={-Math.PI / 4} max={Math.PI / 4} format={degrees} onChange={(v) => update('rotation', { rotation: v })} onCommit={commit} />
       <Slider label="Brightness" value={layer.brightness} min={0.5} max={1.5} step={0.05} format={percent} onChange={(v) => update('brightness', { brightness: v })} onCommit={commit} />
       <div className="button-row">
-        <button className="btn" onClick={() => set({ seed: randomSeed() })}>
-          <Icon name="shuffle" size={18} /> New look
-        </button>
+        {!asset?.isPhoto && (
+          <button className="btn" onClick={() => set({ seed: randomSeed() })}>
+            <Icon name="shuffle" size={18} /> New look
+          </button>
+        )}
         <button className={`btn ${layer.flipX ? 'btn-on' : ''}`} onClick={() => set({ flipX: !layer.flipX })}>
           <Icon name="flip" size={18} /> Flip
         </button>

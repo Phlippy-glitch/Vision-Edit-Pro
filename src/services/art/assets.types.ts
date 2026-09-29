@@ -1,6 +1,6 @@
 import type { Rng } from '../../utils/random';
 
-export type AssetCategory = 'trees' | 'shrubs' | 'flowers' | 'hardscape' | 'house';
+export type AssetCategory = 'trees' | 'shrubs' | 'flowers' | 'hardscape' | 'house' | 'mine';
 
 export interface ColorOption {
   label: string;
@@ -18,6 +18,8 @@ export interface AssetDef {
   /** Whether the object casts a soft contact shadow on the ground. */
   groundShadow: boolean;
   colors?: readonly ColorOption[];
+  /** Made from the user's own photo: fixed artwork, so no "New look" variations. */
+  isPhoto?: boolean;
   draw(ctx: CanvasRenderingContext2D, w: number, h: number, rng: Rng, color: string): void;
 }
 
@@ -27,4 +29,5 @@ export const ASSET_CATEGORIES: readonly { id: AssetCategory; label: string }[] =
   { id: 'flowers', label: 'Perennials' },
   { id: 'hardscape', label: 'Hardscape' },
   { id: 'house', label: 'House' },
+  { id: 'mine', label: 'My plants' },
 ];

@@ -13,6 +13,7 @@ Runs as an installable Progressive Web App (PWA) on iPhone and Android. There's 
 | **Remove** | Paint over an existing feature (an old shrub, a dead patch) and it is filled in from the surrounding texture, with color matching. **Try another fill** cycles through alternative source areas. |
 | **Perspective** | Drag the horizon line to eye level. Guide lines help you line it up with paths and edging. Surfaces use it for foreshortening, and plants scale with distance as you drag them. |
 | **Layers** | Reorder, hide, or delete changes. |
+| **My plants** | Add items from photos of your own stock. Photograph a plant against a plain background, tap the background with the magic eraser (or outline the plant), then name it, pick a typical size and set a price. It's saved on the phone and works like any built-in item, including the estimate. |
 | **Estimate** | Plant list and cost estimate built from the design. Plants are counted by type and color. Surface areas are measured from the photo using the horizon and camera height, roughly ±25%, or you can type an exact area on any surface. Mulch and rock also show cubic yards at 3". Edit any price and it's remembered on the phone. Add tax, copy the estimate as text, or include it on the before/after image. Starting prices are rough examples to replace with your own. |
 
 Also:
@@ -56,4 +57,3 @@ See [CLAUDE.md](./CLAUDE.md) for architecture notes.
 ## Roadmap ideas
 - Wrap with Capacitor for App Store / Play Store distribution and native camera.
 - AI generative fill ("replace this bed with a xeriscape") via a hosted image model.
-- Use photos of the landscaper's own plant stock as custom stamps.

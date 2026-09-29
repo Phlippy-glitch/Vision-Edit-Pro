@@ -91,3 +91,16 @@ export interface Project extends ProjectMeta {
 }
 
 export type Tool = 'select' | 'area' | 'remove' | 'horizon';
+
+/** A plant photographed by the user and cut out for use as a catalog item. */
+export interface CustomAssetRecord {
+  id: string;
+  name: string;
+  /** Trimmed PNG with a transparent background. */
+  image: Blob;
+  width: number;
+  height: number;
+  /** Default placed height as a fraction of the photo height. */
+  defaultHeight: number;
+  createdAt: number;
+}

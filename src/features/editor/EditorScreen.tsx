@@ -7,12 +7,15 @@ import type { MaterialDef } from '../../services/art/materials';
 import { buildEstimate, estimateToText, groundArea, type EstimateSettings } from '../../services/estimate';
 import { loadEstimateSettings, loadPrices, saveEstimateSettings, savePrices } from '../../services/priceList';
 import { getProject, saveProject } from '../../services/projectStore';
+import { CUSTOM_ASSET_PREFIX, listCustomAssetDefs } from '../../services/art/catalog';
+import { loadCustomAssets, removeCustomAsset } from '../../services/customAssets';
 import { resultToLayer, runInpaint, strokesToMask, type BrushStroke } from '../../services/removal';
 import { SceneRenderer } from '../../services/renderer';
 import type { Layer, Point, Project, Tool } from '../../types/Editor.types';
 import type { Rect } from '../../utils/geometry';
 import { blobToCanvas, canvasToBlob } from '../../utils/image';
 import { CompareOverlay } from './CompareOverlay';
+import { CustomPlantEditor } from './CustomPlantEditor';
 import { EditorCanvas, type CanvasApi } from './EditorCanvas';
 import { createEditorState, editorReducer } from './editorReducer';
 import { ExportSheet } from './ExportSheet';
@@ -68,7 +71,11 @@ export function EditorScreen({ projectId, onExit }: EditorScreenProps) {
     (async () => {
       const project = await getProject(projectId);
       if (!project) throw new Error('This project no longer exists on this device.');
-      const photo = await blobToCanvas(project.photo);
+      const [photo] = await Promise.all([
+        blobToCanvas(project.photo),
+        // A failure here only hides "My plants"; the design still opens.
+        loadCustomAssets().catch((e: unknown) => console.error('Could not load custom plants:', e)),
+      ]);
       if (!cancelled) setLoaded({ project, photo });
     })().catch((e: unknown) => {
       console.error('Failed to open project:', e);
@@ -112,6 +119,8 @@ function Editor({ project, photo, onExit }: EditorProps) {
   const [details, setDetails] = useState({ name: project.name, clientName: project.clientName });
   const [panel, setPanel] = useState<PanelId>('plants');
   const [catalogCategory, setCatalogCategory] = useState<AssetCategory>('trees');
+  const [customAssets, setCustomAssets] = useState(listCustomAssetDefs);
+  const [customPhoto, setCustomPhoto] = useState<File | null>(null);
   const [draftArea, setDraftArea] = useState<Point[] | null>(null);
   const [draftMaterial, setDraftMaterial] = useState<MaterialDef | null>(null);
   const [strokes, setStrokes] = useState<BrushStroke[]>([]);
@@ -146,6 +155,7 @@ function Editor({ project, photo, onExit }: EditorProps) {
   const tool: Tool = panel === 'remove' ? 'remove' : panel === 'horizon' ? 'horizon' : draftArea ? 'area' : 'select';
 
   const notify = useCallback((text: string, tone: 'info' | 'error' = 'info') => setToast({ id: Date.now(), text, tone }), []);
+  const onCustomError = useCallback((message: string) => setToast({ id: Date.now(), text: message, tone: 'error' }), []);
   const dismissToast = useCallback(() => setToast(null), []);
 
   // --- Autosave -----------------------------------------------------------
@@ -245,6 +255,28 @@ function Editor({ project, photo, onExit }: EditorProps) {
     dispatch({ type: 'ADD_LAYER', layer });
   };
 
+  const saveCustom = (asset: AssetDef, price: number | null) => {
+    setCustomPhoto(null);
+    setCustomAssets(listCustomAssetDefs());
+    if (price !== null) changePrice(`asset:${asset.id}`, price);
+    addAsset(asset);
+    notify(`"${asset.name}" saved to My plants.`);
+  };
+
+  const deleteCustom = async (asset: AssetDef) => {
+    const used = doc.layers.some((l) => l.kind === 'stamp' && l.assetId === asset.id);
+    const warning = used ? ' It is used in this design and will disappear from it (and any other design using it).' : '';
+    if (!window.confirm(`Delete "${asset.name}" from My plants?${warning}`)) return;
+    try {
+      await removeCustomAsset(asset.id, asset.id.slice(CUSTOM_ASSET_PREFIX.length));
+      setCustomAssets(listCustomAssetDefs());
+      requestRedraw();
+    } catch (e) {
+      console.error('Deleting custom plant failed:', e);
+      notify('Could not delete that plant.', 'error');
+    }
+  };
+
   const startArea = (material: MaterialDef) => {
     dispatch({ type: 'SELECT', id: null });
     setDraftMaterial(material);
@@ -315,7 +347,16 @@ function Editor({ project, photo, onExit }: EditorProps) {
       />
     );
   } else if (panel === 'plants') {
-    content = <CatalogPanel category={catalogCategory} onCategoryChange={setCatalogCategory} onPick={addAsset} />;
+    content = (
+      <CatalogPanel
+        category={catalogCategory}
+        onCategoryChange={setCatalogCategory}
+        onPick={addAsset}
+        customAssets={customAssets}
+        onAddCustom={setCustomPhoto}
+        onDeleteCustom={deleteCustom}
+      />
+    );
   } else if (panel === 'surfaces') {
     content = (
       <SurfacePanel
@@ -425,6 +466,14 @@ function Editor({ project, photo, onExit }: EditorProps) {
         </nav>
       </section>
 
+      {customPhoto && (
+        <CustomPlantEditor
+          file={customPhoto}
+          onCancel={() => setCustomPhoto(null)}
+          onSaved={saveCustom}
+          onError={onCustomError}
+        />
+      )}
       {compareOpen && <CompareOverlay renderer={renderer} doc={doc} onClose={() => setCompareOpen(false)} />}
       {exportOpen && (
         <ExportSheet

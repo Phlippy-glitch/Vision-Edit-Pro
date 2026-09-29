@@ -89,7 +89,7 @@ export function EstimatePanel({ estimate, settings, onPriceChange, onSettingsCha
       {hasEstimated && (
         <p className="hint">
           ≈ Areas are measured from the photo (assumes it was taken standing, camera about {settings.cameraHeightFt} ft up,
-          with the horizon set in Perspective). Accuracy is roughly ±25%. Type exact areas on a surface to override.
+          with the horizon set in the Horizon tab). Accuracy is roughly ±25%. Type exact areas on a surface to override.
         </p>
       )}
       <div className="estimate-settings">

@@ -6,6 +6,7 @@ import type { AssetCategory, AssetDef } from '../../services/art/assets.types';
 import type { MaterialDef } from '../../services/art/materials';
 import { buildEstimate, estimateToText, groundArea, type EstimateSettings } from '../../services/estimate';
 import { loadEstimateSettings, loadPrices, saveEstimateSettings, savePrices } from '../../services/priceList';
+import { AiFillError, generateAiFill, readAccessCode, writeAccessCode } from '../../services/aiFill';
 import { getProject, saveProject } from '../../services/projectStore';
 import { CUSTOM_ASSET_PREFIX, listCustomAssetDefs } from '../../services/art/catalog';
 import { loadCustomAssets, removeCustomAsset } from '../../services/customAssets';
@@ -20,6 +21,7 @@ import { EditorCanvas, type CanvasApi } from './EditorCanvas';
 import { createEditorState, editorReducer } from './editorReducer';
 import { ExportSheet } from './ExportSheet';
 import { createAreaLayer, createStampLayer } from './layerFactory';
+import { AiPanel } from './panels/AiPanel';
 import { CatalogPanel } from './panels/CatalogPanel';
 import { EstimatePanel } from './panels/EstimatePanel';
 import { HorizonPanel } from './panels/HorizonPanel';
@@ -28,13 +30,14 @@ import { PropertiesPanel } from './panels/PropertiesPanel';
 import { RemovePanel } from './panels/RemovePanel';
 import { SurfacePanel } from './panels/SurfacePanel';
 
-type PanelId = 'plants' | 'surfaces' | 'remove' | 'horizon' | 'layers' | 'estimate';
+type PanelId = 'plants' | 'surfaces' | 'remove' | 'ai' | 'horizon' | 'layers' | 'estimate';
 
 const TABS: { id: PanelId; label: string; icon: IconName }[] = [
   { id: 'plants', label: 'Plants', icon: 'tree' },
   { id: 'surfaces', label: 'Surfaces', icon: 'surface' },
   { id: 'remove', label: 'Remove', icon: 'eraser' },
-  { id: 'horizon', label: 'Perspective', icon: 'horizon' },
+  { id: 'ai', label: 'AI fill', icon: 'sparkle' },
+  { id: 'horizon', label: 'Horizon', icon: 'horizon' },
   { id: 'layers', label: 'Layers', icon: 'layers' },
   { id: 'estimate', label: 'Estimate', icon: 'receipt' },
 ];
@@ -121,6 +124,12 @@ function Editor({ project, photo, onExit }: EditorProps) {
   const [catalogCategory, setCatalogCategory] = useState<AssetCategory>('trees');
   const [customAssets, setCustomAssets] = useState(listCustomAssetDefs);
   const [customPhoto, setCustomPhoto] = useState<File | null>(null);
+  const [aiPrompt, setAiPrompt] = useState('');
+  const [aiBusy, setAiBusy] = useState(false);
+  const [lastAi, setLastAi] = useState<{ layerId: string; strokes: BrushStroke[]; prompt: string } | null>(null);
+  const [aiAccessCode, setAiAccessCode] = useState(readAccessCode);
+  const [aiSettingsOpen, setAiSettingsOpen] = useState(false);
+  const aiAbort = useRef<AbortController | null>(null);
   const [draftArea, setDraftArea] = useState<Point[] | null>(null);
   const [draftMaterial, setDraftMaterial] = useState<MaterialDef | null>(null);
   const [strokes, setStrokes] = useState<BrushStroke[]>([]);
@@ -152,7 +161,8 @@ function Editor({ project, photo, onExit }: EditorProps) {
   const estimateText = () =>
     estimateToText(estimate, [details.name, details.clientName].filter(Boolean).join(' – '), estimateSettings.taxRate);
   const selected = doc.layers.find((l) => l.id === selectedId) ?? null;
-  const tool: Tool = panel === 'remove' ? 'remove' : panel === 'horizon' ? 'horizon' : draftArea ? 'area' : 'select';
+  // Both Remove and AI fill use the brush.
+  const tool: Tool = panel === 'remove' || panel === 'ai' ? 'remove' : panel === 'horizon' ? 'horizon' : draftArea ? 'area' : 'select';
 
   const notify = useCallback((text: string, tone: 'info' | 'error' = 'info') => setToast({ id: Date.now(), text, tone }), []);
   const onCustomError = useCallback((message: string) => setToast({ id: Date.now(), text: message, tone: 'error' }), []);
@@ -237,11 +247,12 @@ function Editor({ project, photo, onExit }: EditorProps) {
     if (next === panel) return;
     setDraftArea(null);
     setDraftMaterial(null);
-    if (panel === 'remove') {
+    if (panel === 'remove' || panel === 'ai') {
       setStrokes([]);
       setLastRemoval(null);
+      setLastAi(null);
     }
-    if (next === 'remove' || next === 'horizon') dispatch({ type: 'SELECT', id: null });
+    if (next === 'remove' || next === 'ai' || next === 'horizon') dispatch({ type: 'SELECT', id: null });
     setPanel(next);
   };
 
@@ -288,7 +299,7 @@ function Editor({ project, photo, onExit }: EditorProps) {
     const layer = createAreaLayer(draftMaterial, draftArea, renderer.width);
     dispatch({ type: 'ADD_LAYER', layer });
     if (layer.perspective && Math.min(...draftArea.map((p) => p.y)) < doc.horizonY) {
-      notify('Part of this area is above the horizon line. Adjust it in Perspective if the fill looks cut off.');
+      notify('Part of this area is above the horizon line. Adjust it in Horizon if the fill looks cut off.');
     }
     setDraftArea(null);
     setDraftMaterial(null);
@@ -322,6 +333,42 @@ function Editor({ project, photo, onExit }: EditorProps) {
       notify('Removal failed. Please try again with a smaller area.', 'error');
     } finally {
       setRemoving(false);
+    }
+  };
+
+  const runAi = async (strokesToUse: BrushStroke[], prompt: string, replaceId: string | null) => {
+    const controller = new AbortController();
+    aiAbort.current = controller;
+    setToast(null); // clear any earlier error, e.g. a wrong access code
+    setAiBusy(true);
+    try {
+      const sourceDoc = replaceId ? { ...doc, layers: doc.layers.filter((l) => l.id !== replaceId) } : doc;
+      const source = renderer.removalSource(sourceDoc);
+      const mask = strokesToMask(strokesToUse, renderer.width, renderer.height);
+      const layer = await generateAiFill(source, mask, prompt.trim(), controller.signal);
+      if (replaceId) {
+        const { x, y, width, height, patch, name } = layer;
+        dispatch({ type: 'UPDATE_LAYER', id: replaceId, changes: { x, y, width, height, patch, name, prompt: layer.prompt }, mergeKey: `retry-${replaceId}` });
+        setLastAi({ layerId: replaceId, strokes: strokesToUse, prompt });
+      } else {
+        dispatch({ type: 'ADD_LAYER', layer });
+        dispatch({ type: 'SELECT', id: null });
+        setLastAi({ layerId: layer.id, strokes: strokesToUse, prompt });
+      }
+      setStrokes([]);
+    } catch (e) {
+      if (e instanceof DOMException && e.name === 'AbortError') {
+        notify('AI fill cancelled.');
+      } else if (e instanceof AiFillError) {
+        notify(e.message, 'error');
+        if (e.code === 'access_code') setAiSettingsOpen(true);
+      } else {
+        console.error('AI fill failed:', e);
+        notify('AI fill failed. Please try again.', 'error');
+      }
+    } finally {
+      aiAbort.current = null;
+      setAiBusy(false);
     }
   };
 
@@ -382,6 +429,29 @@ function Editor({ project, photo, onExit }: EditorProps) {
         onClear={() => setStrokes([])}
         onRemove={() => runRemoval(strokes, 0, null)}
         onRetry={() => lastRemoval && runRemoval(lastRemoval.strokes, lastRemoval.candidate + 1, lastRemoval.layerId)}
+      />
+    );
+  } else if (panel === 'ai') {
+    content = (
+      <AiPanel
+        brushSize={brushSize}
+        onBrushSize={setBrushSize}
+        strokeCount={strokes.length}
+        busy={aiBusy}
+        prompt={aiPrompt}
+        onPromptChange={setAiPrompt}
+        onGenerate={() => runAi(strokes, aiPrompt, null)}
+        onCancel={() => aiAbort.current?.abort()}
+        onClear={() => setStrokes([])}
+        canRetry={lastAi !== null && doc.layers.some((l) => l.id === lastAi.layerId) && strokes.length === 0}
+        onRetry={() => lastAi && runAi(lastAi.strokes, aiPrompt.trim() || lastAi.prompt, lastAi.layerId)}
+        accessCode={aiAccessCode}
+        onAccessCodeChange={(code) => {
+          setAiAccessCode(code);
+          writeAccessCode(code);
+        }}
+        settingsOpen={aiSettingsOpen}
+        onSettingsOpenChange={setAiSettingsOpen}
       />
     );
   } else if (panel === 'horizon') {

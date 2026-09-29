@@ -62,6 +62,10 @@ export interface RemovalLayer extends LayerBase {
   height: number;
   /** PNG data URL of the patch, including a feathered alpha edge. */
   patch: string;
+  /** How the patch was made; absent on older designs means 'removal'. */
+  source?: 'removal' | 'ai';
+  /** The request that produced an AI patch. */
+  prompt?: string;
 }
 
 export type Layer = StampLayer | AreaLayer | RemovalLayer;

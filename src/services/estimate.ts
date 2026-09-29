@@ -168,6 +168,8 @@ export function buildEstimate(
         estimated,
       });
     } else {
+      // AI redesign patches are a visual; what they show is priced separately.
+      if (layer.source === 'ai') continue;
       add({
         key: 'removal',
         priceKey: 'removal',

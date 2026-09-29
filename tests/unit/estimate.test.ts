@@ -136,6 +136,11 @@ describe('estimate', () => {
       expect(estimate.lines[0].estimated).toBe(false);
     });
 
+    it('does not bill AI redesign patches as removals', () => {
+      const estimate = buildEstimate(doc([{ ...removal, source: 'ai' }]), { removal: 100 }, settings, { width: W, height: H });
+      expect(estimate.lines).toHaveLength(0);
+    });
+
     it('does not guess wall areas', () => {
       const estimate = buildEstimate(doc([area('w', patio, { perspective: false, materialId: 'siding-white' })]), {}, settings, {
         width: W,
